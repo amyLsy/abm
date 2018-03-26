@@ -39,7 +39,7 @@
                                 <constraint firstAttribute="width" secondItem="7rm-2f-jIY" secondAttribute="height" multiplier="4:3" id="FeF-bm-7QH"/>
                                 <constraint firstAttribute="width" constant="40" id="Vn2-QE-Akh"/>
                             </constraints>
-                            <state key="normal" image="personal_letter"/>
+                            <state key="normal" image="me_message"/>
                             <connections>
                                 <action selector="messageClick" destination="iN0-l3-epB" eventType="touchUpInside" id="610-8e-5jN"/>
                             </connections>
@@ -54,7 +54,7 @@
                                 <constraint firstAttribute="width" constant="40" id="CP6-HX-N1A"/>
                                 <constraint firstAttribute="width" secondItem="d16-uD-YwI" secondAttribute="height" multiplier="4:3" id="UlX-n6-JJa"/>
                             </constraints>
-                            <state key="normal" image="edit"/>
+                            <state key="normal" image="me_editor"/>
                             <connections>
                                 <action selector="editClick" destination="iN0-l3-epB" eventType="touchUpInside" id="4LL-Gn-gFc"/>
                             </connections>
@@ -329,10 +329,10 @@
         </view>
     </objects>
     <resources>
-        <image name="edit" width="26" height="26"/>
         <image name="icon_avatar_default" width="100" height="100"/>
-        <image name="nv" width="22" height="22"/>
-        <image name="personal_letter" width="26" height="26"/>
+        <image name="me_editor" width="24" height="24"/>
+        <image name="me_message" width="24" height="24"/>
+        <image name="nv" width="13" height="13"/>
         <image name="新通知" width="2" height="2"/>
     </resources>
 </document>

@@ -74,7 +74,7 @@
     self.attention.text = user.attention_num;
     self.videoLabel.text = user.video_num;
     self.picImageLabel.text = user.photo_num;
-    [self.bigImageView lg_setImageWithurl:user.background placeholderImage:nil];
+    [self.bigImageView lg_setImageWithurl:user.background placeholderImage:[UIImage imageNamed:@"me_bg"]];
     [self.level setTitle:user.localProcessedUserLevel forState:UIControlStateNormal];
     [self.level setBackgroundImage:[UIImage imageNamed:user.userLevelImageName] forState:UIControlStateNormal];
     KWeakSelf;

@@ -253,7 +253,25 @@
             CGFloat width = [_titleSizeArray[i] CGSizeValue].width;
             CGRect buttonFrame = CGRectMake(x-width/2, 0, width, TAB_HEIGHT);
             titleButton.frame = buttonFrame;
-            [titleButton setImage:[UIImage imageNamed:@"small_normal"] forState:UIControlStateNormal];
+            if (i == 0) {
+                
+                [titleButton setImage:[UIImage imageNamed:@"bar_live_elect"] forState:UIControlStateSelected];
+
+                [titleButton setImage:[UIImage imageNamed:@"bar_live_normal"] forState:UIControlStateNormal];
+
+            }else if (i == 1){
+                
+                [titleButton setImage:[UIImage imageNamed:@"bar_video_elect"] forState:UIControlStateSelected];
+
+                [titleButton setImage:[UIImage imageNamed:@"bar_video_normal"] forState:UIControlStateNormal];
+
+            }else{
+                
+                [titleButton setImage:[UIImage imageNamed:@"bar_picture_elect"] forState:UIControlStateSelected];
+
+                [titleButton setImage:[UIImage imageNamed:@"bar_picture_normal"] forState:UIControlStateNormal];
+
+            }
             [titleButton layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:0];
             [_topTabScrollView addSubview:titleButton];
             [titleButton addTarget:self action:@selector(touchAction:) forControlEvents:UIControlEventTouchUpInside];

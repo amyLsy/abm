@@ -50,8 +50,8 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
     self.dataSource = [[MineDataSource alloc]initWithController:self];
     YZGTableViewSectionItem *sectionItem = [[YZGTableViewSectionItem alloc]init];
     //添加的数据 开车 魏友臣 17/5/12
-    NSArray *descrpArray = @[@"贡献榜",@"活力",@"我的礼物",@"智力",@"家族",@"等级",@"主播特长",@"推荐人列表",@"设置"];
-    NSArray *imageArray = @[@"list_contribute",@"list_vitality",@"list_mypresent",@"list_intelligence",@"list_family",@"list_grade",@"list_specialty",@"list_recommend",@"list_setup"];
+    NSArray *descrpArray = @[@"贡献榜",@"活力",@"我的物品",@"智力",@"家族",@"等级",@"主播特长",@"推荐人列表",@"设置"];
+    NSArray *imageArray = @[@"list_contribute",@"list_meimei",@"list_goods",@"list_meili",@"list_family",@"list_level",@"list_specialty",@"list_recommend",@"list_setup"];
     if ([YZGAppSetting sharedInstance].isInAppleStore)  {
         descrpArray = @[@"智力",@"家族",@"等级",@"主播特长",@"推荐人列表",@"设置"];
 //        imageArray = @[@"贡献榜",@"秀豆充值",@"我的等级",@"设置"];
@@ -193,7 +193,7 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
 
 -(void)didSelectItem:(id)item atIndexPath:(NSIndexPath *)indexPath{
     MineRowItem *rowItem = (MineRowItem *)item;
-    if( [rowItem.descrp isEqualToString:@"我的粉丝贡献榜"]){
+    if( [rowItem.descrp isEqualToString:@"贡献榜"]){
         PersonalContributionController *contribution  = [[PersonalContributionController alloc]initWithID:[Account shareInstance].ID];
         [self presentWithViewController:contribution];
     }else if([rowItem.descrp isEqualToString:@"活力"]){

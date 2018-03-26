@@ -31,13 +31,13 @@
         //为大图
 //        [self big:self.bigButton];
         [YZGAppSetting sharedInstance].isBig = YES;
-        [self.samllButton setImage:[UIImage imageNamed:@"big_normal"] forState:UIControlStateNormal];
+        [self.samllButton setImage:[UIImage imageNamed:@"big_elect"] forState:UIControlStateNormal];
     }else{
         //为小图
            [YZGAppSetting sharedInstance].hotCellWidth = (KScreenWidth/2) - 1;
 //        [self samll:self.samllButton];
         [YZGAppSetting sharedInstance].isBig = NO;
-        [self.samllButton setImage:[UIImage imageNamed:@"small_normal"] forState:UIControlStateNormal];
+        [self.samllButton setImage:[UIImage imageNamed:@"small_elect"] forState:UIControlStateNormal];
         
     }
 }
@@ -92,14 +92,14 @@
     if (type == 1) {
         //当前为大图，要切换为小图
         [YZGAppSetting sharedInstance].isBig = NO;
-        [self.samllButton setImage:[UIImage imageNamed:@"small_normal"] forState:UIControlStateNormal];
+        [self.samllButton setImage:[UIImage imageNamed:@"small_elect"] forState:UIControlStateNormal];
         if (_bigOrSmallAtion) {
             _bigOrSmallAtion(0);
         }
     }else{
         //当前为小图，要切换为大图
         [YZGAppSetting sharedInstance].isBig = YES;
-        [self.samllButton setImage:[UIImage imageNamed:@"big_normal"] forState:UIControlStateNormal];
+        [self.samllButton setImage:[UIImage imageNamed:@"big_elect"] forState:UIControlStateNormal];
         if (_bigOrSmallAtion) {
             _bigOrSmallAtion(1);
         }
