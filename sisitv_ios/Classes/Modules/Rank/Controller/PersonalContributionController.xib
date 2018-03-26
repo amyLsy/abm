@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalContributionController">
+            <connections>
+                <outlet property="segementControl" destination="giV-zF-Dse" id="haB-Tz-26i"/>
+                <outlet property="segentHeight" destination="FOB-Wi-POQ" id="wlj-Y7-oDr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3v0-Wx-Dhq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="giV-zF-Dse">
+                            <rect key="frame" x="10" y="8" width="355" height="45"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segments>
+                                <segment title="总榜"/>
+                                <segment title="月榜"/>
+                                <segment title="周榜"/>
+                                <segment title="日榜"/>
+                            </segments>
+                            <color key="tintColor" red="0.93017643689999996" green="0.38788837189999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cliclSegment:" destination="-1" eventType="valueChanged" id="w65-aT-gWk"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="giV-zF-Dse" firstAttribute="leading" secondItem="3v0-Wx-Dhq" secondAttribute="leading" constant="10" id="158-cP-xI3"/>
+                        <constraint firstAttribute="height" constant="60" id="FOB-Wi-POQ"/>
+                        <constraint firstAttribute="bottom" secondItem="giV-zF-Dse" secondAttribute="bottom" constant="8" id="Vwt-kV-lap"/>
+                        <constraint firstItem="giV-zF-Dse" firstAttribute="top" secondItem="3v0-Wx-Dhq" secondAttribute="top" constant="8" id="WMA-wI-xVT"/>
+                        <constraint firstAttribute="trailing" secondItem="giV-zF-Dse" secondAttribute="trailing" constant="10" id="YhA-tz-Eut"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3v0-Wx-Dhq" secondAttribute="trailing" id="PiP-wK-bQW"/>
+                <constraint firstItem="3v0-Wx-Dhq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PmB-R5-e8W"/>
+                <constraint firstItem="3v0-Wx-Dhq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aoO-t7-q4h"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>

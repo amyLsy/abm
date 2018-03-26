@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChatCallInvitationView">
+            <rect key="frame" x="0.0" y="0.0" width="285" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYf-oC-Fuc">
+                    <rect key="frame" x="0.0" y="80" width="142" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rKj-P9-l26"/>
+                    </constraints>
+                    <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancelButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="iGL-7m-aSe"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-Zk-o1k">
+                    <rect key="frame" x="126.5" y="15" width="33" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主播申请和你连麦,是否同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-X7-oNT">
+                    <rect key="frame" x="61" y="42.5" width="163" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbS-xG-SuW" userLabel="sepView">
+                    <rect key="frame" x="0.0" y="79" width="285" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="of6-PT-QMY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6K5-xQ-IqN">
+                    <rect key="frame" x="142" y="80" width="1" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="Kb3-tP-SAz"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCt-mE-JLG">
+                    <rect key="frame" x="143" y="80" width="142" height="40"/>
+                    <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="confirmButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="dmX-0I-jWb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.95294117647058818" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IAT-X7-oNT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KYT-sO-LIg"/>
+                <constraint firstItem="gCt-mE-JLG" firstAttribute="top" secondItem="cbS-xG-SuW" secondAttribute="bottom" id="MPo-yq-9N6"/>
+                <constraint firstItem="gCt-mE-JLG" firstAttribute="width" secondItem="wYf-oC-Fuc" secondAttribute="width" id="OEv-sl-qre"/>
+                <constraint firstAttribute="bottom" secondItem="wYf-oC-Fuc" secondAttribute="bottom" id="RTS-Oq-Uae"/>
+                <constraint firstItem="wYf-oC-Fuc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RTd-LM-Y1u"/>
+                <constraint firstItem="gCt-mE-JLG" firstAttribute="leading" secondItem="wYf-oC-Fuc" secondAttribute="trailing" constant="1" id="Tb0-IU-zG9"/>
+                <constraint firstItem="DNc-Zk-o1k" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="W09-jg-i7q"/>
+                <constraint firstItem="gCt-mE-JLG" firstAttribute="height" secondItem="wYf-oC-Fuc" secondAttribute="height" id="YwS-hd-8O5"/>
+                <constraint firstItem="6K5-xQ-IqN" firstAttribute="top" secondItem="cbS-xG-SuW" secondAttribute="bottom" id="ibp-vn-C31"/>
+                <constraint firstAttribute="bottom" secondItem="6K5-xQ-IqN" secondAttribute="bottom" id="kda-lV-FdC"/>
+                <constraint firstAttribute="trailing" secondItem="cbS-xG-SuW" secondAttribute="trailing" id="l5E-rc-30M"/>
+                <constraint firstItem="6K5-xQ-IqN" firstAttribute="leading" secondItem="wYf-oC-Fuc" secondAttribute="trailing" id="lPy-Hn-8m0"/>
+                <constraint firstItem="cbS-xG-SuW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="o79-AV-aii"/>
+                <constraint firstAttribute="trailing" secondItem="gCt-mE-JLG" secondAttribute="trailing" id="s3x-jq-msN"/>
+                <constraint firstItem="IAT-X7-oNT" firstAttribute="top" secondItem="DNc-Zk-o1k" secondAttribute="bottom" constant="8" id="tfI-bX-k1O"/>
+                <constraint firstItem="DNc-Zk-o1k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="wp7-xK-rwm"/>
+                <constraint firstAttribute="bottom" secondItem="gCt-mE-JLG" secondAttribute="bottom" id="xny-En-eyc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="messageLabel" destination="IAT-X7-oNT" id="Ig7-Oe-FHj"/>
+            </connections>
+            <point key="canvasLocation" x="-92.5" y="-149"/>
+        </view>
+    </objects>
+</document>

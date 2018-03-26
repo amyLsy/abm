@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController">
+            <connections>
+                <outlet property="phone" destination="Vr1-TM-qPG" id="aHk-oN-Von"/>
+                <outlet property="protocolButton" destination="ryj-FT-zbi" id="Ds1-ER-TAj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="4fJ-jH-qcX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vr1-TM-qPG">
+                    <rect key="frame" x="133.5" y="565" width="108" height="26"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="手机号登陆/注册">
+                                <attributes>
+                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="phone:" destination="-1" eventType="touchUpInside" id="5Y1-EA-w6v"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用即为同意" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tk-4r-Zb3">
+                    <rect key="frame" x="77.5" y="621" width="80" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryj-FT-zbi">
+                    <rect key="frame" x="157.5" y="615" width="146" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="《嘚瑟鱼直播注册协议》">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="protocol:" destination="-1" eventType="touchUpInside" id="no3-ms-4cT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ryj-FT-zbi" firstAttribute="leading" secondItem="2tk-4r-Zb3" secondAttribute="trailing" id="3i5-he-k4T"/>
+                <constraint firstAttribute="trailing" secondItem="4fJ-jH-qcX" secondAttribute="trailing" id="3zg-6L-J1Y"/>
+                <constraint firstItem="4fJ-jH-qcX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4Z3-BO-yrV"/>
+                <constraint firstItem="4fJ-jH-qcX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kkc-Zg-FTw"/>
+                <constraint firstItem="2tk-4r-Zb3" firstAttribute="top" secondItem="Vr1-TM-qPG" secondAttribute="bottom" constant="30" id="Orp-4M-hJJ"/>
+                <constraint firstItem="2tk-4r-Zb3" firstAttribute="centerX" secondItem="4fJ-jH-qcX" secondAttribute="centerX" constant="-70" id="XuN-eL-4Ki"/>
+                <constraint firstItem="Vr1-TM-qPG" firstAttribute="centerX" secondItem="4fJ-jH-qcX" secondAttribute="centerX" id="kVF-ha-Y5F"/>
+                <constraint firstItem="ryj-FT-zbi" firstAttribute="centerY" secondItem="2tk-4r-Zb3" secondAttribute="centerY" id="ooo-eS-7dS"/>
+                <constraint firstAttribute="bottom" secondItem="4fJ-jH-qcX" secondAttribute="bottom" id="wtw-SW-e4N"/>
+                <constraint firstAttribute="bottom" secondItem="2tk-4r-Zb3" secondAttribute="bottom" constant="30" id="zBn-zZ-dIZ"/>
+            </constraints>
+            <point key="canvasLocation" x="77" y="41"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_login" width="360" height="540"/>
+    </resources>
+</document>

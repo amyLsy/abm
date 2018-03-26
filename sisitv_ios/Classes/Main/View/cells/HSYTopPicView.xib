@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="26X-X1-Re2" customClass="HSYTopPicView">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="235"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9v2-hf-tif">
+                    <rect key="frame" x="0.0" y="0.0" width="323" height="235"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtn-98-nzp">
+                    <rect key="frame" x="0.0" y="192" width="323" height="43"/>
+                    <state key="normal" title="点击查看全图" image="see-big-picture" backgroundImage="see-big-picture-background"/>
+                    <connections>
+                        <action selector="seeBigImage:" destination="26X-X1-Re2" eventType="touchUpInside" id="eOq-3T-8oB"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-9m-qiS">
+                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E9-wO-Zt4" customClass="DALabeledCircularProgressView">
+                    <rect key="frame" x="102" y="58" width="120" height="120"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="Mjn-TK-deL"/>
+                        <constraint firstAttribute="width" constant="120" id="x4u-G2-KPc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9v2-hf-tif" firstAttribute="top" secondItem="26X-X1-Re2" secondAttribute="top" id="2o1-ic-QAy"/>
+                <constraint firstItem="Xtn-98-nzp" firstAttribute="leading" secondItem="26X-X1-Re2" secondAttribute="leading" id="3aq-rx-IPQ"/>
+                <constraint firstItem="gUc-9m-qiS" firstAttribute="leading" secondItem="26X-X1-Re2" secondAttribute="leading" id="KO3-8U-wT3"/>
+                <constraint firstAttribute="bottom" secondItem="Xtn-98-nzp" secondAttribute="bottom" id="KUm-40-CB6"/>
+                <constraint firstItem="gUc-9m-qiS" firstAttribute="top" secondItem="26X-X1-Re2" secondAttribute="top" id="UX2-gY-uex"/>
+                <constraint firstItem="9E9-wO-Zt4" firstAttribute="centerX" secondItem="26X-X1-Re2" secondAttribute="centerX" id="UXa-ww-3Ot"/>
+                <constraint firstAttribute="trailing" secondItem="Xtn-98-nzp" secondAttribute="trailing" id="akm-O1-khH"/>
+                <constraint firstAttribute="trailing" secondItem="9v2-hf-tif" secondAttribute="trailing" id="ic9-78-Toh"/>
+                <constraint firstAttribute="bottom" secondItem="9v2-hf-tif" secondAttribute="bottom" id="rTL-wP-HFt"/>
+                <constraint firstItem="9E9-wO-Zt4" firstAttribute="centerY" secondItem="26X-X1-Re2" secondAttribute="centerY" id="tAP-Zh-WcA"/>
+                <constraint firstItem="9v2-hf-tif" firstAttribute="leading" secondItem="26X-X1-Re2" secondAttribute="leading" id="xEI-ca-bqg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="gifButton" destination="gUc-9m-qiS" id="wRo-zf-6EG"/>
+                <outlet property="imageView" destination="9v2-hf-tif" id="Rd9-BH-E60"/>
+                <outlet property="progressVIew" destination="9E9-wO-Zt4" id="kVx-O2-1mN"/>
+                <outlet property="seeBigImageButton" destination="Xtn-98-nzp" id="jGA-Sb-N1Z"/>
+            </connections>
+            <point key="canvasLocation" x="92" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common-gif" width="31" height="31"/>
+        <image name="see-big-picture" width="19" height="19"/>
+        <image name="see-big-picture-background" width="285" height="43"/>
+    </resources>
+</document>

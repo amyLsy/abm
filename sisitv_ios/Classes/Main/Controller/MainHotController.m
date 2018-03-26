@@ -1,0 +1,371 @@
+//
+//  MainHotController.m
+//  sisitv_ios
+//
+//  Created by apple on 17/2/27.
+//  Copyright © 2017年 JLXX--YZG. All rights reserved.
+//
+
+#import "MainHotController.h"
+#import "PlayerViewController.h"
+#import "BaseWebViewController.h"
+
+#import "MainDataSource.h"
+#import "MainListModel.h"
+
+#import "AlertTool.h"
+#import "Account.h"
+#import "RoomModel.h"
+#import "BannerRequest.h"
+#import "HotTopTypeCell.h"
+#import "LGHotDataSource.h"
+#import "LGHotDataSource.h"
+#import "YZGAppSetting.h"
+#import "LGMediaListModel.h"
+#import "MJRefresh.h"
+#import "LGPlaysController.h"
+#import "HttpTool.h"
+#import "LGUploadTermsModel.h"
+#import "LGButtont.h"
+#import "LGSelectGameView.h"
+#import "ChatView.h"
+#import "ChatViewController.h"
+@interface MainHotController ()<LGHotDataSourceHeadViewDelegate,LGTermsViewDelegate>
+//视频类型1为视频热门  2为竞技热门直播
+
+@property(nonatomic,assign) NSInteger dataType;
+@property(nonatomic,strong) HotTopTypeCell *headView;
+@property(nonatomic,strong) RoomInfo *roomInfo;
+@end
+
+@implementation MainHotController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//     [self.collectionView yzgStartRefreshing];
+    
+    
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initHeadView];
+    _dataType = 1;
+//    [self.collectionView.mj_header beginRefreshing];
+    [self.headView.termaTypwView defaultSelect];
+    
+   
+
+}
+
+
+- (void)initHeadView{
+    
+    
+    
+}
+
+- (void)createDataSourceAndLayout{
+    LGHotDataSource *dataSource = [[LGHotDataSource alloc] initWithController:self];
+    self.dataSource = dataSource;
+    dataSource.headViewDelegate = self;
+    YZGCollectionSectionItem *sectionItem0 = [[YZGCollectionSectionItem alloc]init];
+    YZGCollectionSectionItem *sectionItem1 = [[YZGCollectionSectionItem alloc]init];
+    [self.dataSource.sectionItems addObject:sectionItem0];
+    [self.dataSource.sectionItems addObject:sectionItem1];
+
+    
+    CGFloat margin = 1;
+    YZGCollectionViewFlowLayout *layout = [[YZGCollectionViewFlowLayout alloc] initWithRowSpacing:margin columnSpacing:margin];
+    layout.headerReferenceSize = CGSizeMake(KScreenWidth, 147);
+    self.layout = layout;
+    self.cellClassName = @[@"BannerTableViewCell",@"LGHotCell",@"LGVideoListCell"];
+    self.dataType = 2;
+    
+   self.headView = (HotTopTypeCell *)[dataSource collectionView:self.collectionView headerViewForHeaderItem:nil];
+   self.headView.termaTypwView.delegate = self;
+   [self loadVideoType];
+    
+   
+  
+}
+
+- (void)termsViewAtionWithType:(LGButtont *)actionType headView:(LGTermsTypeView *)termsView{
+    
+    LGUploadTermsModel *terModel = actionType.object;
+    //竞技直播
+    if ([terModel.id integerValue] == 1) {
+        
+        [self headViewAtionWithType:2 headView:self.headView];
+        
+    }else{
+        
+        [self headViewAtionWithType:1 headView:self.headView];
+        
+    }
+    
+    
+}
+
+- (void)headViewAtionWithType:(NSInteger)actionType headView:(HotTopTypeCell *)headView{
+    
+    switch (actionType) {
+        case 1:
+            NSLog(@"视频热门");
+            //获取热门数据
+            self.dataType = 2;
+            [self createModel];
+            [self configForRequest];
+              [self.listModel pullDownToRefresh];
+            headView.bigOrSmallButton.hidden = YES;
+            break;
+        case 2:
+            NSLog(@"竞技热门");
+            self.dataType = 1;
+            [self createModel];
+            [self configForRequest];
+             [self.listModel pullDownToRefresh];
+            headView.bigOrSmallButton.hidden = NO;
+            break;
+        case 3:
+            NSLog(@"大图");
+              [YZGAppSetting sharedInstance].isHot = YES;
+            [YZGAppSetting sharedInstance].hotCellWidth = KScreenWidth;
+            [YZGAppSetting sharedInstance].isBig =  YES;
+            [self.collectionView reloadData];
+            break;
+        case 4:
+            NSLog(@"小图");
+             [YZGAppSetting sharedInstance].isHot = YES;
+            [YZGAppSetting sharedInstance].hotCellWidth = (KScreenWidth/2) - 1;
+            [YZGAppSetting sharedInstance].isBig =  NO;
+            [self.collectionView reloadData];
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+}
+
+-(void)createModel{
+    if (_dataType == 2) {
+         self.listModel = [[LGMediaListModel alloc] initWithDelegate:self];
+    }else{
+        self.listModel = [[MainListModel alloc] initWithDelegate:self];
+    }
+}
+-(void)configForRequest{
+    
+    if (_dataType == 2) {
+        
+        MainListParam *mainListParam = [[MainListParam alloc] init];
+        mainListParam.type = [NSString stringWithFormat:@"%zd",1];
+        mainListParam.sortby = @"3";
+        YZGRequest *mainListRequest = [[YZGRequest alloc] initWithRequestUrl:@"get_views" withRequestParam:mainListParam];
+        self.listModel.netRequest = mainListRequest;
+        
+    }else{
+        
+        MainListParam *mainListParam = [[MainListParam alloc] init];
+        mainListParam.type = @"1";
+        YZGRequest *mainListRequest = [[YZGRequest alloc] initWithRequestUrl:@"getLive" withRequestParam:mainListParam];
+        self.listModel.netRequest = mainListRequest;
+    }
+    
+    
+}
+
+-(void)createDataSource{
+    self.dataSource = [[LGHotDataSource alloc] initWithController:self];
+    YZGTableViewSectionItem *sectionItem0 = [[YZGTableViewSectionItem alloc]init];   
+    [self.dataSource.sectionItems addObject:sectionItem0];
+
+}
+
+-(void)handleAfterRequestFaile{
+    [super handleAfterRequestFaile];
+    [self loadBanner];
+}
+
+// 播放列表
+-(void)requestDidSuccess{
+     [YZGAppSetting sharedInstance].isHot = YES;
+    YZGTableViewSectionItem *sectionItem1 =  [self.dataSource.sectionItems objectAtIndex:0];
+    [sectionItem1.rowItems addObjectsFromArray: self.listModel.responseObject];
+    // 加载广告列表
+    [self loadBanner];
+    //加载视频类型
+   
+    [self.collectionView reloadData];
+}
+
+
+
+- (void)loadVideoType{
+    
+    LGUploadTermsModel *mdeol1 = [[LGUploadTermsModel alloc] init];
+    mdeol1.name = @"竞技直播";
+    mdeol1.id = @"1";
+    LGUploadTermsModel *mdeol2 = [[LGUploadTermsModel alloc] init];
+    mdeol2.name = @"热门视频";
+    mdeol2.id = @"2";
+    //写死
+    self.headView.termaTypwView.typeStrArray = @[mdeol1,mdeol2];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    param[@"type"] = @(1);
+//
+//    [HttpTool requestWithUrlFlag:HttpRequsetUrlFlagGetUploadTerms param:param success:^(id responseObject) {
+//        if ([responseObject[@"code"] integerValue] == 200) {
+//
+//            self.headView.termaTypwView.typeStrArray = [LGUploadTermsModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+//        }
+//
+//
+//    } faile:^{
+//
+//    }];
+    
+    
+    
+}
+
+// 加载广告列表
+-(void)loadBanner{
+    if (self.listModel.isRefresh) {
+        
+        BannerRequest *bannerRequest = [[BannerRequest alloc] init];
+        [bannerRequest startWithCompletionBlockWithSuccess:^(__kindof YZGRequest * _Nonnull request) {
+        HotTopTypeCell *headView = (HotTopTypeCell *)[self.dataSource collectionView:self.collectionView headerViewForHeaderItem:nil];
+            [headView setItem:request.item forIndexPath:nil];
+           
+           [self.collectionView reloadData];
+          
+        } failure:nil];
+    }
+}
+
+
+-(void)tableViewCell:(HotTopTypeCell *)headView tapBanner:(BannerRowItem *)banner{
+    
+    if (banner.type.integerValue ==1) {
+        [self persentPlayerControllrWithRoom_id:banner.jump avatar:nil room_password:nil video_url:nil];
+    }else{
+        [self pushWebViewControllrWithUrl:[NSURL URLWithString:banner.jump] withTitle:banner.title];
+    }
+}
+
+
+
+-(void)pushWebViewControllrWithUrl:(NSURL *)url withTitle:(NSString *)title
+{
+    BaseWebViewController *webViewController = ({
+        BaseWebViewController *web = [[BaseWebViewController alloc] init];
+        web.url = url;
+        web.title = title;
+        web;
+    });
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)didSelectItem:(id)item atIndexPath:(NSIndexPath *)indexPath{
+    if ([item isKindOfClass:[RoomInfo class]]) {
+        RoomInfo *roomInfo = (RoomInfo *)item;
+        _roomInfo = roomInfo;
+        if (roomInfo.price.integerValue>0) {
+            [self enterPriceRoomWithRoomInfo:roomInfo];
+            
+        }else if (roomInfo.minute_charge.integerValue>0){
+            [self enterMinuteChargeRoomWithRoomInfo:roomInfo];
+    
+        }else if ([roomInfo.need_password intValue])//0不是，1密码房
+        {
+            [self enterPasswordRoomWithRoomInfo:roomInfo];  
+        }else{
+            [self persentPlayerControllrWithRoom_id:roomInfo.room_id avatar:roomInfo.avatar room_password:nil video_url:roomInfo.channel_source];
+        }
+    }else if([item isKindOfClass:[LGMediaListModel class]]){
+        
+        //添加点击量
+        
+        
+        
+        LGMediaListModel *model = (LGMediaListModel *)item;
+        [self addhits:model];
+        LGPlaysController *play = [[LGPlaysController alloc] init];
+        play.model = model;
+        play.viewType = 1;
+        YZGTableViewSectionItem *sectionItem1 =  [self.dataSource.sectionItems objectAtIndex:0];
+        play.videoListArray = sectionItem1.rowItems;
+        play.indexPath = indexPath;
+        //    [self.navigationController pushViewController:play animated:YES];
+        [self presentNeedNavgation:YES presentendViewController:play];
+    }
+}
+
+- (void)addhits:(LGMediaListModel *)model{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"token"] = [Account shareInstance].token;
+    param[@"type"] = @"1";
+    param[@"item_id"] = model.id;
+    [HttpTool requestWithUrlFlag:HttpRequsetUrlFlagAddhits param:param success:^(id responseObject) {
+     
+    } faile:^{
+        
+    }];
+    
+    
+}
+
+
+-(void)enterPriceRoomWithRoomInfo:(RoomInfo *)roomInfo{
+    [AlertTool alertWithTitle:nil message:[NSString stringWithFormat:@"该直播间为付费房间\n(%@%@/每次)",roomInfo.price,kBalance] callbackBlock:^(NSInteger index, UITextField * _Nullable textField) {
+        if (index ==1) {
+            if ([[Account shareInstance].balance integerValue] > roomInfo.price.integerValue) {
+                [self persentPlayerControllrWithRoom_id:roomInfo.room_id avatar:roomInfo.avatar room_password:nil video_url:roomInfo.channel_source];
+            }else{
+                [AlertTool ShowErrorInView:self.view withTitle:[NSString stringWithFormat:@"%@不足",kBalance]];
+            }
+        }
+    } cancelButtonTitle:@"取消" destructiveButtonTitle:@"进入" needTextFiled:NO presentingController:self otherButtonTitles:nil, nil];
+}
+
+-(void)enterPasswordRoomWithRoomInfo:(RoomInfo *)roomInfo{
+    [AlertTool alertWithTitle:nil message:@"进入该直播间需要密码" callbackBlock:^(NSInteger index, UITextField * _Nullable textField) {
+        if (index ==1) {
+            NSString *room_password = textField.text;
+            RoomParam *roomParam = [[RoomParam alloc]init];
+            roomParam.room_id = roomInfo.room_id;
+            roomParam.room_password = room_password;
+            [RoomModel checkRoomPassword:roomParam success:^(id info, BOOL successGetInfo){
+                if (successGetInfo) {
+                    [self persentPlayerControllrWithRoom_id:roomInfo.room_id avatar:roomInfo.avatar room_password:room_password video_url:roomInfo.channel_source];
+                }else{
+                    [AlertTool ShowErrorInView:self.view withTitle:info];
+                }
+            }];
+        }
+    } cancelButtonTitle:@"取消" destructiveButtonTitle:@"进入" needTextFiled:YES presentingController:self otherButtonTitles:nil, nil];
+}
+-(void)enterMinuteChargeRoomWithRoomInfo:(RoomInfo *)roomInfo{
+    [AlertTool alertWithTitle:nil message:[NSString stringWithFormat:@"该直播间为付费房间\n(%@%@/每分钟)",roomInfo.minute_charge,kBalance] callbackBlock:^(NSInteger index, UITextField * _Nullable textField) {
+        if (index ==1) {
+            [self persentPlayerControllrWithRoom_id:roomInfo.room_id avatar:roomInfo.avatar room_password:nil video_url:roomInfo.channel_source];
+        }
+    } cancelButtonTitle:@"取消" destructiveButtonTitle:@"进入" needTextFiled:NO presentingController:self otherButtonTitles:nil, nil];
+}
+
+- (void)persentPlayerControllrWithRoom_id:(NSString *)room_id avatar:(NSString *)avatar room_password:(NSString *)room_password video_url:(NSString *)video_url{
+    PlayerViewController *playerControllr = [[PlayerViewController alloc] init];
+    playerControllr.room_id = room_id;
+    playerControllr.chatViewController.roomInfo = _roomInfo;
+    playerControllr.avatar = avatar;
+    playerControllr.room_password = room_password;
+    playerControllr.video_url = video_url;
+    [self presentNeedNavgation:NO presentendViewController:playerControllr];
+}
+@end

@@ -1,0 +1,31 @@
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+target ‘sisitv_ios’ do
+
+
+pod 'AFNetworking', '~> 3.1.0'
+pod 'FMDB', '~> 2.6.2'
+pod 'MJExtension', '~> 3.0.13'
+pod 'SDWebImage', '~> 3.8.1'
+pod 'Masonry', '~> 1.0.1'
+pod 'MBProgressHUD', '~> 0.9.0'
+pod 'ShareSDK3', '~> 3.4.0'
+pod 'MOBFoundation', '~> 2.0.8'
+pod 'ShareSDK3/ShareSDKPlatforms/QQ'
+pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
+pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+pod 'SDCycleScrollView'
+pod 'SVProgressHUD'
+pod 'DACircularProgress'
+pod 'IQKeyboardManager'
+
+pod 'JPush-iOS-SDK', '~> 3.0.5'
+
+pod 'KSYRTCLive',:git =>'https://git.oschina.net/kinlink/KinLinkRTCLive_iOS.git', :tag=>'2.0.2'
+#pod 'libksygpulive/KSYGPUResource',:git => 'https://git.oschina.net/kinlink/KinLinkLive_iOS.git', :tag=>'2.0.1'
+#pod 'libksygpulive/libksygpulive',:git => 'https://git.oschina.net/kinlink/KinLinkLive_iOS.git', :tag=>'2.0.1'
+pod 'libksygpulive/KSYGPUResource'
+pod 'libksygpulive/libksygpulive'
+pod 'ChatKit', :git => 'https://git.oschina.net/kinlink/KinLinkChatKit.git',:commit=>'ef8c6c9ee103709e14c059843eeb4ffefaae15ca'
+end

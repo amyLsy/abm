@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatGuardListCell" rowHeight="61" id="KGk-i7-Jjw" customClass="ChatGuardListCell">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="60.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox8-0a-8Nd">
+                        <rect key="frame" x="222" y="8" width="90" height="44.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="BWQ-F7-Yso"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="取消场控"/>
+                        <connections>
+                            <action selector="cancelAdmin:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8Vr-Nx-0Dh"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExZ-gK-hzO">
+                        <rect key="frame" x="80.5" y="5" width="131.5" height="50.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X1O-A7-82X">
+                        <rect key="frame" x="20" y="5" width="50.5" height="50.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="X1O-A7-82X" secondAttribute="height" multiplier="1:1" id="LC6-XJ-xG7"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pia-vw-h1F">
+                        <rect key="frame" x="0.0" y="59.5" width="322" height="1"/>
+                        <color key="backgroundColor" red="0.83529411760000005" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ZAm-QW-N4c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="X1O-A7-82X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="0KH-dT-3Zc"/>
+                    <constraint firstItem="ExZ-gK-hzO" firstAttribute="leading" secondItem="X1O-A7-82X" secondAttribute="trailing" constant="10" id="EUd-aY-vlz"/>
+                    <constraint firstItem="ExZ-gK-hzO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Et1-Za-LWW"/>
+                    <constraint firstAttribute="trailing" secondItem="Pia-vw-h1F" secondAttribute="trailing" id="IdC-Wr-7l0"/>
+                    <constraint firstAttribute="bottom" secondItem="X1O-A7-82X" secondAttribute="bottom" constant="5" id="KmE-vB-tbL"/>
+                    <constraint firstAttribute="bottom" secondItem="ExZ-gK-hzO" secondAttribute="bottom" constant="5" id="Nvg-gN-FFd"/>
+                    <constraint firstAttribute="trailing" secondItem="Ox8-0a-8Nd" secondAttribute="trailing" constant="10" id="go3-O2-NWn"/>
+                    <constraint firstAttribute="bottom" secondItem="Ox8-0a-8Nd" secondAttribute="bottom" constant="8" id="lA7-c3-2tD"/>
+                    <constraint firstAttribute="bottom" secondItem="Pia-vw-h1F" secondAttribute="bottom" id="lBN-ar-nXa"/>
+                    <constraint firstItem="X1O-A7-82X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="lM6-K5-SCE"/>
+                    <constraint firstItem="Ox8-0a-8Nd" firstAttribute="leading" secondItem="ExZ-gK-hzO" secondAttribute="trailing" constant="10" id="tCp-kh-jny"/>
+                    <constraint firstItem="Ox8-0a-8Nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="v7W-8G-NUI"/>
+                    <constraint firstItem="Pia-vw-h1F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yNl-b7-lsx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cancelButtton" destination="Ox8-0a-8Nd" id="cX0-IM-rcx"/>
+                <outlet property="iconImageView" destination="X1O-A7-82X" id="Pph-Xc-Vew"/>
+                <outlet property="nameLabel" destination="ExZ-gK-hzO" id="lCs-4S-Ol9"/>
+            </connections>
+            <point key="canvasLocation" x="360" y="238.5"/>
+        </tableViewCell>
+    </objects>
+</document>

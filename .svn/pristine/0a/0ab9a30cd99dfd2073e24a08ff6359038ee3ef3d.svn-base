@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="blanksCellID" rowHeight="84" id="KGk-i7-Jjw" customClass="JLGameBlanksCell">
+            <rect key="frame" x="0.0" y="0.0" width="364" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="364" height="83.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jee-VK-QEX">
+                        <rect key="frame" x="5" y="31.5" width="35" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="请输入答案" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1d-SO-8wC">
+                        <rect key="frame" x="50" y="27" width="207" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nc-e5-BTn">
+                        <rect key="frame" x="267" y="27" width="76" height="30"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.61568627450980395" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="76" id="Bjl-uh-iq7"/>
+                        </constraints>
+                        <state key="normal" title="确认提交">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="submitButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2Rc-sL-xE6"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答案:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW6-kO-hcH">
+                        <rect key="frame" x="5" y="31" width="39.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="LW6-kO-hcH" firstAttribute="centerY" secondItem="c1d-SO-8wC" secondAttribute="centerY" id="7RS-V9-bng"/>
+                    <constraint firstItem="Jee-VK-QEX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="8MG-pq-yjm"/>
+                    <constraint firstItem="6nc-e5-BTn" firstAttribute="leading" secondItem="c1d-SO-8wC" secondAttribute="trailing" constant="10" id="A7Y-cl-ReB"/>
+                    <constraint firstItem="c1d-SO-8wC" firstAttribute="leading" secondItem="Jee-VK-QEX" secondAttribute="trailing" constant="10" id="FgP-gA-PH6"/>
+                    <constraint firstItem="LW6-kO-hcH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Jr9-ts-EXc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6nc-e5-BTn" secondAttribute="trailing" constant="5" id="Txd-Ni-t6V"/>
+                    <constraint firstItem="Jee-VK-QEX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bI1-Ch-9MQ"/>
+                    <constraint firstItem="6nc-e5-BTn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iZD-NH-ueV"/>
+                    <constraint firstItem="c1d-SO-8wC" firstAttribute="height" secondItem="6nc-e5-BTn" secondAttribute="height" id="ibD-Nr-Bc4"/>
+                    <constraint firstItem="c1d-SO-8wC" firstAttribute="centerY" secondItem="Jee-VK-QEX" secondAttribute="centerY" id="krN-Qj-VuZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answerTextFiekd" destination="c1d-SO-8wC" id="IiB-0s-yEi"/>
+                <outlet property="submitButton" destination="6nc-e5-BTn" id="ywv-yF-gMl"/>
+            </connections>
+            <point key="canvasLocation" x="-150" y="4"/>
+        </tableViewCell>
+    </objects>
+</document>

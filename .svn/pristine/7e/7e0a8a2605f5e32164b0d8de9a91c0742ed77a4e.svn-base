@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="JTz-zK-thV" customClass="LGBottonCommentView">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="544"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2Q-hk-o4Z">
+                    <rect key="frame" x="0.0" y="624" width="362" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-Qn-PJT">
+                            <rect key="frame" x="10" y="10" width="27" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.69019607839999997" green="0.69019607839999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="说点什么..." textAlignment="natural" minimumFontSize="17" background="userTextFiled_bac_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xPb-Zq-6FG">
+                            <rect key="frame" x="10" y="36" width="286" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wht-JP-oSv">
+                            <rect key="frame" x="306" y="33" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="L9L-Sx-Kbx"/>
+                                <constraint firstAttribute="width" constant="46" id="dzh-7J-Odw"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="submitAtion:" destination="JTz-zK-thV" eventType="touchUpInside" id="1Cn-Lc-oDT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="xPb-Zq-6FG" secondAttribute="bottom" constant="10" id="3IH-1k-eZC"/>
+                        <constraint firstItem="wht-JP-oSv" firstAttribute="leading" secondItem="xPb-Zq-6FG" secondAttribute="trailing" constant="10" id="Ifa-gS-g3D"/>
+                        <constraint firstAttribute="height" constant="70" id="Ryt-y9-Fvh"/>
+                        <constraint firstItem="cPv-Qn-PJT" firstAttribute="top" secondItem="c2Q-hk-o4Z" secondAttribute="top" constant="10" id="Tvk-XN-IDb"/>
+                        <constraint firstItem="wht-JP-oSv" firstAttribute="centerY" secondItem="xPb-Zq-6FG" secondAttribute="centerY" id="Ubn-Ge-Txo"/>
+                        <constraint firstItem="xPb-Zq-6FG" firstAttribute="leading" secondItem="cPv-Qn-PJT" secondAttribute="leading" id="dQg-2l-2lR"/>
+                        <constraint firstAttribute="trailing" secondItem="wht-JP-oSv" secondAttribute="trailing" constant="10" id="ez0-WU-b2P"/>
+                        <constraint firstItem="xPb-Zq-6FG" firstAttribute="top" secondItem="cPv-Qn-PJT" secondAttribute="bottom" constant="10" id="j6x-MO-p5W"/>
+                        <constraint firstItem="cPv-Qn-PJT" firstAttribute="leading" secondItem="c2Q-hk-o4Z" secondAttribute="leading" constant="10" id="tTF-Pe-7k7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c2Q-hk-o4Z" firstAttribute="leading" secondItem="JTz-zK-thV" secondAttribute="leading" id="HgU-Dh-GnS"/>
+                <constraint firstAttribute="bottom" secondItem="c2Q-hk-o4Z" secondAttribute="bottom" constant="-150" id="SR4-SZ-eYb"/>
+                <constraint firstAttribute="trailing" secondItem="c2Q-hk-o4Z" secondAttribute="trailing" id="l1C-ru-yuo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentTexf" destination="xPb-Zq-6FG" id="BbK-Hv-Xhw"/>
+                <outlet property="submitButton" destination="wht-JP-oSv" id="tDc-Ab-hkL"/>
+                <outlet property="viewBottomMargin" destination="SR4-SZ-eYb" id="u7Z-8N-XKf"/>
+            </connections>
+            <point key="canvasLocation" x="40" y="-21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="userTextFiled_bac_icon" width="210" height="38"/>
+    </resources>
+</document>

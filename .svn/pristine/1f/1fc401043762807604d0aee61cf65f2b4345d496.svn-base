@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YZGShareView">
+            <rect key="frame" x="0.0" y="0.0" width="485" height="255"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-mq-uen" userLabel="buttomView">
+                    <rect key="frame" x="0.0" y="125" width="485" height="130"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享到" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVW-JB-KPg">
+                            <rect key="frame" x="223.5" y="10" width="37" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-s9-h6n" userLabel="buttonView">
+                            <rect key="frame" x="0.0" y="34.5" width="485" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="sTN-3F-19L"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20f-yv-4wA" userLabel="sepView">
+                            <rect key="frame" x="0.0" y="89.5" width="485" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="MuK-hh-MWe"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-ja-Dmf">
+                            <rect key="frame" x="226.5" y="95.5" width="31" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="OVW-JB-KPg" firstAttribute="top" secondItem="sQf-mq-uen" secondAttribute="top" constant="10" id="DWF-zn-dfH"/>
+                        <constraint firstAttribute="height" constant="130" id="Dgk-mx-ohS"/>
+                        <constraint firstAttribute="trailing" secondItem="WSS-s9-h6n" secondAttribute="trailing" id="Jm5-gx-T8g"/>
+                        <constraint firstItem="YRU-ja-Dmf" firstAttribute="top" secondItem="20f-yv-4wA" secondAttribute="bottom" constant="5" id="LGp-cA-qPY"/>
+                        <constraint firstItem="WSS-s9-h6n" firstAttribute="top" secondItem="OVW-JB-KPg" secondAttribute="bottom" constant="10" id="MhM-es-sUi"/>
+                        <constraint firstItem="20f-yv-4wA" firstAttribute="leading" secondItem="sQf-mq-uen" secondAttribute="leading" id="TbM-2b-VLv"/>
+                        <constraint firstAttribute="trailing" secondItem="20f-yv-4wA" secondAttribute="trailing" id="VrX-PF-cIB"/>
+                        <constraint firstItem="WSS-s9-h6n" firstAttribute="bottom" secondItem="20f-yv-4wA" secondAttribute="top" id="bcP-ES-4yG"/>
+                        <constraint firstItem="WSS-s9-h6n" firstAttribute="leading" secondItem="sQf-mq-uen" secondAttribute="leading" id="cmw-aH-QxD"/>
+                        <constraint firstItem="YRU-ja-Dmf" firstAttribute="centerX" secondItem="sQf-mq-uen" secondAttribute="centerX" id="fal-k9-xAQ"/>
+                        <constraint firstItem="OVW-JB-KPg" firstAttribute="centerX" secondItem="sQf-mq-uen" secondAttribute="centerX" id="x4j-BD-r1e"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sQf-mq-uen" secondAttribute="bottom" id="B38-kV-Q9q"/>
+                <constraint firstItem="sQf-mq-uen" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NmQ-aL-hBo"/>
+                <constraint firstAttribute="trailing" secondItem="sQf-mq-uen" secondAttribute="trailing" id="PT0-ol-l7j"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buttomView" destination="sQf-mq-uen" id="h94-QW-gpT"/>
+                <outlet property="buttonsSuperView" destination="WSS-s9-h6n" id="zjQ-JO-mi3"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="-59.5"/>
+        </view>
+    </objects>
+</document>

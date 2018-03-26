@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LGTopCell">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="59"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="59"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI0-xg-VoY" customClass="LGTermsTypeView">
+                        <rect key="frame" x="0.0" y="0.0" width="330" height="59"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-aY-Sde">
+                                <rect key="frame" x="0.0" y="58" width="330" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="vjC-A0-7oF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gfQ-aY-Sde" secondAttribute="trailing" id="CZQ-oa-NuF"/>
+                            <constraint firstItem="gfQ-aY-Sde" firstAttribute="leading" secondItem="JI0-xg-VoY" secondAttribute="leading" id="Sc9-CH-2c4"/>
+                            <constraint firstAttribute="bottom" secondItem="gfQ-aY-Sde" secondAttribute="bottom" id="jVN-xm-dQN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="JI0-xg-VoY" secondAttribute="bottom" id="eF3-ae-6xm"/>
+                <constraint firstItem="JI0-xg-VoY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gMV-Fc-GrJ"/>
+                <constraint firstItem="JI0-xg-VoY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ooo-dj-mQq"/>
+                <constraint firstAttribute="trailing" secondItem="JI0-xg-VoY" secondAttribute="trailing" id="tdR-2F-fBD"/>
+            </constraints>
+            <size key="customSize" width="330" height="59"/>
+            <connections>
+                <outlet property="termsTypeView" destination="JI0-xg-VoY" id="iJ2-aj-MlA"/>
+            </connections>
+            <point key="canvasLocation" x="-272" y="15.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

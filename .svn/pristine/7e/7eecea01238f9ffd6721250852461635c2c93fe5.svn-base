@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatSearchMusicCell" rowHeight="60" id="KGk-i7-Jjw" customClass="ChatMusicCell">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="307" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="music-name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbX-P1-3TC">
+                        <rect key="frame" x="10" y="21.5" width="217" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juz-sF-7Or">
+                        <rect key="frame" x="237" y="15" width="60" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="MfD-SJ-sQO"/>
+                            <constraint firstAttribute="height" constant="30" id="n5y-hn-A7S"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="下载">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Lfc-pI-bFD"/>
+                        </connections>
+                    </button>
+                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-Sg-pwd">
+                        <rect key="frame" x="10" y="54.5" width="287" height="2"/>
+                        <color key="tintColor" red="0.27205150820000001" green="0.81602564099999997" blue="0.031251304899999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYX-EZ-fel" userLabel="sepView">
+                        <rect key="frame" x="10" y="58.5" width="287" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Oc4-2H-Mtz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="SYX-EZ-fel" secondAttribute="bottom" id="0GI-ei-usm"/>
+                    <constraint firstItem="SYX-EZ-fel" firstAttribute="trailing" secondItem="Juz-sF-7Or" secondAttribute="trailing" id="Db2-G6-fKB"/>
+                    <constraint firstItem="hbX-P1-3TC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="FG2-Ww-j5e"/>
+                    <constraint firstItem="SYX-EZ-fel" firstAttribute="leading" secondItem="hbX-P1-3TC" secondAttribute="leading" id="GOe-cK-YyE"/>
+                    <constraint firstItem="SYX-EZ-fel" firstAttribute="top" secondItem="sHe-Sg-pwd" secondAttribute="bottom" constant="2" id="Iaz-XG-KGn"/>
+                    <constraint firstItem="Juz-sF-7Or" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qx8-Pp-aLy"/>
+                    <constraint firstItem="sHe-Sg-pwd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="SZh-yK-Jdq"/>
+                    <constraint firstAttribute="trailing" secondItem="Juz-sF-7Or" secondAttribute="trailing" constant="10" id="T9u-Az-MYd"/>
+                    <constraint firstAttribute="trailing" secondItem="sHe-Sg-pwd" secondAttribute="trailing" constant="10" id="c87-65-aG4"/>
+                    <constraint firstItem="Juz-sF-7Or" firstAttribute="leading" secondItem="hbX-P1-3TC" secondAttribute="trailing" constant="10" id="eKk-lP-yLM"/>
+                    <constraint firstItem="hbX-P1-3TC" firstAttribute="centerY" secondItem="Juz-sF-7Or" secondAttribute="centerY" id="fby-KM-Ecy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="button" destination="Juz-sF-7Or" id="PWZ-Tj-Sv0"/>
+                <outlet property="musicName" destination="hbX-P1-3TC" id="5eH-gk-wVr"/>
+                <outlet property="progress" destination="sHe-Sg-pwd" id="xax-v6-LV6"/>
+            </connections>
+            <point key="canvasLocation" x="-14.5" y="46"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="commentID" rowHeight="123" id="wa1-uv-Y5e" customClass="LGCommentCell">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="123"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wa1-uv-Y5e" id="UAy-bk-1KJ">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuX-0S-pgL">
+                        <rect key="frame" x="61" y="11" width="267" height="18"/>
+                        <gestureRecognizers/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edg-4Q-CPR">
+                        <rect key="frame" x="61" y="96.5" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hse-dF-psd">
+                        <rect key="frame" x="61" y="39" width="277" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="91W-eS-61S">
+                        <rect key="frame" x="16" y="11" width="35" height="35"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="4RV-BF-xHQ"/>
+                            <constraint firstAttribute="width" constant="35" id="nBB-ad-K1K"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0D-Ci-Scy">
+                        <rect key="frame" x="328" y="10" width="16" height="22"/>
+                        <state key="normal" image="jubao_iocn"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-IF-3Wx">
+                        <rect key="frame" x="0.0" y="121.5" width="354" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="zzr-xC-1Ci"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-By-AgZ">
+                        <rect key="frame" x="61" y="58" width="247" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-vn-yqu" customClass="LGButtont">
+                                <rect key="frame" x="0.0" y="0.0" width="247" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.1843137255" green="0.36470588240000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eu7-vn-yqu" firstAttribute="centerY" secondItem="gBG-By-AgZ" secondAttribute="centerY" id="b7i-ZD-Oi7"/>
+                            <constraint firstAttribute="height" constant="30" id="fp8-1a-qD9"/>
+                            <constraint firstItem="eu7-vn-yqu" firstAttribute="height" secondItem="gBG-By-AgZ" secondAttribute="height" id="p56-4L-UCW"/>
+                            <constraint firstItem="eu7-vn-yqu" firstAttribute="centerX" secondItem="gBG-By-AgZ" secondAttribute="centerX" id="uSf-tu-98U"/>
+                            <constraint firstItem="eu7-vn-yqu" firstAttribute="width" secondItem="gBG-By-AgZ" secondAttribute="width" id="wQI-gS-7IY"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8D-Op-ZGE">
+                        <rect key="frame" x="326" y="93" width="18" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="image_none_like">
+                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <state key="selected" image="image_like_icon"/>
+                        <connections>
+                            <action selector="likeBUtton:" destination="wa1-uv-Y5e" eventType="touchUpInside" id="Jqj-Me-gqb"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="hse-dF-psd" secondAttribute="trailing" id="2cp-aY-0k2"/>
+                    <constraint firstItem="91W-eS-61S" firstAttribute="top" secondItem="UAy-bk-1KJ" secondAttribute="topMargin" id="4iI-fK-0ei"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="BuX-0S-pgL" secondAttribute="trailing" constant="10" id="6uG-mj-9CA"/>
+                    <constraint firstItem="91W-eS-61S" firstAttribute="leading" secondItem="UAy-bk-1KJ" secondAttribute="leadingMargin" id="8hv-AZ-rzd"/>
+                    <constraint firstAttribute="bottom" secondItem="aS6-IF-3Wx" secondAttribute="bottom" id="9jJ-Jc-Gvp"/>
+                    <constraint firstItem="i0D-Ci-Scy" firstAttribute="top" secondItem="UAy-bk-1KJ" secondAttribute="top" constant="10" id="GmF-cy-SWg"/>
+                    <constraint firstAttribute="trailing" secondItem="W8D-Op-ZGE" secondAttribute="trailing" constant="10" id="L5T-NA-VVm"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gBG-By-AgZ" secondAttribute="trailing" constant="30" id="LJg-t7-I55"/>
+                    <constraint firstItem="aS6-IF-3Wx" firstAttribute="leading" secondItem="UAy-bk-1KJ" secondAttribute="leading" id="QeS-Ti-vbl"/>
+                    <constraint firstItem="aS6-IF-3Wx" firstAttribute="top" secondItem="edg-4Q-CPR" secondAttribute="bottom" constant="10" id="VcV-3X-JWf"/>
+                    <constraint firstItem="edg-4Q-CPR" firstAttribute="top" secondItem="gBG-By-AgZ" secondAttribute="bottom" constant="8" id="aXD-GD-61c"/>
+                    <constraint firstAttribute="trailing" secondItem="aS6-IF-3Wx" secondAttribute="trailing" id="dGM-Ub-6gZ"/>
+                    <constraint firstItem="hse-dF-psd" firstAttribute="leading" secondItem="BuX-0S-pgL" secondAttribute="leading" id="dru-0V-rkr"/>
+                    <constraint firstItem="BuX-0S-pgL" firstAttribute="leading" secondItem="91W-eS-61S" secondAttribute="trailing" constant="10" id="eH1-D1-VqF"/>
+                    <constraint firstItem="aS6-IF-3Wx" firstAttribute="top" secondItem="W8D-Op-ZGE" secondAttribute="bottom" constant="10" id="jQV-6c-y9d"/>
+                    <constraint firstItem="BuX-0S-pgL" firstAttribute="top" secondItem="91W-eS-61S" secondAttribute="top" id="liG-VI-Tcc"/>
+                    <constraint firstItem="edg-4Q-CPR" firstAttribute="leading" secondItem="BuX-0S-pgL" secondAttribute="leading" id="lrc-Pr-3BV"/>
+                    <constraint firstItem="hse-dF-psd" firstAttribute="top" secondItem="BuX-0S-pgL" secondAttribute="bottom" constant="10" id="sZ3-fd-8I8"/>
+                    <constraint firstAttribute="trailing" secondItem="i0D-Ci-Scy" secondAttribute="trailing" constant="10" id="tYA-Pl-9YT"/>
+                    <constraint firstItem="gBG-By-AgZ" firstAttribute="leading" secondItem="edg-4Q-CPR" secondAttribute="leading" id="xX6-b8-fb7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="avatarImageView" destination="91W-eS-61S" id="aY6-q4-y2D"/>
+                <outlet property="contenLable" destination="hse-dF-psd" id="B34-z6-SKI"/>
+                <outlet property="likesBUtton" destination="W8D-Op-ZGE" id="M7O-w0-IiE"/>
+                <outlet property="nameLable" destination="BuX-0S-pgL" id="qZU-4X-eGQ"/>
+                <outlet property="subComentView" destination="gBG-By-AgZ" id="BB1-VB-QHi"/>
+                <outlet property="subCommens" destination="eu7-vn-yqu" id="khy-OW-Jcb"/>
+                <outlet property="timeLable" destination="edg-4Q-CPR" id="gnW-FT-slf"/>
+            </connections>
+            <point key="canvasLocation" x="-468" y="33"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image_like_icon" width="19" height="17"/>
+        <image name="image_none_like" width="18" height="16"/>
+        <image name="jubao_iocn" width="16" height="8"/>
+    </resources>
+</document>

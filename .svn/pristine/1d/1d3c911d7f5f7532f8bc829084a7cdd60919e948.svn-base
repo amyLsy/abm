@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChatAlertManagerView">
+            <rect key="frame" x="0.0" y="0.0" width="453" height="397"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipP-sb-1Li" userLabel="managerView">
+                    <rect key="frame" x="0.0" y="267" width="453" height="130"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="操作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-bb-mrn">
+                            <rect key="frame" x="209.5" y="5" width="33" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-H4-pGa">
+                            <rect key="frame" x="210" y="102.5" width="33" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-G8-i8u" userLabel="buttonView">
+                            <rect key="frame" x="0.0" y="34.5" width="453" height="62"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3N-aW-eRT" userLabel="sepView">
+                            <rect key="frame" x="0.0" y="96.5" width="453" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="6tq-g2-L5v"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.27205150820000001" green="0.81602564099999997" blue="0.031251304899999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Y3N-aW-eRT" firstAttribute="leading" secondItem="ipP-sb-1Li" secondAttribute="leading" id="3Rz-HV-Lmk"/>
+                        <constraint firstItem="0WM-H4-pGa" firstAttribute="centerX" secondItem="ipP-sb-1Li" secondAttribute="centerX" id="8z8-kJ-AbC"/>
+                        <constraint firstItem="sGe-G8-i8u" firstAttribute="leading" secondItem="ipP-sb-1Li" secondAttribute="leading" id="BF8-Ec-rWL"/>
+                        <constraint firstAttribute="bottom" secondItem="0WM-H4-pGa" secondAttribute="bottom" constant="8" id="GRb-ax-XNG"/>
+                        <constraint firstItem="sGe-G8-i8u" firstAttribute="top" secondItem="R0t-bb-mrn" secondAttribute="bottom" constant="10" id="JBN-6E-jXo"/>
+                        <constraint firstItem="R0t-bb-mrn" firstAttribute="top" secondItem="ipP-sb-1Li" secondAttribute="top" constant="5" id="M4I-Vd-P1D"/>
+                        <constraint firstItem="0WM-H4-pGa" firstAttribute="top" secondItem="Y3N-aW-eRT" secondAttribute="bottom" constant="5" id="RLJ-OG-5Jx"/>
+                        <constraint firstAttribute="trailing" secondItem="Y3N-aW-eRT" secondAttribute="trailing" id="Y2r-mb-kGT"/>
+                        <constraint firstItem="R0t-bb-mrn" firstAttribute="centerX" secondItem="ipP-sb-1Li" secondAttribute="centerX" id="YPO-kx-dMC"/>
+                        <constraint firstAttribute="trailing" secondItem="sGe-G8-i8u" secondAttribute="trailing" id="dbg-to-tEh"/>
+                        <constraint firstItem="R0t-bb-mrn" firstAttribute="centerX" secondItem="ipP-sb-1Li" secondAttribute="centerX" id="khc-Ek-pvM"/>
+                        <constraint firstAttribute="height" constant="130" id="sz9-7b-WQN"/>
+                        <constraint firstItem="Y3N-aW-eRT" firstAttribute="top" secondItem="sGe-G8-i8u" secondAttribute="bottom" id="uxM-hS-srJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588239999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ipP-sb-1Li" secondAttribute="trailing" id="7cE-aG-4sf"/>
+                <constraint firstItem="ipP-sb-1Li" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aPn-vu-1rI"/>
+                <constraint firstAttribute="bottom" secondItem="ipP-sb-1Li" secondAttribute="bottom" id="jFP-bE-H9U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buttonView" destination="sGe-G8-i8u" id="3Ws-dZ-lT6"/>
+                <outlet property="managerView" destination="ipP-sb-1Li" id="c3E-w4-Ih9"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="161.5"/>
+        </view>
+    </objects>
+</document>

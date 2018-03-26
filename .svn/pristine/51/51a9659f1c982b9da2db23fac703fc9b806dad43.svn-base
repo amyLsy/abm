@@ -1,0 +1,6 @@
+framework module SPUncaughtExceptionHandler {
+  umbrella header "SPUncaughtExceptionHandler-umbrella.h"
+
+  export *
+  module * { export * }
+}

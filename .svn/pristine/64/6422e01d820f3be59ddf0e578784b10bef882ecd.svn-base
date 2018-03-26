@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="JIE-zx-l92" customClass="ChatMoreOpitionView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="291"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c弹窗" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-Dl-Lbg">
+                    <rect key="frame" x="182" y="52.5" width="113" height="193.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="3g1-FS-Rso"/>
+                        <constraint firstAttribute="height" constant="193.75" id="uNj-de-pUk"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9V-xO-aqz">
+                    <rect key="frame" x="187" y="57" width="103" height="184"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-H7-b05">
+                            <rect key="frame" x="0.0" y="38" width="103" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="翻转" image="b镜头翻转"/>
+                            <connections>
+                                <action selector="clickButton:" destination="JIE-zx-l92" eventType="touchUpInside" id="fR8-yK-aMH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziB-iQ-l9T">
+                            <rect key="frame" x="0.0" y="76" width="103" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="闪光灯" image="b闪光灯"/>
+                            <connections>
+                                <action selector="clickButton:" destination="JIE-zx-l92" eventType="touchUpInside" id="XMH-Jc-pYq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-rj-wcU">
+                            <rect key="frame" x="0.0" y="109" width="103" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="美颜" image="b美颜"/>
+                            <connections>
+                                <action selector="clickButton:" destination="JIE-zx-l92" eventType="touchUpInside" id="1Wj-Ri-Q5s"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-MO-ayH">
+                            <rect key="frame" x="0.0" y="147" width="103" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="我的场控" image="b场控"/>
+                            <connections>
+                                <action selector="clickButton:" destination="JIE-zx-l92" eventType="touchUpInside" id="4Id-AX-a7v"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP3-Bp-r2a">
+                            <rect key="frame" x="0.0" y="1" width="103" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="背景音乐" image="Music"/>
+                            <connections>
+                                <action selector="clickButton:" destination="JIE-zx-l92" eventType="touchUpInside" id="7SO-ze-rHb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Owh-rj-wcU" firstAttribute="top" secondItem="ziB-iQ-l9T" secondAttribute="bottom" constant="-4" id="2Zx-Zh-Zdy"/>
+                        <constraint firstItem="ibP-MO-ayH" firstAttribute="trailing" secondItem="Owh-rj-wcU" secondAttribute="trailing" id="2gm-zP-GvK"/>
+                        <constraint firstItem="Owh-rj-wcU" firstAttribute="trailing" secondItem="ziB-iQ-l9T" secondAttribute="trailing" id="3mc-cc-Bf4"/>
+                        <constraint firstItem="HP3-Bp-r2a" firstAttribute="leading" secondItem="X9V-xO-aqz" secondAttribute="leading" id="6jQ-cR-NAW"/>
+                        <constraint firstAttribute="bottom" secondItem="ibP-MO-ayH" secondAttribute="bottom" id="AAh-GQ-yfY"/>
+                        <constraint firstItem="Owh-rj-wcU" firstAttribute="leading" secondItem="ziB-iQ-l9T" secondAttribute="leading" id="CGJ-iB-xN3"/>
+                        <constraint firstItem="ziB-iQ-l9T" firstAttribute="height" secondItem="cAl-H7-b05" secondAttribute="height" id="DOZ-zs-iwv"/>
+                        <constraint firstItem="cAl-H7-b05" firstAttribute="top" secondItem="X9V-xO-aqz" secondAttribute="top" constant="38" id="EyB-fT-4tf"/>
+                        <constraint firstItem="ziB-iQ-l9T" firstAttribute="leading" secondItem="cAl-H7-b05" secondAttribute="leading" id="Kf4-ZN-8ui"/>
+                        <constraint firstItem="ibP-MO-ayH" firstAttribute="leading" secondItem="Owh-rj-wcU" secondAttribute="leading" id="LEW-Ew-ZOj"/>
+                        <constraint firstItem="cAl-H7-b05" firstAttribute="top" secondItem="HP3-Bp-r2a" secondAttribute="bottom" id="Nzp-Dt-l7b"/>
+                        <constraint firstItem="ibP-MO-ayH" firstAttribute="top" secondItem="Owh-rj-wcU" secondAttribute="bottom" constant="1" id="OUe-kV-OS5"/>
+                        <constraint firstItem="ibP-MO-ayH" firstAttribute="height" secondItem="Owh-rj-wcU" secondAttribute="height" id="W1A-0e-qao"/>
+                        <constraint firstItem="HP3-Bp-r2a" firstAttribute="height" secondItem="cAl-H7-b05" secondAttribute="height" id="d8K-VN-ec1"/>
+                        <constraint firstItem="ziB-iQ-l9T" firstAttribute="top" secondItem="cAl-H7-b05" secondAttribute="bottom" constant="1" id="edq-Au-H7x"/>
+                        <constraint firstItem="ziB-iQ-l9T" firstAttribute="trailing" secondItem="cAl-H7-b05" secondAttribute="trailing" id="fPx-CY-uLG"/>
+                        <constraint firstAttribute="trailing" secondItem="HP3-Bp-r2a" secondAttribute="trailing" id="mLl-xE-G78"/>
+                        <constraint firstItem="Owh-rj-wcU" firstAttribute="height" secondItem="ziB-iQ-l9T" secondAttribute="height" id="mvZ-xw-UZ3"/>
+                        <constraint firstAttribute="trailing" secondItem="cAl-H7-b05" secondAttribute="trailing" id="uTw-Da-TSJ"/>
+                        <constraint firstItem="cAl-H7-b05" firstAttribute="leading" secondItem="X9V-xO-aqz" secondAttribute="leading" id="uoL-Uc-JX9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="N6c-Dl-Lbg" secondAttribute="trailing" constant="5" id="hPf-s8-qgf"/>
+                <constraint firstAttribute="bottom" secondItem="N6c-Dl-Lbg" secondAttribute="bottom" constant="45" id="j8D-OT-Khh"/>
+                <constraint firstAttribute="bottom" secondItem="X9V-xO-aqz" secondAttribute="bottom" constant="50" id="kDb-GH-qfz"/>
+                <constraint firstAttribute="trailing" secondItem="X9V-xO-aqz" secondAttribute="trailing" constant="10" id="li3-zk-I6c"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="beauty" destination="Owh-rj-wcU" id="13b-Y7-vVC"/>
+                <outlet property="bgmButton" destination="HP3-Bp-r2a" id="5J1-l3-zZx"/>
+                <outlet property="camera" destination="cAl-H7-b05" id="ptY-WX-XWX"/>
+                <outlet property="myGuards" destination="ibP-MO-ayH" id="vzc-Rs-l2u"/>
+                <outlet property="torch" destination="ziB-iQ-l9T" id="HvR-2q-AGg"/>
+            </connections>
+            <point key="canvasLocation" x="-149" y="2.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Music" width="25" height="25"/>
+        <image name="b场控" width="45" height="37"/>
+        <image name="b美颜" width="45" height="37"/>
+        <image name="b镜头翻转" width="45" height="37"/>
+        <image name="b闪光灯" width="45" height="37"/>
+        <image name="c弹窗" width="212" height="302"/>
+    </resources>
+</document>
