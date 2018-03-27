@@ -563,7 +563,7 @@
 
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:[self api]]];
     
-    [manager.requestSerializer setTimeoutInterval:60];
+    [manager.requestSerializer setTimeoutInterval:30];
     
     manager.responseSerializer.acceptableContentTypes  = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html" ,@"text/plain",nil];
     

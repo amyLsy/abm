@@ -8,12 +8,12 @@
 #define LEFT_SPACE 20
 #define RIGHT_SPACE 20
 #define MIN_SPACING 20
-#define TAB_HEIGHT 66
-#define LINEBOTTOM_HEIGHT 3
+#define TAB_HEIGHT 58
+#define LINEBOTTOM_HEIGHT 0
 #define TOPBOTTOMLINEBOTTOM_HEIGHT .5
-#define SELECTED_COLOR kNavColor
-#define UNSELECTED_COLOR [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
-#define TPOTABBOTTOMLINE_COLOR [UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1.0]
+#define SELECTED_COLOR [UIColor blackColor]
+#define UNSELECTED_COLOR [UIColor lightGrayColor]
+#define TPOTABBOTTOMLINE_COLOR [UIColor clearColor]
 
 #import "HYPageView.h"
 #import <objc/runtime.h>
@@ -39,6 +39,8 @@
     NSArray        *_parameters;
     UIView         *_lineBottom;
     NSMutableArray *_titleButtons;
+    NSArray        *_selectImgButtons;
+    NSArray        *_unselectImgButtons;
     NSMutableArray *_titleSizeArray;
     NSMutableArray *_centerPoints;
     
@@ -58,7 +60,6 @@
 }
 
 - (void)dealloc{
-    
     [self removeObserver:self forKeyPath:@"currentPage"];
 }
 
@@ -242,6 +243,8 @@
         
         _topTabScrollView.contentSize = CGSizeMake(totalWidth, 0);
         _titleButtons = [NSMutableArray array];
+        _selectImgButtons = @[@"bar_live_elect",@"bar_video_elect",@"bar_picture_elect"];
+        _unselectImgButtons = @[@"bar_live_normal",@"bar_video_normal",@"bar_picture_normal"];
         for (NSInteger i=0; i<_titles.count; i++) {
             //lsy 在上放添加图片
             UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -253,25 +256,8 @@
             CGFloat width = [_titleSizeArray[i] CGSizeValue].width;
             CGRect buttonFrame = CGRectMake(x-width/2, 0, width, TAB_HEIGHT);
             titleButton.frame = buttonFrame;
-            if (i == 0) {
-                
-                [titleButton setImage:[UIImage imageNamed:@"bar_live_elect"] forState:UIControlStateSelected];
-
-                [titleButton setImage:[UIImage imageNamed:@"bar_live_normal"] forState:UIControlStateNormal];
-
-            }else if (i == 1){
-                
-                [titleButton setImage:[UIImage imageNamed:@"bar_video_elect"] forState:UIControlStateSelected];
-
-                [titleButton setImage:[UIImage imageNamed:@"bar_video_normal"] forState:UIControlStateNormal];
-
-            }else{
-                
-                [titleButton setImage:[UIImage imageNamed:@"bar_picture_elect"] forState:UIControlStateSelected];
-
-                [titleButton setImage:[UIImage imageNamed:@"bar_picture_normal"] forState:UIControlStateNormal];
-
-            }
+            [titleButton setImage:[UIImage imageNamed:_selectImgButtons[i]] forState:UIControlStateSelected];
+            [titleButton setImage:[UIImage imageNamed:_unselectImgButtons[i]] forState:UIControlStateNormal];
             [titleButton layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:0];
             [_topTabScrollView addSubview:titleButton];
             [titleButton addTarget:self action:@selector(touchAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -367,12 +353,15 @@
     for (UIButton *button in _titleButtons) {
         if (button.tag == page) {
             [button setTitleColor:__selectedColor forState:UIControlStateNormal];
+            button.selected = YES;
             if (_isAnimated) {
                 [UIView animateWithDuration:0.3 animations:^{
                     button.transform = CGAffineTransformMakeScale(1.1, 1.1);
                 }];
             }
         }else{
+            
+            button.selected = NO;
             [button setTitleColor:__unselectedColor forState:UIControlStateNormal];
             if (_isAnimated) {
                 [UIView animateWithDuration:0.3 animations:^{

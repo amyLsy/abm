@@ -51,8 +51,8 @@
                   symbolName = "-[ShowControl streamerKit]"
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/jule/sisitv_ios/Classes/Showing/Model/ShowControl.m"
-                  timestampString = "543740455.6201299"
+                  urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Showing/Model/ShowControl.m"
+                  timestampString = "543812649.174168"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
@@ -66,8 +66,8 @@
                   symbolName = "__26-[ShowControl streamerKit]_block_invoke"
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/jule/sisitv_ios/Classes/Showing/Model/ShowControl.m"
-                  timestampString = "543740455.625213"
+                  urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Showing/Model/ShowControl.m"
+                  timestampString = "543812649.178881"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -116,44 +116,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sisitv_ios/Classes/Main/View/cells/HotTopTypeCell.m"
-            timestampString = "543741095.465873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-awakeFromNib"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/View/cells/HotTopTypeCell.m"
             timestampString = "543741095.466284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "-samll:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/View/cells/HotTopTypeCell.m"
-            timestampString = "543741095.466565"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-awakeFromNib"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,22 +138,6 @@
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "-collectionView:headerViewForHeaderItem:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/View/cells/HotTopTypeCell.m"
-            timestampString = "543741095.466935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-awakeFromNib"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
