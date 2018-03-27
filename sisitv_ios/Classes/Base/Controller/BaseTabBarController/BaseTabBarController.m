@@ -75,7 +75,7 @@
     
     [self addOneChildViewControllerWithControllerName:@"MainAttentionController" normaImage:KNormaImage(@"menu_attention_normal") selectedImage:KSelectedImage(@"menu_attention_elect") navTitle:@"关注" tabBarTitle:@"关注" needNavgationBar:YES];
     
-       [self addOneChildViewControllerWithControllerName:@"UIViewController" normaImage:KNormaImage(@"") selectedImage:KSelectedImage(@"") navTitle:nil tabBarTitle:@"" needNavgationBar:YES];
+       [self addOneChildViewControllerWithControllerName:@"UIViewController" normaImage:KNormaImage(@"") selectedImage:KSelectedImage(@"") navTitle:nil tabBarTitle:@"直播" needNavgationBar:YES];
     //wode
      [self addOneChildViewControllerWithControllerName:@"SisiConversationListController" normaImage:KNormaImage(@"menu_message_normal") selectedImage:KSelectedImage(@"menu_message_elect") navTitle:@"消息" tabBarTitle:@"消息" needNavgationBar:YES];
 
@@ -192,6 +192,12 @@
         [self addChildViewController:nav];
         return;
      }
+    
+    //未选中字体颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont fontWithName:@"Marion-Italic" size:10]} forState:UIControlStateNormal];
+    
+    //选中字体颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBToColor(141, 67, 220),NSFontAttributeName:[UIFont fontWithName:@"Marion-Italic" size:10]} forState:UIControlStateSelected];
     [self addChildViewController:viewController];
 }
 

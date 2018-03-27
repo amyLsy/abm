@@ -9,6 +9,7 @@
 #import "YZGTabBar.h"
 #import "BaseButton.h"
 #import "TabBarButton.h"
+#import "UIButton+MBHExpand.h"
 //中心按钮向上偏移的高度
 //#define MoveHeight 20
 
@@ -69,8 +70,8 @@ static YZGTabBar *tabBar = nil;
 {
     [super layoutSubviews];
 
-    int btnIndex = 0;
-    for (UIView *btn in self.subviews) {
+//    int btnIndex = 0;
+//    for (UIView *btn in self.subviews) {
         //遍历tabbar的子控件
         //btn是_UIBarBackground,则btn.superclass是UIView,排除.
         //btn是UITabBarButton则btn.superclass是UIControl,调整子控件位置，空出中间位置.
@@ -82,12 +83,12 @@ static YZGTabBar *tabBar = nil;
 //                btnIndex += 3;
 //            }
 //        }
-    }
+//    }
 //    [self addSubview:self.dhButton];
 //    [self addSubview:self.czButton];
     [self addSubview:self.centerButton];
     [self bringSubviewToFront:self.centerButton];
-    UIImage *image = [UIImage imageNamed:@"menu_commence"];
+//    UIImage *image = [UIImage imageNamed:@"menu_commence"];
     
 //    self.centerButton.width = image.size.width * 0.7;
 //     self.centerButton.height = image.size.height * 0.7;
@@ -123,7 +124,12 @@ static YZGTabBar *tabBar = nil;
         UIButton *centerButton = [[UIButton alloc] init];
         [centerButton setImage:[UIImage imageNamed:@"menu_commence"] forState:UIControlStateNormal];
         [centerButton setImage:[UIImage imageNamed:@"menu_commence"] forState:UIControlStateHighlighted];
+        [centerButton setTitle:@"直播" forState:UIControlStateNormal];
+        centerButton.titleLabel.font = [UIFont systemFontOfSize:10];
+        [centerButton setTitleColor:RGBToColor(140, 69, 222) forState:UIControlStateSelected];
+        [centerButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [centerButton sizeToFit];
+        [centerButton layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:0];
         [centerButton addTarget:self action:@selector(centerButtonClick) forControlEvents:UIControlEventTouchUpInside];
         self.centerButton = centerButton;
     }

@@ -903,6 +903,11 @@ SOFTWARE.
 
 
 
+## WechatOpenSDK
+
+Copyright 2017 tencent.com. All rights reserved.
+
+
 ## libksygpulive
 
 Copyright 2015 kingsoft Ltd. All rights reserved.

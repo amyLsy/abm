@@ -15,6 +15,7 @@
 #import "RootTool.h"
 #import "YZGShare.h"
 #import "SPUncaughtExceptionHandler.h"
+#import "ThirdLoginService.h"
 
 
 //------------推送相关------
@@ -158,6 +159,7 @@
 //注册sharesdk
 -(void)regeistShare
 {
+    [ThirdLoginService sharedInstance];
     [YZGShare registerShare];
 }
 //注册Notification
@@ -185,12 +187,22 @@
 
 //openurl
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    if ([[url scheme] hasPrefix:@"wx"]){
+        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+    }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    if ([[url scheme] hasPrefix:@"wx"]){
+        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+    }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[url scheme] hasPrefix:@"wx"]){
+        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+    }
     return [[YZGPay shareInstance] handleOpenURL:url];
 }
 

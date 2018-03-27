@@ -14,11 +14,11 @@
 #import <ShareSDKConnector/ShareSDKConnector.h>
 #import <ShareSDK/ShareSDK.h>
 //微信SDK头文件
-//#import <WXApi.h>
+#import <WXApi.h>
 //qq
 //腾讯开放平台（对应QQ和QQ空间）SDK头文件
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
 //新浪微博SDK头文件
 //#import "WeiboSDK.h"
 
@@ -33,7 +33,57 @@
     NSString *qqAppKey = YZGShareQQAppKey;
     NSString *sinaAppKey = YZGShareSinaAppKey;
     NSString *sinaAppSecret = YZGShareSinaAppSecret;
-/*
+    /*
+    [ShareSDK registerActivePlatforms:@[
+                                        @(SSDKPlatformTypeWechat),
+                                        @(SSDKPlatformTypeQQ),
+                                        @(SSDKPlatformTypeSinaWeibo)
+                                        ]
+                             onImport:^(SSDKPlatformType platformType)
+     {
+         switch (platformType)
+         {
+             case SSDKPlatformTypeWechat:
+                 [ShareSDKConnector connectWeChat:[WXApi class]];
+                 break;
+             case SSDKPlatformTypeQQ:
+                 [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                 break;
+             case SSDKPlatformTypeSinaWeibo:
+                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                 break;
+             default:
+                 break;
+         }
+     }
+                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+     {
+         
+         switch (platformType)
+         {
+             case SSDKPlatformTypeSinaWeibo:
+                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                 [appInfo SSDKSetupSinaWeiboByAppKey:sinaAppKey
+                                           appSecret:sinaAppSecret
+                                         redirectUri:@"https://api.weibo.com/oauth2/default.html"
+                                            authType:SSDKAuthTypeBoth];
+                 break;
+             case SSDKPlatformTypeWechat:
+                 [appInfo SSDKSetupWeChatByAppId:weChatAppID
+                                       appSecret:weChatAppSecret];
+                 break;
+             case SSDKPlatformTypeQQ:
+                 [appInfo SSDKSetupQQByAppId:YZGShareQQAppId
+                                      appKey:YZGShareQQAppKey
+                                    authType:SSDKAuthTypeBoth];
+                 break;
+                 
+             default:
+                 break;
+         }
+     }];
+     */
+    /*
     [ShareSDK registerApp:shareSDK activePlatforms:@[@(SSDKPlatformTypeWechat),
                                                      @(SSDKPlatformTypeSinaWeibo),
                                                      @(SSDKPlatformTypeQQ)] onImport:^(SSDKPlatformType platformType) {
@@ -74,7 +124,7 @@
                  break;
          }
      }];
-    */
+     */
 }
 
 

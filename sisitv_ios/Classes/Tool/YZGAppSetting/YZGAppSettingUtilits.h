@@ -22,12 +22,12 @@ static NSString *const AppleIdInItunes = @"11946";
  APP Url 91pgxj.com www.91yeyan.com
  APP Api
  */
-//static NSString *const AppUrl = @"http://www.91yeyan.com/";
-//static NSString *const AppApi = @"http://www.91yeyan.com/Api/SiSi/";
+static NSString *const AppUrl = @"http://www.91yeyan.com/";
+static NSString *const AppApi = @"http://www.91yeyan.com/Api/SiSi/";
 
 // 测试用
-static NSString *const AppUrl = @"http://39.108.80.70/";
-static NSString *const AppApi = @"http://39.108.80.70/Api/SiSi/";
+//static NSString *const AppUrl = @"http://39.108.80.70/";
+//static NSString *const AppApi = @"http://39.108.80.70/Api/SiSi/";
 
 
 /**

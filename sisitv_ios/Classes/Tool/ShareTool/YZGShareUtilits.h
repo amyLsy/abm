@@ -17,12 +17,12 @@ static NSString *const YZGShareSDKId = @"1eae76eafda6f";
 /**
  *   WeChatAppID
  */
-static NSString *const YZGShareWeChatAppId = @"wx756d2911836fac4f";
+static NSString *const YZGShareWeChatAppId = @"wx48f78c84a33b7555";
 
 /**
  *   WeChatAppSecret
  */
-static NSString *const YZGShareWeChatAppSecret = @"ed56a98a3bb95043d68d975e638e92e8";
+static NSString *const YZGShareWeChatAppSecret = @"394bf747c0e4f5d8d3e65b4dc66628c7";
 
 /**
  *   QQAppId 1105785975

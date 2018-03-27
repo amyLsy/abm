@@ -15,6 +15,8 @@
 #import "AlertTool.h"
 #import "RootTool.h"
 #import "YZGAppSetting.h"
+#import "ThirdLoginService.h"
+
 @interface LoginController ()
 
 //@property (weak, nonatomic) IBOutlet UIView *thirdButtonView;
@@ -100,13 +102,22 @@
 - (void)isThirdLogin:(UIButton *)sender
 {
     
-//    if (sender.tag==1001) {
-//        [AlertTool ShowErrorInView:self.view withTitle:@"功能开发中，敬请期待"];
-//        return;
-//    }
-//    
-    
     [AlertTool ShowInView:self.view withTitle:@"正在登录"];
+    [[ThirdLoginService sharedInstance] wechatLogin:^(BOOL success, ShareParam *reqParam) {
+        if (!success) {
+            [AlertTool ShowErrorInView:self.view withTitle:@"微信登录失败"];
+            return ;
+        }
+        [YZGShare sendOauthUserInfoWithParam:reqParam success:^(id response, BOOL successGetInfo) {
+            if (successGetInfo) {
+                [AlertTool Hidden];
+                self.successLogin();
+            }else{
+                [AlertTool ShowErrorInView:self.view withTitle:response];
+            }
+        }];
+    }];
+    /*
     [YZGShare loginWithPlatformType:sender.tag-998 success:^(id responseObj, BOOL successGetInfo){
         if (successGetInfo){
             [YZGShare sendOauthUserInfoWithParam:responseObj success:^(id response, BOOL successGetInfo) {
@@ -121,7 +132,7 @@
             [AlertTool ShowErrorInView:self.view withTitle:responseObj];
         }
     }];
-
+     */
     
 }
 

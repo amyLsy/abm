@@ -11,11 +11,11 @@
 /**
  *   LeanCouldAppId
  */
-static NSString *const LeanCouldAppId = @"02yeYGwC2kCaVsiX3PQ29DdP-gzGzoHsz";
+static NSString *const LeanCouldAppId = @"FC1crXEfGvMLSLlTjfAjuiL7-gzGzoHsz";
 /**
  *   LeanCouldAppKey
  */
-static NSString *const LeanCouldAppKey = @"w1OCDx2PWDh7MbWFLVxghzXi";
+static NSString *const LeanCouldAppKey = @"Ns94cBAEa1x3JSnitHBTo3w4";
 
 /**
  *  消息到来了，通知聊天页面和最近对话页面刷新

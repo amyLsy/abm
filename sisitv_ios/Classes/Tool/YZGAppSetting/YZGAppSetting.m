@@ -251,6 +251,9 @@
     NSString *administrativeArea = self.placemark.administrativeArea;
     NSString *city = self.currentCity;
     NSString *location = [NSString stringWithFormat:@"%@-%@-%@",country,administrativeArea,city];
+    if ([Account shareInstance].token.length == 0) {
+        return;
+    }
     NSDictionary *param=@{@"token":[Account shareInstance].token,
                           @"location":location,
                           @"longitude":@(self.locationService.longitude),

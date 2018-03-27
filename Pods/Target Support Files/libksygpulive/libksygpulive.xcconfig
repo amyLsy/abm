@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/libksygpulive
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JPush-iOS-SDK" "${PODS_ROOT}/Headers/Public/KSYRTCLive" "${PODS_ROOT}/Headers/Public/MOBFoundation" "${PODS_ROOT}/Headers/Public/ShareSDK3"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JPush-iOS-SDK" "${PODS_ROOT}/Headers/Public/KSYRTCLive" "${PODS_ROOT}/Headers/Public/MOBFoundation" "${PODS_ROOT}/Headers/Public/ShareSDK3" "${PODS_ROOT}/Headers/Public/WechatOpenSDK"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/libksygpulive/prebuilt/libs"
 OTHER_LDFLAGS = -all_load -l"ObjC" -l"bz2" -l"iconv" -l"ksybase" -l"ksygpufilter" -l"ksymediacodec" -l"ksymediacore_enc_base" -l"ksymediacore_enc_lite" -l"ksyplayer" -l"ksystreamerbase" -l"ksystreamerengine" -l"ksyyuv" -l"stdc++.6" -l"z" -framework "AVFoundation" -framework "VideoToolbox"
 PODS_BUILD_DIR = ${BUILD_DIR}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '82DBE04B4DE65659BBD1BE5A1A3A9D5F'
-               BlueprintName = 'SPUncaughtExceptionHandler'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SPUncaughtExceptionHandler.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82DBE04B4DE65659BBD1BE5A1A3A9D5F"
+               BlueprintName = "SPUncaughtExceptionHandler"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SPUncaughtExceptionHandler.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

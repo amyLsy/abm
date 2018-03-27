@@ -50,7 +50,8 @@
 //        UIVisualEffectView *visualEffectViewUpper = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
 //        UIVisualEffectView *visualEffectViewMiddle = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
 //        UIVisualEffectView *visualEffectViewDown = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        self.upperImageView = [LGVideoPlayCell viewFromeNib];
+        self.upperImageView = [[[NSBundle mainBundle] loadNibNamed:@"LGVideoPlayCell" owner:nil options:nil] firstObject];
+//        self.upperImageView = [LGVideoPlayCell viewFromeNib];
         self.upperImageView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         self.middleImageView = [LGVideoPlayCell viewFromeNib];
         self.middleImageView.frame = CGRectMake(0, frame.size.height, frame.size.width, frame.size.height);

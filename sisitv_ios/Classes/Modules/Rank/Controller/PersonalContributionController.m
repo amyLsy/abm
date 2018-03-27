@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"个人粉丝贡献榜";
+    self.navigationItem.title = @"贡献榜";
     CGFloat y = self.segentHeight.constant;
     self.tableView.frame = CGRectMake(0, y, KScreenWidth, KOnlyHadNavBarViewHeight - y );
 //    self.segementControl.tintColor = kNavColor;

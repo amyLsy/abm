@@ -18,6 +18,7 @@
 		181C78CD2048F3140030F970 /* GameGiftListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C78CB2048F3140030F970 /* GameGiftListCell.m */; };
 		181C78CE2048F3140030F970 /* GameGiftListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181C78CC2048F3140030F970 /* GameGiftListCell.xib */; };
 		18215AF52068A1840011B83D /* UIButton+MBHExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18215AF42068A1840011B83D /* UIButton+MBHExpand.m */; };
+		18251C8E206A3C6E00D14BC0 /* ThirdLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 18251C8D206A3C6E00D14BC0 /* ThirdLoginService.m */; };
 		1826F90F201042960042A578 /* librpcsvc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1826F90E201042960042A578 /* librpcsvc.tbd */; };
 		1826F911201042BB0042A578 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1826F910201042BB0042A578 /* libicucore.tbd */; };
 		1826F913201042CE0042A578 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1826F912201042CD0042A578 /* libc++.1.tbd */; };
@@ -56,8 +57,6 @@
 		187860821E112C8700B65EB7 /* sisitv_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 187860811E112C8700B65EB7 /* sisitv_iosTests.m */; };
 		1878608D1E112C8700B65EB7 /* sisitv_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1878608C1E112C8700B65EB7 /* sisitv_iosUITests.m */; };
 		188614A42012E37F001EF61B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5D59821FF09CFE00335D35 /* CoreVideo.framework */; };
-		18956459201340AF0017D34D /* AliyunVideoSDKPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18956457201340A50017D34D /* AliyunVideoSDKPro.framework */; };
-		1895645A201340AF0017D34D /* QuCore-ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18956458201340AF0017D34D /* QuCore-ThirdParty.framework */; };
 		1895645E201340DC0017D34D /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895645B201340C70017D34D /* AliyunOSSiOS.framework */; };
 		1895645F201340DC0017D34D /* VODUpload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895645C201340D00017D34D /* VODUpload.framework */; };
 		18956460201340DC0017D34D /* AliyunVideoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895645D201340DC0017D34D /* AliyunVideoCore.framework */; };
@@ -621,6 +620,8 @@
 		181C78CC2048F3140030F970 /* GameGiftListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameGiftListCell.xib; sourceTree = "<group>"; };
 		18215AF32068A1830011B83D /* UIButton+MBHExpand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MBHExpand.h"; sourceTree = "<group>"; };
 		18215AF42068A1840011B83D /* UIButton+MBHExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MBHExpand.m"; sourceTree = "<group>"; };
+		18251C8C206A3C6E00D14BC0 /* ThirdLoginService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdLoginService.h; sourceTree = "<group>"; };
+		18251C8D206A3C6E00D14BC0 /* ThirdLoginService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdLoginService.m; sourceTree = "<group>"; };
 		1826F90E201042960042A578 /* librpcsvc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = librpcsvc.tbd; path = usr/lib/librpcsvc.tbd; sourceTree = SDKROOT; };
 		1826F910201042BB0042A578 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		1826F912201042CD0042A578 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
@@ -703,8 +704,6 @@
 		1878608C1E112C8700B65EB7 /* sisitv_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sisitv_iosUITests.m; sourceTree = "<group>"; };
 		1878608E1E112C8700B65EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1878609A1E112C9A00B65EB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		18956457201340A50017D34D /* AliyunVideoSDKPro.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunVideoSDKPro.framework; sourceTree = "<group>"; };
-		18956458201340AF0017D34D /* QuCore-ThirdParty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "QuCore-ThirdParty.framework"; sourceTree = "<group>"; };
 		1895645B201340C70017D34D /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = "<group>"; };
 		1895645C201340D00017D34D /* VODUpload.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VODUpload.framework; sourceTree = "<group>"; };
 		1895645D201340DC0017D34D /* AliyunVideoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunVideoCore.framework; sourceTree = "<group>"; };
@@ -1631,9 +1630,7 @@
 				1826F913201042CE0042A578 /* libc++.1.tbd in Frameworks */,
 				1826F911201042BB0042A578 /* libicucore.tbd in Frameworks */,
 				1826F90F201042960042A578 /* librpcsvc.tbd in Frameworks */,
-				1895645A201340AF0017D34D /* QuCore-ThirdParty.framework in Frameworks */,
 				185A846A200C4E43002547AD /* ChatKit.framework in Frameworks */,
-				18956459201340AF0017D34D /* AliyunVideoSDKPro.framework in Frameworks */,
 				1895645F201340DC0017D34D /* VODUpload.framework in Frameworks */,
 				1895645E201340DC0017D34D /* AliyunOSSiOS.framework in Frameworks */,
 				1826F9322010730D0042A578 /* AgoraRtcEngineKit.framework in Frameworks */,
@@ -1697,6 +1694,15 @@
 				00844E2AFE943A16213C2E2D /* Pods_sisitv_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18251C8B206A3BD300D14BC0 /* LoginTool */ = {
+			isa = PBXGroup;
+			children = (
+				18251C8C206A3C6E00D14BC0 /* ThirdLoginService.h */,
+				18251C8D206A3C6E00D14BC0 /* ThirdLoginService.m */,
+			);
+			path = LoginTool;
 			sourceTree = "<group>";
 		};
 		1826F909201042800042A578 /* framework */ = {
@@ -3317,6 +3323,7 @@
 		3A5D57901FF09AF500335D35 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				18251C8B206A3BD300D14BC0 /* LoginTool */,
 				3A833F9620144E2200E4FC9A /* Import */,
 				3A833F8F20144DE700E4FC9A /* PhotoLibrary */,
 				3A833F7E20144D7E00E4FC9A /* Crop */,
@@ -3585,7 +3592,6 @@
 				1826F909201042800042A578 /* framework */,
 				3A5D59591FF09B3700335D35 /* arm&simulator */,
 				3A5D595F1FF09B3700335D35 /* QPSDK.bundle */,
-				3A5D59601FF09B3700335D35 /* Release */,
 			);
 			path = AliVideoFramwork;
 			sourceTree = "<group>";
@@ -3600,15 +3606,6 @@
 				3A5D595E1FF09B3700335D35 /* AliyunVodPlayerViewSDK.framework */,
 			);
 			path = "arm&simulator";
-			sourceTree = "<group>";
-		};
-		3A5D59601FF09B3700335D35 /* Release */ = {
-			isa = PBXGroup;
-			children = (
-				18956457201340A50017D34D /* AliyunVideoSDKPro.framework */,
-				18956458201340AF0017D34D /* QuCore-ThirdParty.framework */,
-			);
-			path = Release;
 			sourceTree = "<group>";
 		};
 		3A833F6B20143A8500E4FC9A /* Record */ = {
@@ -3958,8 +3955,8 @@
 				TargetAttributes = {
 					187860631E112C8600B65EB7 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = YZ3R3HFEC3;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = FCUTEG929X;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
 								enabled = 0;
@@ -4237,12 +4234,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-sisitv_ios/Pods-sisitv_ios-resources.sh",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4555,6 +4550,7 @@
 				3AAADC1A1FF2329F006E1F2B /* MJRefreshAutoNormalFooter.m in Sources */,
 				3A5D58371FF09AF500335D35 /* YZGListModel.m in Sources */,
 				3A5D58431FF09AF500335D35 /* UIColor+Hex.m in Sources */,
+				18251C8E206A3C6E00D14BC0 /* ThirdLoginService.m in Sources */,
 				3A5D58D71FF09AF600335D35 /* RadioButton.m in Sources */,
 				3A7166501FF1EA0200AB78CC /* LGImageListController.m in Sources */,
 				3A5D582E1FF09AF500335D35 /* BaseViewController.m in Sources */,
@@ -4797,8 +4793,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yiqiu he (63T252A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YZ3R3HFEC3;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FCUTEG929X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4819,8 +4815,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"WeChatSDK\"",
-					"-l\"WeiboSDK\"",
 					"-l\"c++\"",
 					"-l\"iconv\"",
 					"-l\"icucore\"",
@@ -4897,11 +4891,7 @@
 					"-framework",
 					"\"ShareSDKConnector\"",
 					"-framework",
-					"\"ShareSDKExtension\"",
-					"-framework",
 					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TencentOpenAPI\"",
 					"-framework",
 					"\"UIKit\"",
 					"-framework",
@@ -4917,10 +4907,10 @@
 					"-framework",
 					"\"pop\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lsy.zhibomei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owst.zhibomei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "386a7bae-b1a0-42be-9354-79d1078b0846";
+				PROVISIONING_PROFILE_SPECIFIER = development_profile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4931,9 +4921,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yiqiu he (ZG9T5NERK4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YZ3R3HFEC3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FCUTEG929X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4954,8 +4944,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"WeChatSDK\"",
-					"-l\"WeiboSDK\"",
 					"-l\"c++\"",
 					"-l\"iconv\"",
 					"-l\"icucore\"",
@@ -5032,11 +5020,7 @@
 					"-framework",
 					"\"ShareSDKConnector\"",
 					"-framework",
-					"\"ShareSDKExtension\"",
-					"-framework",
 					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TencentOpenAPI\"",
 					"-framework",
 					"\"UIKit\"",
 					"-framework",
@@ -5052,10 +5036,10 @@
 					"-framework",
 					"\"pop\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lsy.zhibomei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owst.zhibomei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "01be9e52-8bcb-4f75-9d60-44188b876a0a";
+				PROVISIONING_PROFILE_SPECIFIER = distribution_profile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

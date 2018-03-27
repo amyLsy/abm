@@ -97,8 +97,8 @@
     LGUploadTermsModel *terModel = actionType.object;
     //竞技直播
     if ([terModel.id integerValue] == 1) {
-        
-        [self headViewAtionWithType:2 headView:self.headView];
+        //lsy
+        [self headViewAtionWithType:1 headView:self.headView];
         
     }else{
         

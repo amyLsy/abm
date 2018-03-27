@@ -153,7 +153,7 @@ static CGFloat const kCollectionViewHeight = 44.0;
 //        item1.name = @"关注";
 //        [_topicRowItemArray addObject:item1];
         TopicRowItem *item2 = [[TopicRowItem alloc] init];
-        item2.name = @"热门";
+        item2.name = @"直播";
          [_topicRowItemArray addObject:item2];
         TopicRowItem *item5 = [[TopicRowItem alloc] init];
         [_topicRowItemArray addObject:item5];

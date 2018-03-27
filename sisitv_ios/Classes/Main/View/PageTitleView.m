@@ -10,7 +10,7 @@
 #import "TopicRowItem.h"
 
 
-static CGFloat const kScrollLineH = 3.0;
+static CGFloat const kScrollLineH = 5.0;
 static CGFloat const kTitleButtonHeight = 41.0;
 
 @interface PageTitleView ()
@@ -60,16 +60,30 @@ static CGFloat const kTitleButtonHeight = 41.0;
         titleLabel.text = item.name;
         titleLabel.tag = i;
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.textColor = [UIColor darkGrayColor];
+        titleLabel.textColor = [UIColor lightGrayColor];
         [self.scrollView addSubview:titleLabel];
         [self.titleLabels addObject:titleLabel];
         titleLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleLabelClickWithTapGes:)];
         [titleLabel addGestureRecognizer:tapGes];
         
-        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(btnX + btnW * 0.2 * 0.5, kTitleButtonHeight, btnW * 0.8, kScrollLineH)];
+        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(btnX + btnW * 0.2 * 0.5, kTitleButtonHeight - 2, btnW * 0.8, kScrollLineH)];
         titleView.hidden = YES;
-        titleView.backgroundColor = RGB_COLOR(255, 102, 88, 1);
+        //lsy
+        UIImageView *lineImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bar_underline"]];
+        [titleView addSubview:lineImgView];
+        lineImgView.contentMode = UIViewContentModeScaleToFill;
+        [lineImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(titleView).offset(12);
+//            make.right.mas_equalTo(titleView).offset(-12);
+            make.centerX.mas_equalTo(titleView);
+            make.width.mas_equalTo(20);
+            make.bottom.mas_equalTo(titleView).offset(-4);
+            make.height.mas_equalTo(kScrollLineH);
+        }];
+//        titleView.backgroundColor = RGB_COLOR(255, 102, 88, 1);
+//        titleView.backgroundColor = RGBToColor(142, 63, 216);
+        titleView.backgroundColor = [UIColor clearColor];
         [self.scrollView addSubview:titleView];
         [self.titleViews addObject:titleView];
     }
@@ -109,7 +123,7 @@ static CGFloat const kTitleButtonHeight = 41.0;
 }
 
 -(void)setTitleWithIndex:(NSInteger)index{
-    self.selectedLabel.textColor = [UIColor darkGrayColor];
+    self.selectedLabel.textColor = [UIColor lightGrayColor];
     self.selectedView.hidden = YES;
     self.selectedLabel = self.titleLabels[index];
     self.selectedView = self.titleViews[index];

@@ -84,15 +84,10 @@ PODS:
     - ShareSDK3/ShareSDK (= 4.0.4)
   - ShareSDK3/ShareSDK (4.0.4):
     - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.4):
-    - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.4):
-    - MOBFoundation
-  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.4):
-    - MOBFoundation
   - SPUncaughtExceptionHandler (0.3.3)
   - SVProgressHUD (2.2.5)
   - UITableView+FDTemplateLayoutCell (1.6)
+  - WechatOpenSDK (1.8.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -110,11 +105,9 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage (~> 3.8.1)
   - ShareSDK3 (~> 4.0.4)
-  - ShareSDK3/ShareSDKPlatforms/QQ
-  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
-  - ShareSDK3/ShareSDKPlatforms/WeChat
   - SPUncaughtExceptionHandler
   - SVProgressHUD
+  - WechatOpenSDK
 
 EXTERNAL SOURCES:
   ChatKit:
@@ -160,7 +153,8 @@ SPEC CHECKSUMS:
   SPUncaughtExceptionHandler: 2a617e91cde852b5e30acc3e15c9b74e7e62c8b9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
 
-PODFILE CHECKSUM: 1e93ed63a646d14b70fb2704de63daa16798f8b7
+PODFILE CHECKSUM: 545cdf69926e0f1f2fb8119a12950209becd12e1
 
 COCOAPODS: 1.4.0
