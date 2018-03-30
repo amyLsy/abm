@@ -43,6 +43,13 @@
 		183355142021974C00144B1C /* GameListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183355132021974C00144B1C /* GameListView.xib */; };
 		183355182021988300144B1C /* LGGameListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183355162021988300144B1C /* LGGameListView.m */; };
 		183355192021988300144B1C /* LGGameListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183355172021988300144B1C /* LGGameListView.xib */; };
+		1833EECD206CE49A00B3426C /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1833EECC206CE49A00B3426C /* TencentOpenAPI.framework */; };
+		1833EED7206CE70900B3426C /* MMHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833EECE206CE70600B3426C /* MMHeaderView.m */; };
+		1833EED8206CE70900B3426C /* MMRechargeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833EECF206CE70600B3426C /* MMRechargeFooterView.m */; };
+		1833EED9206CE70900B3426C /* MMHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1833EED2206CE70700B3426C /* MMHeaderView.xib */; };
+		1833EEDA206CE70900B3426C /* MMRechargeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1833EED4206CE70800B3426C /* MMRechargeFooterView.xib */; };
+		1833EEDB206CE70900B3426C /* MMRechargeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833EED5206CE70800B3426C /* MMRechargeTableViewCell.m */; };
+		1833EEDC206CE70900B3426C /* MMRechargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1833EED6206CE70800B3426C /* MMRechargeTableViewCell.xib */; };
 		18392ADF20187624000E89B0 /* LGLiveAttentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18392ADE20187624000E89B0 /* LGLiveAttentionController.m */; };
 		18392AE22018763D000E89B0 /* LGVideoAttentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18392AE12018763D000E89B0 /* LGVideoAttentionController.m */; };
 		183D885A20464E70006EC088 /* RankTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183D885920464E70006EC088 /* RankTitleView.xib */; };
@@ -678,6 +685,16 @@
 		183355152021988300144B1C /* LGGameListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGGameListView.h; sourceTree = "<group>"; };
 		183355162021988300144B1C /* LGGameListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGGameListView.m; sourceTree = "<group>"; };
 		183355172021988300144B1C /* LGGameListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LGGameListView.xib; sourceTree = "<group>"; };
+		1833EECC206CE49A00B3426C /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		1833EECE206CE70600B3426C /* MMHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHeaderView.m; sourceTree = "<group>"; };
+		1833EECF206CE70600B3426C /* MMRechargeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRechargeFooterView.m; sourceTree = "<group>"; };
+		1833EED0206CE70700B3426C /* MMRechargeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRechargeTableViewCell.h; sourceTree = "<group>"; };
+		1833EED1206CE70700B3426C /* MMHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHeaderView.h; sourceTree = "<group>"; };
+		1833EED2206CE70700B3426C /* MMHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMHeaderView.xib; sourceTree = "<group>"; };
+		1833EED3206CE70700B3426C /* MMRechargeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRechargeFooterView.h; sourceTree = "<group>"; };
+		1833EED4206CE70800B3426C /* MMRechargeFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMRechargeFooterView.xib; sourceTree = "<group>"; };
+		1833EED5206CE70800B3426C /* MMRechargeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRechargeTableViewCell.m; sourceTree = "<group>"; };
+		1833EED6206CE70800B3426C /* MMRechargeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMRechargeTableViewCell.xib; sourceTree = "<group>"; };
 		18392ADD20187624000E89B0 /* LGLiveAttentionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLiveAttentionController.h; sourceTree = "<group>"; };
 		18392ADE20187624000E89B0 /* LGLiveAttentionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGLiveAttentionController.m; sourceTree = "<group>"; };
 		18392AE02018763D000E89B0 /* LGVideoAttentionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGVideoAttentionController.h; sourceTree = "<group>"; };
@@ -1632,6 +1649,7 @@
 				1826F90F201042960042A578 /* librpcsvc.tbd in Frameworks */,
 				185A846A200C4E43002547AD /* ChatKit.framework in Frameworks */,
 				1895645F201340DC0017D34D /* VODUpload.framework in Frameworks */,
+				1833EECD206CE49A00B3426C /* TencentOpenAPI.framework in Frameworks */,
 				1895645E201340DC0017D34D /* AliyunOSSiOS.framework in Frameworks */,
 				1826F9322010730D0042A578 /* AgoraRtcEngineKit.framework in Frameworks */,
 				18F9F75F20171CF30066FDC4 /* QuCore-ThirdParty.framework in Frameworks */,
@@ -1786,6 +1804,14 @@
 				182CB7242046C6A700464B5E /* MYGiftModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1833EECB206CE49A00B3426C /* Tencent */ = {
+			isa = PBXGroup;
+			children = (
+				1833EECC206CE49A00B3426C /* TencentOpenAPI.framework */,
+			);
+			path = Tencent;
 			sourceTree = "<group>";
 		};
 		18392ADC201875A2000E89B0 /* Attention */ = {
@@ -2992,6 +3018,15 @@
 		3A5D56FC1FF09AF500335D35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1833EED1206CE70700B3426C /* MMHeaderView.h */,
+				1833EECE206CE70600B3426C /* MMHeaderView.m */,
+				1833EED2206CE70700B3426C /* MMHeaderView.xib */,
+				1833EED3206CE70700B3426C /* MMRechargeFooterView.h */,
+				1833EECF206CE70600B3426C /* MMRechargeFooterView.m */,
+				1833EED4206CE70800B3426C /* MMRechargeFooterView.xib */,
+				1833EED0206CE70700B3426C /* MMRechargeTableViewCell.h */,
+				1833EED5206CE70800B3426C /* MMRechargeTableViewCell.m */,
+				1833EED6206CE70800B3426C /* MMRechargeTableViewCell.xib */,
 				3A5D56FD1FF09AF500335D35 /* MineBalanceDiamondCell.h */,
 				3A5D56FE1FF09AF500335D35 /* MineBalanceDiamondCell.m */,
 				3A5D56FF1FF09AF500335D35 /* MineBalanceDiamondCell.xib */,
@@ -3731,6 +3766,7 @@
 		3AAADBE41FF23270006E1F2B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1833EECB206CE49A00B3426C /* Tencent */,
 				3A05AA041FFBE2000091797F /* LWImageBrowser */,
 				3AAADBE51FF2329E006E1F2B /* MJRefresh */,
 			);
@@ -3956,7 +3992,7 @@
 					187860631E112C8600B65EB7 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FCUTEG929X;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
 								enabled = 0;
@@ -4012,6 +4048,7 @@
 				3A5D58B61FF09AF600335D35 /* ChatMoreOpitionView.xib in Resources */,
 				3A5D58471FF09AF500335D35 /* AlipaySDK.bundle in Resources */,
 				3A5D58C01FF09AF600335D35 /* ChatSendMessageView.xib in Resources */,
+				1833EED9206CE70900B3426C /* MMHeaderView.xib in Resources */,
 				182CB72F2046DCC400464B5E /* MYExchageGiftController.xib in Resources */,
 				3A5D58A61FF09AF500335D35 /* ChatGuardListCell.xib in Resources */,
 				182F68F2200D941500EA0A36 /* RankHeadView.xib in Resources */,
@@ -4022,6 +4059,7 @@
 				3A5D58CC1FF09AF600335D35 /* ChatGiftListView.xib in Resources */,
 				3A6BE4101FFF5A3B008E9A49 /* HotTopTypeCell.xib in Resources */,
 				181C78CE2048F3140030F970 /* GameGiftListCell.xib in Resources */,
+				1833EEDC206CE70900B3426C /* MMRechargeTableViewCell.xib in Resources */,
 				3AAADC4E1FF23E84006E1F2B /* LGBottonCommentView.xib in Resources */,
 				3A5D580B1FF09AF500335D35 /* LoginController.xib in Resources */,
 				3A5D58A11FF09AF500335D35 /* ChatConversationCell.xib in Resources */,
@@ -4088,6 +4126,7 @@
 				3A5D58731FF09AF500335D35 /* MainTitleView.xib in Resources */,
 				3A5D58D41FF09AF600335D35 /* JLGameBlanksCell.xib in Resources */,
 				3AAADC371FF234C2006E1F2B /* LGCommentCell.xib in Resources */,
+				1833EEDA206CE70900B3426C /* MMRechargeFooterView.xib in Resources */,
 				3A5D58A81FF09AF600335D35 /* ChatLyricsCell.xib in Resources */,
 				3A5D59491FF09AF600335D35 /* TZImagePickerController.bundle in Resources */,
 				3A7166591FF1EBC100AB78CC /* HSYTopPicView.xib in Resources */,
@@ -4265,6 +4304,7 @@
 				3A5D58EF1FF09AF600335D35 /* RankCell.m in Sources */,
 				3A5D59511FF09AF600335D35 /* AliyunImage.m in Sources */,
 				3A5D58DF1FF09AF600335D35 /* MineBalanceDiamondCell.m in Sources */,
+				1833EEDB206CE70900B3426C /* MMRechargeTableViewCell.m in Sources */,
 				3A5D58771FF09AF500335D35 /* UpdateView.m in Sources */,
 				3A102B0A1FF69E1100C329F4 /* LGBgmCell.m in Sources */,
 				3A5D584F1FF09AF500335D35 /* MainHotController.m in Sources */,
@@ -4379,6 +4419,7 @@
 				3A5D58391FF09AF500335D35 /* YZGSingleton.m in Sources */,
 				3A5D58F11FF09AF600335D35 /* RankTitleView.m in Sources */,
 				3A5D59181FF09AF600335D35 /* TopicRequest.m in Sources */,
+				1833EED7206CE70900B3426C /* MMHeaderView.m in Sources */,
 				3A5D58D01FF09AF600335D35 /* YZGEntranceAnimationView.m in Sources */,
 				3A833FA520144E2200E4FC9A /* AliyunAlbumViewController.m in Sources */,
 				3A833FA820144E2200E4FC9A /* AliyunPhotoAssetSelectedView.m in Sources */,
@@ -4616,6 +4657,7 @@
 				3A5D592E1FF09AF600335D35 /* JSONModel.m in Sources */,
 				3A09AE5D2014343500F0884B /* AliyunMediaConfig.m in Sources */,
 				3A5D58E71FF09AF600335D35 /* PersonalContributionController.m in Sources */,
+				1833EED8206CE70900B3426C /* MMRechargeFooterView.m in Sources */,
 				3A5D58751FF09AF500335D35 /* PageTitleView.m in Sources */,
 				3A5D593B1FF09AF600335D35 /* AliyunPathManager.m in Sources */,
 				3A5D58281FF09AF500335D35 /* YZGTableViewCell.m in Sources */,
@@ -4793,8 +4835,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yiqiu he (63T252A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FCUTEG929X;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4806,6 +4848,7 @@
 					"$(PROJECT_DIR)/sisitv_ios/Classes/Lib/AliyunVideoBase",
 					"$(PROJECT_DIR)/sisitv_ios/AliVideoFramwork/framework/Debug",
 					"$(PROJECT_DIR)/sisitv_ios/Vendor",
+					"$(PROJECT_DIR)/sisitv_ios/Vendor/Tencent",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sisitv_ios/PrefixHeader.pch;
@@ -4909,8 +4952,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.owst.zhibomei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "386a7bae-b1a0-42be-9354-79d1078b0846";
-				PROVISIONING_PROFILE_SPECIFIER = development_profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4921,9 +4964,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yiqiu he (ZG9T5NERK4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FCUTEG929X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4935,6 +4978,7 @@
 					"$(PROJECT_DIR)/sisitv_ios/Classes/Lib/AliyunVideoBase",
 					"$(PROJECT_DIR)/sisitv_ios/AliVideoFramwork/framework/Debug",
 					"$(PROJECT_DIR)/sisitv_ios/Vendor",
+					"$(PROJECT_DIR)/sisitv_ios/Vendor/Tencent",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sisitv_ios/PrefixHeader.pch;
@@ -5038,8 +5082,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.owst.zhibomei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01be9e52-8bcb-4f75-9d60-44188b876a0a";
-				PROVISIONING_PROFILE_SPECIFIER = distribution_profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

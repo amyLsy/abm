@@ -9,5 +9,5 @@
 #import "YZGRefreshTableViewController.h"
 
 @interface IncomeRankController : YZGRefreshTableViewController
-
+@property (nonatomic, strong) NSString *type;
 @end

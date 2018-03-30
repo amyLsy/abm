@@ -87,7 +87,9 @@
 
 - (void)addAnimationChatMessage:(ChatMessage *)chatMessage
 {
-    [self.userLevel setBackgroundImage:[UIImage imageNamed:chatMessage.userLevelImageName] forState:UIControlStateNormal];
+    [self.userLevel setImage:[UIImage imageNamed:chatMessage.userLevelImageName] forState:UIControlStateNormal];
+    self.userLevel.titleLabel.font = [UIFont systemFontOfSize:10];
+    [self.userLevel setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [self.userLevel setTitle:chatMessage.localProcessedUserLevel forState:UIControlStateNormal];
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
     animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 1.0, 0.0)];

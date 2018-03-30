@@ -40,21 +40,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    self.regeistButton.backgroundColor = [UIColor darkGrayColor];
-
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.regeistButton setBackgroundImage:[UIImage imageNamed:@"login_bt_press"] forState:UIControlStateSelected];
+    
     [self.regeistButton setTitleColor:[UIColor whiteColor] forState: UIControlStateNormal];
     
     UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(varCodeLabelClick)];
     [self.varCodeLabel addGestureRecognizer:tagGesture];
     [self setLayOut];
     self.navigationItem.title = @"注册";
-    [self viewSetAtt:self.phoneTextFiled withImageName:@"手机号" placeholderString:@"请输入手机号" color:[UIColor lightGrayColor] font:13];
-    [self viewSetAtt:self.passTextFlied withImageName:@"验证码" placeholderString:@"请输入密码" color:[UIColor lightGrayColor] font:13];
-      [self viewSetAtt:self.InviteCodeTextField withImageName:@"验证码" placeholderString:@"请输入邀请码(可选)" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.phoneTextFiled withImageName:@"login_user" placeholderString:@"请输入手机号" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.passTextFlied withImageName:@"registration_password" placeholderString:@"请输入密码" color:[UIColor lightGrayColor] font:13];
+      [self viewSetAtt:self.InviteCodeTextField withImageName:@"registration_invitation" placeholderString:@"请输入邀请码(可选)" color:[UIColor lightGrayColor] font:13];
     [self viewSetAtt:self.varCodeView withImageName:nil placeholderString:nil color:[UIColor lightGrayColor] font:13];
 
-    [self textFiledSetLeftView:self.varcode withImageName:@"验证码" placeholderString:@"请输入验证码" color:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13]];
+    [self textFiledSetLeftView:self.varcode withImageName:@"registration_captcha" placeholderString:@"请输入验证码" color:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13]];
     self.agreeProtocolButton.selected = YES;
     [YZGAppSetting sharedInstance].isAutoUpSpring = YES;
     

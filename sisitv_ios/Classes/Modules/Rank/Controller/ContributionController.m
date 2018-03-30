@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CGFloat y = self.segentHeight.constant;
-    self.tableView.frame = CGRectMake(0, y, KScreenWidth, KOnlyHadNavBarViewHeight - y );
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KOnlyHadNavBarViewHeight);
 
 //    self.segementControl.tintColor = kNavColor;
 

@@ -21,10 +21,12 @@
 
 + (CGSize)collectionView:(UICollectionView *)collectionView itemSizeForItem:(id)item{
     
-    
+    //lsy
     if ([YZGAppSetting sharedInstance].isBig ==  YES && [YZGAppSetting sharedInstance].isHot == YES) {
         
-        return CGSizeMake(KScreenWidth , KScreenWidth/0.65);
+//        return CGSizeMake(KScreenWidth , KScreenWidth/0.65);
+        
+        return CGSizeMake(KScreenWidth , KScreenWidth);
     }else{
         
         CGFloat width = (KScreenWidth - 2)/2.0;

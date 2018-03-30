@@ -39,7 +39,7 @@
 }
 
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForIndexPath:(NSIndexPath *)indexPath{
-    return 55 + KScreenWidth + 2;
+    return KScreenWidth;
 }
 
 -(void)setItem:(id)item forIndexPath:(NSIndexPath *)indexPath
@@ -57,9 +57,10 @@
     
     [self.title setText:roomInfo.channel_title];
     
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
     [self.level setTitle:roomInfo.localProcessedUserLevel forState:UIControlStateNormal];
-    
-    [self.level setBackgroundImage:[UIImage imageNamed:roomInfo.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:roomInfo.userLevelImageName] forState:UIControlStateNormal];
    
 }
 

@@ -8,7 +8,7 @@
 #define LEFT_SPACE 20
 #define RIGHT_SPACE 20
 #define MIN_SPACING 20
-#define TAB_HEIGHT 58
+#define TAB_HEIGHT 55
 #define LINEBOTTOM_HEIGHT 0
 #define TOPBOTTOMLINEBOTTOM_HEIGHT .5
 #define SELECTED_COLOR [UIColor blackColor]
@@ -131,7 +131,7 @@
     if (_viewController.navigationController && !_viewController.navigationController.navigationBar.hidden && !_viewController.navigationController.navigationBarHidden) {
         __topSpace = 0;
     }
-    _font = _font?_font:[UIFont systemFontOfSize:16];
+    _font = _font?_font:[UIFont systemFontOfSize:14];
     [self addSubview:self.scrollView];
     [self addSubview:self.topTabView];
     [self addSubview:self.topTabScrollView];

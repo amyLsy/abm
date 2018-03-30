@@ -98,7 +98,7 @@
     //竞技直播
     if ([terModel.id integerValue] == 1) {
         //lsy
-        [self headViewAtionWithType:1 headView:self.headView];
+        [self headViewAtionWithType:2 headView:self.headView];
         
     }else{
         

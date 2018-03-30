@@ -7,6 +7,6 @@
 //
 
 #import "YZGTableViewController.h"
-@interface CostViewController : YZGTableViewController
+@interface CostViewController : UIViewController
 
 @end

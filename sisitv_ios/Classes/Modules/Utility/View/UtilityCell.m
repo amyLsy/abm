@@ -35,7 +35,9 @@
     [self.avtar sd_setImageWithURL:[NSURL URLWithString:utilityRowItem.avatar] placeholderImage:[UIImage imageNamed:@"icon_avatar_default"]];
     self.name.text = utilityRowItem.user_nicename;
     [self.level setTitle: utilityRowItem.localProcessedUserLevel forState:UIControlStateNormal];
-    [self.level setBackgroundImage:[UIImage imageNamed:utilityRowItem.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:utilityRowItem.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
     self.gender.image = [UIImage imageNamed:utilityRowItem.sex];
     //认证
 //    if (attentionOrFansRowItem.is_truename) {

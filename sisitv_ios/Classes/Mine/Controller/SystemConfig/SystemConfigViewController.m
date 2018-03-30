@@ -15,7 +15,7 @@
 #import "LeanCloudTool.h"
 @interface SystemConfigViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *changePassword;
-@property (weak, nonatomic) IBOutlet UIButton *currentVersion;
+@property (weak, nonatomic) IBOutlet UILabel *currentVersion;
 @property (weak, nonatomic) IBOutlet UIButton *exit;
 
 @end
@@ -27,9 +27,7 @@
     self.navigationItem.title = @"设置";
      NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    [self.currentVersion setTitle:[NSString stringWithFormat:@"当前版本 : v%@",version] forState:UIControlStateNormal];
-    self.exit.backgroundColor = [UIColor darkGrayColor];
-    self.exit.layer.cornerRadius = self.exit.height/2.0;
+    self.currentVersion.text = [NSString stringWithFormat:@"当前版本 : v%@",version];
 }
 
 

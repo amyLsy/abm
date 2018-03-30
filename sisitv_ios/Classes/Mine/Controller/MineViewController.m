@@ -49,16 +49,16 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
 -(void)createDataSource{
     self.dataSource = [[MineDataSource alloc]initWithController:self];
     YZGTableViewSectionItem *sectionItem = [[YZGTableViewSectionItem alloc]init];
-//    YZGTableViewSectionItem *sectionItem1 = [[YZGTableViewSectionItem alloc]init];
-//    YZGTableViewSectionItem *sectionItem2 = [[YZGTableViewSectionItem alloc]init];
-//    YZGTableViewSectionItem *sectionItem3 = [[YZGTableViewSectionItem alloc]init];
-//    YZGTableViewSectionItem *sectionItem4 = [[YZGTableViewSectionItem alloc]init];
+    //    YZGTableViewSectionItem *sectionItem1 = [[YZGTableViewSectionItem alloc]init];
+    //    YZGTableViewSectionItem *sectionItem2 = [[YZGTableViewSectionItem alloc]init];
+    //    YZGTableViewSectionItem *sectionItem3 = [[YZGTableViewSectionItem alloc]init];
+    //    YZGTableViewSectionItem *sectionItem4 = [[YZGTableViewSectionItem alloc]init];
     //添加的数据 开车 魏友臣 17/5/12
     NSArray *descrpArray = @[@"贡献榜",@"我的物品",@"媚力",@"美美",@"家族",@"推荐人列表",@"等级",@"主播特长",@"设置"];
     NSArray *imageArray = @[@"list_contribute",@"list_goods",@"list_meili",@"list_meimei",@"list_family",@"list_recommend",@"list_level",@"list_specialty",@"list_setup"];
     if ([YZGAppSetting sharedInstance].isInAppleStore)  {
         descrpArray = @[@"智力",@"家族",@"等级",@"主播特长",@"推荐人列表",@"设置"];
-//        imageArray = @[@"贡献榜",@"秀豆充值",@"我的等级",@"设置"];
+        //        imageArray = @[@"贡献榜",@"秀豆充值",@"我的等级",@"设置"];
     }
     for (NSInteger i =0; i<descrpArray.count; i++) {
         MineRowItem *rowItem = [[MineRowItem alloc]init];
@@ -130,7 +130,7 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
         case MineHeaderViewButtonPhoto:
         {
             //图片
-             LGUserMediaViewController *imageVc = [[LGUserMediaViewController alloc] initWithVcType:2];
+            LGUserMediaViewController *imageVc = [[LGUserMediaViewController alloc] initWithVcType:2];
             imageVc.navigationItem.title = [Account shareInstance].user_nicename;
             LGMediaListModel *model = [[LGMediaListModel alloc] init];
             model.owner_id = [Account shareInstance].ID;
@@ -141,31 +141,31 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
             break;
         case MineHeaderViewUploadImage:
         {
-                UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"修改背景图片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-                
-                UIAlertAction *photoAssetAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
-                    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    imagePicker.allowsEditing = YES;
-                    imagePicker.delegate = self;
-                    [self presentViewController:imagePicker animated:YES completion:nil];
-                }];
-                
-                UIAlertAction *takePhotoAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
-                    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])  return;
-                    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                    imagePicker.allowsEditing = YES;
-                    imagePicker.delegate = self;
-                    [self presentViewController:imagePicker animated:YES completion:nil];
-                }];
-                
-                UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-                [controller addAction:photoAssetAction];
-                [controller addAction:takePhotoAction];
-                [controller addAction:cancleAction];
-                [self presentViewController:controller animated:YES completion:nil];
-
+            UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"修改背景图片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            UIAlertAction *photoAssetAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+                imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                imagePicker.allowsEditing = YES;
+                imagePicker.delegate = self;
+                [self presentViewController:imagePicker animated:YES completion:nil];
+            }];
+            
+            UIAlertAction *takePhotoAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+                if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])  return;
+                imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                imagePicker.allowsEditing = YES;
+                imagePicker.delegate = self;
+                [self presentViewController:imagePicker animated:YES completion:nil];
+            }];
+            
+            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [controller addAction:photoAssetAction];
+            [controller addAction:takePhotoAction];
+            [controller addAction:cancleAction];
+            [self presentViewController:controller animated:YES completion:nil];
+            
         }
             break;
         default:
@@ -201,29 +201,31 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
         PersonalContributionController *contribution  = [[PersonalContributionController alloc]initWithID:[Account shareInstance].ID];
         [self presentWithViewController:contribution];
     }else if([rowItem.descrp isEqualToString:@"媚力"]){
-        CostViewController *costViewController = [[CostViewController alloc]init];
-        [self presentWithViewController:costViewController];
-//        NSString *exchangeUrl = [NSString stringWithFormat:@"%@/portal/Appweb/recharge?token=%@",self.url,[[Account shareInstance] token]];
-//        ChagerViewController *chager = [[ChagerViewController alloc]init];
-//        chager.title = @"充值";
-//        chager.url = exchangeUrl;
-//        [self presentWithViewController:chager];
+        
+        NSString *exchangeUrl = [NSString stringWithFormat:@"%@/portal/Appweb/earn?token=%@",self.url,[[Account shareInstance] token]];
+        BaseWebViewController *exchange = [[BaseWebViewController alloc]init];
+        exchange.title = @"媚力";
+        exchange.url = [NSURL URLWithString:exchangeUrl];
+        [self presentWithViewController:exchange];
+        
+        //        NSString *exchangeUrl = [NSString stringWithFormat:@"%@/portal/Appweb/recharge?token=%@",self.url,[[Account shareInstance] token]];
+        //        ChagerViewController *chager = [[ChagerViewController alloc]init];
+        //        chager.title = @"充值";
+        //        chager.url = exchangeUrl;
+        //        [self presentWithViewController:chager];
     }else if([rowItem.descrp isEqualToString:@"我的物品"]){//我的礼物页面
         
         MyGiftController *mypvc = [[MyGiftController alloc] init];
         mypvc.title = @"我的物品列表";
         [self presentWithViewController:mypvc];//该行负责跳转
         
-//        LGReferencesViewController *refVc = [[LGReferencesViewController alloc] init];//模仿“推荐人列表”设计礼物列表
-//        refVc.title = @"我的礼物列表";
-//        [self presentWithViewController:refVc];
+        //        LGReferencesViewController *refVc = [[LGReferencesViewController alloc] init];//模仿“推荐人列表”设计礼物列表
+        //        refVc.title = @"我的礼物列表";
+        //        [self presentWithViewController:refVc];
         
     }else if([rowItem.descrp isEqualToString:@"美美"]){
-        NSString *exchangeUrl = [NSString stringWithFormat:@"%@/portal/Appweb/earn?token=%@",self.url,[[Account shareInstance] token]];
-        BaseWebViewController *exchange = [[BaseWebViewController alloc]init];
-        exchange.title = @"美美";
-        exchange.url = [NSURL URLWithString:exchangeUrl];
-        [self presentWithViewController:exchange];
+        CostViewController *costViewController = [[CostViewController alloc]init];
+        [self presentWithViewController:costViewController];
     }else if([rowItem.descrp isEqualToString:@"家族"]){
         NSString *familyUrl = [NSString stringWithFormat:@"%@/portal/Family/index?token=%@",self.url,[[Account shareInstance] token]];
         BaseWebViewController *exchange = [[BaseWebViewController alloc]init];
@@ -287,3 +289,4 @@ NSString * const LGUploadImageSuccess  = @"LGUploadImageSuccess";
 }
 
 @end
+

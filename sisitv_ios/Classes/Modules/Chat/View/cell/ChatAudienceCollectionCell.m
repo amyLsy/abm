@@ -35,7 +35,9 @@
     
     [self.level setTitle:audienceInfo.localProcessedUserLevel  forState:UIControlStateNormal];
 
-    [self.level setBackgroundImage:[UIImage imageNamed:audienceInfo.userLevelImageName] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:audienceInfo.userLevelImageName] forState:UIControlStateNormal];
 
 }
 

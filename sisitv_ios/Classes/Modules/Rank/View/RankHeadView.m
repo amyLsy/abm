@@ -18,10 +18,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *secondLevel;
 @property (weak, nonatomic) IBOutlet UIButton *firstLevel;
 @property (weak, nonatomic) IBOutlet UIButton *threeLevel;
+@property (weak, nonatomic) IBOutlet UIView *switchBgView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *secondSex;
 @property (weak, nonatomic) IBOutlet UIImageView *firstSex;
 @property (weak, nonatomic) IBOutlet UIImageView *threeSex;
+@property (nonatomic, assign) CGFloat originalX;
+@property (nonatomic, strong) UIView *slideView;
+@property (nonatomic, strong) NSMutableArray *btnArray;
+
+@property (weak, nonatomic) IBOutlet UIView *secondStageBgView;
+@property (weak, nonatomic) IBOutlet UIView *theThirdStageBgView;
+@property (weak, nonatomic) IBOutlet UIView *firstStageBgView;
+@property (weak, nonatomic) IBOutlet UIImageView *firstCrownImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *secondCrownImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *thirdCrownImgView;
+
+
 
 @end
 
@@ -35,72 +48,115 @@
     self.avatarImageViews = @[self.firstAvatar,self.secondAvatar,self.theThirdAvatar];
     self.nameLables = @[self.firstName,self.secondName,self.theThirdName];
     self.infoLables = @[self.firstInfoLabel,self.secondInfoLabel,self.theThirdInfoLabel];
-    self.bgimages = @[self.firstBgImageView,self.secondBgImageView,self.thirdBgimageView];
+    self.bgStageImages = @[self.firstStageBgView,self.secondStageBgView,self.theThirdStageBgView];
     self.levels = @[self.firstLevel,self.secondLevel,self.threeLevel];
     self.sexs = @[self.firstSex,self.secondSex,self.threeSex];
+    self.vipImages = @[self.firstVIPImageView,self.secondVIPImageView,self.theThirdVIPImageView];
+    self.crownImages = @[self.firstCrownImgView,self.secondCrownImgView,self.thirdCrownImgView];
+    self.btnArray = [[NSMutableArray alloc] init];
+    [self layoutSwitchView];
+}
+
+- (void)layoutSwitchView{
+    self.switchBgView.layer.cornerRadius = 18;
+    self.switchBgView.clipsToBounds = YES;
+    self.switchBgView.layer.borderWidth = 0.8;
+    self.switchBgView.layer.borderColor = [UIColor whiteColor].CGColor;
+    _originalX = 96;
+    CGFloat width = (KScreenWidth-192)/3;
+    _slideView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,width , 36)];
+    [self.switchBgView addSubview:_slideView];
+    _slideView.layer.cornerRadius = 18;
+    _slideView.clipsToBounds = YES;
+    _slideView.backgroundColor = rgba(255, 255, 255, 1);
+    UIButton *lastBtn;
+    for (int i=0; i<3; i++) {
+        UIButton *btn = [[UIButton alloc] init];
+        btn.tag = i;
+//        [self.switchBgView addSubview:btn];
+        [self.switchBgView insertSubview:btn atIndex:self.switchBgView.subviews.count -1];
+        if (lastBtn) {
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(lastBtn.mas_right);
+                make.top.mas_equalTo(self.switchBgView);
+                make.bottom.mas_equalTo(self.switchBgView);
+                make.width.mas_equalTo(width);
+            }];
+            lastBtn = btn;
+        }else{
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(self.switchBgView);
+                make.top.mas_equalTo(self.switchBgView);
+                make.bottom.mas_equalTo(self.switchBgView);
+                make.width.mas_equalTo(width);
+            }];
+            btn.selected = YES;
+            lastBtn = btn;
+        }
+        NSString *title = i == 0 ? @"月榜":@"周榜";
+        if (i==2) {
+            title = @"日榜";
+        }
+        [btn setTitle:title forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+        btn.backgroundColor = [UIColor clearColor];
+        [btn addTarget:self action:@selector(switchType:) forControlEvents:UIControlEventTouchUpInside];
+        [self.btnArray addObject:btn];
+    }
+    
+    [self.slideView.superview sendSubviewToBack:self.slideView];
+}
+
+- (void)switchType:(UIButton *)btn{
+    NSString *type = btn.tag == 0 ? @"month" : @"week";
+    if (btn.tag == 2) {
+        type = @"day";
+    }
+    for (UIButton *button in self.btnArray) {
+        if (button.tag != btn.tag) {
+            button.selected = NO;
+        }else{
+            button.selected = YES;
+        }
+    }
+    CGFloat width = (KScreenWidth-192)/3;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.slideView.superview sendSubviewToBack:self.slideView];
+        self.slideView.frame = CGRectMake(btn.tag * width, 0, width, 36);
+    }];
+    if (_switchRankType) {
+        _switchRankType(type);
+    }
 }
 
 
 - (void)setDataArray:(NSArray *)dataArray{
-    for (int i = 0; i < 3; i++) {
-        UIView *view1 = self.avatarImageViews[i];
-        UIView *view2 = self.infoLables[i];
-        LGButtont *view3 = self.bgimages[i];
-        UIView *view4 = self.nameLables[i];
-        UIView *view5 = self.levels[i];
-        UIView *view6 = self.sexs[i];
-        view1.hidden = YES;
-        view2.hidden = YES;
-        view3.hidden = YES;
-        view3.object = nil;
-        view4.hidden = YES;
-        view5.hidden = YES;
-        view6.hidden = YES;
-    }
-    
     
     _dataArray = dataArray;
-    for (int i = 0; i < dataArray.count; i++) {
-        
-        [self configHeadData:dataArray[i] avatarImageView:self.avatarImageViews[i] nameLable:self.nameLables[i] infoLabel:self.infoLables[i] bgImageView:self.bgimages[i] levelButton:self.levels[i] suerSexImageView:self.sexs[i]];
-        
+    if (dataArray.count == 0) {
+        return;
     }
     
-//    RankRowItem *rowItem1 = dataArray[0];
-//    [self.firstAvatar setHeader:rowItem1.avatar];
-//    self.firstName.text = rowItem1.user_nicename;
-//    [self confidata:rowItem1 infoLabel:self.firstInfoLabel];
-//
-//    RankRowItem *rowItem2 = dataArray[1];
-//    [self.secondAvatar setHeader:rowItem2.avatar];
-//    self.secondName.text = rowItem2.user_nicename;
-//    [self confidata:rowItem2 infoLabel:self.secondInfoLabel];
-//
-//
-//    RankRowItem *rowItem3 = dataArray[2];
-//    [self.theThirdAvatar setHeader:rowItem3.avatar];
-//    self.theThirdName.text = rowItem3.user_nicename;
-//    [self confidata:rowItem3 infoLabel:self.theThirdInfoLabel];
-    
-    
-}
-
-- (void)configHeadData:(RankRowItem *)item  avatarImageView:(UIImageView *)avatarImageView nameLable:(UILabel *)namelable infoLabel:(UILabel *)infoLabel bgImageView:(LGButtont *)bgImageView levelButton:(UIButton *)level suerSexImageView:(UIImageView *)sex{
-    
-    bgImageView.hidden = NO;
-    avatarImageView.hidden = NO;
-    infoLabel.hidden = NO;
-    namelable.hidden = NO;
-    level.hidden = NO;
-    sex.hidden = NO;
-    [avatarImageView setHeader:item.avatar];
-    bgImageView.object = item;
-    namelable.text = item.user_nicename;
-    [self confidata:item infoLabel:infoLabel];
-
-    [level setTitle:item.localProcessedUserLevel forState:UIControlStateNormal];
-    [level setBackgroundImage:[UIImage imageNamed:item.userLevelImageName] forState:UIControlStateNormal];
-    sex.image = [UIImage imageNamed:item.sex];
+    for (int i = 0; i < dataArray.count; i++) {
+        UIImageView *avatarImageView = self.avatarImageViews[i];
+        avatarImageView.hidden = NO;
+        UILabel *infoLabel = self.infoLables[i];
+        UILabel *nameLabel = self.nameLables[i];
+        UIButton *levelBtn = self.levels[i];
+        UIImageView *sexImgView = self.sexs[i];
+        UIView *stageView = self.bgStageImages[i];
+        stageView.hidden = NO;
+        UIImageView *crownImgView = self.crownImages[i];
+        crownImgView.hidden = NO;
+        RankRowItem *item = dataArray[i];
+        [avatarImageView setHeader:item.avatar];
+        nameLabel.text =  item.user_nicename;
+        [levelBtn setTitle:item.localProcessedUserLevel forState:UIControlStateNormal];
+        [self confidata:item infoLabel:infoLabel];
+        sexImgView.image = [UIImage imageNamed:item.sex];
+    }
 }
 
 - (void)confidata:(RankRowItem *)rankRowItem infoLabel:(UILabel *)infoLabel{

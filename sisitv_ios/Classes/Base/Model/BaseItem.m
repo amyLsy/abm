@@ -20,21 +20,21 @@
     if (userLevel.length>0) {
         NSInteger  level = userLevel.integerValue;
         if (level<1) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<6) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<11) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<16) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<21) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<31) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else if (level<41) {
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }else{
-            self.userLevelImageName = @"grade";
+            self.userLevelImageName = @"level";
         }
         _localProcessedUserLevel = [NSString stringWithFormat:@"  %@",userLevel];
     }else{
@@ -45,7 +45,7 @@
 
 -(NSString *)localProcessedUserLevel{
     if (!_localProcessedUserLevel) {
-        self.userLevelImageName = @"grade";
+        self.userLevelImageName = @"level";
         return @"  1";
     }
     return _localProcessedUserLevel;

@@ -27,6 +27,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self.avtar roundingImage];
+    self.rank.layer.cornerRadius = 7.5;
+    self.rank.clipsToBounds = YES;
     self.info.text = [NSString stringWithFormat:@"%@0",kBenefit];//源代码默认显示每条数据的具体值
 }
 
@@ -42,15 +44,7 @@
 {
     RankRowItem *rankRowItem = (RankRowItem *)item;
 
-    NSString *rankOrder = [NSString stringWithFormat:@"NO.%ld",indexPath.row +4];
-//    if (indexPath.row<=2) {
-//        [self.rank setImage:[UIImage imageNamed:rankOrder] forState:UIControlStateNormal];
-//        [self.rank setTitle:nil forState:UIControlStateNormal];
-//        self.topOfThreeRank.image = [UIImage imageNamed:[NSString stringWithFormat:@"第%ld名头像",indexPath.row +1]];
-//        self.avatrToLeft.constant = 20;
-//    }else{
-    
-        self.topOfThreeRank.image = nil;
+    NSString *rankOrder = [NSString stringWithFormat:@"%ld",indexPath.row +4];
         [self.rank setImage:nil forState:UIControlStateNormal];
         [self.rank setTitle:rankOrder forState:UIControlStateNormal];
         self.avatrToLeft.constant = 15;
@@ -58,7 +52,9 @@
     [self.avtar sd_setImageWithURL:rankRowItem.avatar];
     self.gender.image = [UIImage imageNamed:rankRowItem.sex];
     [self.level setTitle:rankRowItem.localProcessedUserLevel forState:UIControlStateNormal];
-    [self.level setBackgroundImage:[UIImage imageNamed:rankRowItem.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:rankRowItem.userLevelImageName] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
     self.name.text = rankRowItem.user_nicename;
     // 收益榜、打赏榜、智者榜每条数据的前缀描述文字
     if ([rankRowItem.type isEqualToString:@"benefit"]) {

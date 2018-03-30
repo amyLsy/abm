@@ -11,20 +11,23 @@
 #import "RankRowItem.h"
 
 typedef void (^LGHeadCallback)(RankRowItem *item);
-
+typedef void(^SwitchRankType)(NSString *type);
 @interface RankHeadView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *secondAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *secondName;
 @property (weak, nonatomic) IBOutlet UILabel *secondInfoLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *secondVIPImageView;
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *theThirdAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *theThirdName;
 @property (weak, nonatomic) IBOutlet UILabel *theThirdInfoLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *theThirdVIPImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *firstAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *firstName;
 @property (weak, nonatomic) IBOutlet UILabel *firstInfoLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *firstVIPImageView;
 
 
 
@@ -37,13 +40,15 @@ typedef void (^LGHeadCallback)(RankRowItem *item);
 @property (strong, nonatomic) NSArray *infoLables;
 @property (strong, nonatomic) NSArray *dataArray;
 @property (strong, nonatomic)  NSArray *avatarImageViews;
-@property (strong, nonatomic)  NSArray *bgimages;
+@property (strong, nonatomic)  NSArray *bgStageImages;
+@property (strong, nonatomic)  NSArray *vipImages;
+@property (strong, nonatomic)  NSArray *crownImages;
 
 @property (strong, nonatomic)  NSArray *sexs;
 @property (strong, nonatomic)  NSArray *levels;
 
 @property (copy, nonatomic) LGHeadCallback headCallback;
-
+@property (copy, nonatomic) SwitchRankType switchRankType;
 
 
 @end

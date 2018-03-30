@@ -64,7 +64,8 @@
 
 -(void)setInfomation:(id)infomation{
     Account *user = (Account *)infomation;
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar]];
+//    [self.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"defaultavatar"]];
     self.name.text = user.user_nicename;
     self.ID.text = [NSString stringWithFormat:@"ID: %@",user.ID];
     self.signature.text = user.signature;
@@ -76,7 +77,7 @@
     self.picImageLabel.text = user.photo_num;
     [self.bigImageView lg_setImageWithurl:user.background placeholderImage:[UIImage imageNamed:@"me_bg"]];
     [self.level setTitle:user.localProcessedUserLevel forState:UIControlStateNormal];
-    [self.level setBackgroundImage:[UIImage imageNamed:user.userLevelImageName] forState:UIControlStateNormal];
+//    [self.level setBackgroundImage:[UIImage imageNamed:user.userLevelImageName] forState:UIControlStateNormal];
     KWeakSelf;
     [[LeanCloudTool leanCloudTool] setUnreadCountBlock:^(NSInteger totalUnreadCount) {
         if (totalUnreadCount <=0) {

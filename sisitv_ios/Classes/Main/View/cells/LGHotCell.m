@@ -35,9 +35,9 @@
     self.zhibobutton.layer.masksToBounds = YES;
     
     self.avtar.layer.masksToBounds = YES;
-    self.avtar.layer.cornerRadius = 45.0/2;
-    self.avtar.layer.borderWidth = 1.0;
-    self.avtar.layer.borderColor = [kNavColor CGColor];
+    self.avtar.layer.cornerRadius = 20;
+//    self.avtar.layer.borderWidth = 1.0;
+//    self.avtar.layer.borderColor = [kNavColor CGColor];
     
 //    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.gimeTimeBgView.bounds byRoundingCorners: UIRectCornerBottomRight cornerRadii:CGSizeMake(5,2)];
 //
@@ -54,12 +54,12 @@
 
 + (CGSize)collectionView:(UICollectionView *)collectionView itemSizeForItem:(id)item{
     CGFloat widith = [YZGAppSetting sharedInstance].isBig == YES ? KScreenWidth:[YZGAppSetting sharedInstance].hotCellWidth;
-  
+    //lsy
     if ([YZGAppSetting sharedInstance].isBig == YES) {
-         return CGSizeMake(widith, 55 + widith);
+         return CGSizeMake(widith,  widith);
     }else{
         
-         return CGSizeMake(widith, 26 + widith);
+         return CGSizeMake(widith,  widith);
     }
     
    
@@ -76,29 +76,31 @@
 {
     
     
-    
+    //lsy 首页直播推荐cell
     if ([YZGAppSetting sharedInstance].isBig == YES) {
        
-        self.headViewHeightCons.constant =  55;
-        self.avtar.layer.cornerRadius = 45.0/2;
+        self.headViewHeightCons.constant =  50;
+        self.avtar.layer.cornerRadius = self.headViewHeightCons.constant/2;
         self.name.font = [UIFont systemFontOfSize:18];
         self.subTitle.font = [UIFont systemFontOfSize:15];
         self.people.font = [UIFont systemFontOfSize:15];
         self.location.font = [UIFont systemFontOfSize:14];
         self.title.font = [UIFont systemFontOfSize:20];
+        self.cityLabel.font = [UIFont systemFontOfSize:18];
         self.levelWidthCons.constant = 30;
         self.levelHeightCons.constant = 15;
         self.level.titleLabel.font = [UIFont systemFontOfSize:10];
         self.locationImageView.image = [UIImage imageNamed:@"定位直播"];
     }else{
             //小图
-        self.headViewHeightCons.constant=  36;
-        self.avtar.layer.cornerRadius = 26.0/2;
+        self.headViewHeightCons.constant =  40;
+        self.avtar.layer.cornerRadius = self.headViewHeightCons.constant/2;
         self.name.font = [UIFont systemFontOfSize:9];
         self.subTitle.font = [UIFont systemFontOfSize:7.5];
         self.people.font = [UIFont systemFontOfSize:7.5];
         self.location.font = [UIFont systemFontOfSize:7];
-        self.title.font = [UIFont systemFontOfSize:10];
+        self.title.font = [UIFont systemFontOfSize:12];
+        self.cityLabel.font = [UIFont systemFontOfSize:10];
         self.levelWidthCons.constant = 30 * 0.5;
         self.levelHeightCons.constant = 15 * 0.5;
         self.level.titleLabel.font = [UIFont systemFontOfSize:5];
@@ -108,6 +110,7 @@
 
     roomInfo = (RoomInfo *)item;
     
+    self.cityLabel.text = roomInfo.location;
     self.name.text =  roomInfo.user_nicename  ;
     [self.preImageView sd_setImageWithURL:roomInfo.smeta];
     [self.avtar sd_setImageWithURL:[NSURL URLWithString: roomInfo.avatar ]];
@@ -161,7 +164,9 @@
     
     [self.level setTitle:roomInfo.localProcessedUserLevel forState:UIControlStateNormal];
     
-    [self.level setBackgroundImage:[UIImage imageNamed:roomInfo.userLevelImageName] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:roomInfo.userLevelImageName] forState:UIControlStateNormal];
     
 }
 

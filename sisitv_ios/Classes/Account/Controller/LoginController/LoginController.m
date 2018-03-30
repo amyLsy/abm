@@ -16,6 +16,8 @@
 #import "RootTool.h"
 #import "YZGAppSetting.h"
 #import "ThirdLoginService.h"
+#import "RegiestController.h"
+#import "ForgetController.h"
 
 @interface LoginController ()
 
@@ -29,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *protocolButton;
 
 @property (nonatomic , copy) void(^successLogin)(void);
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *phoneLoginBtn;
 
 @end
 
@@ -42,7 +47,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     //检查是否上架
 //    KWeakSelf;
 //    [[YZGAppSetting sharedInstance] checkIsInAppleStore:^(BOOL isInAppStore) {
@@ -56,52 +61,34 @@
 //    }];
 //    self.thirdButtonView.hidden = NO;
 //    self.selectLoginType.hidden = NO;
-    
-    [_protocolButton setTitle:[NSString stringWithFormat:@"《%@注册协议》",[YZGAppSetting sharedInstance].appName] forState:UIControlStateNormal];
-    [_protocolButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"手机号登陆/注册"];
-    NSRange strRange = {0,[str length]};
-    [str addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:strRange];
-    [str addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:strRange];
-    [_phone setAttributedTitle:str forState:UIControlStateNormal];
-    
-    //logo
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(KScreenWidth/2.0-60, 100, 120, 120)];
-    imageView.layer.cornerRadius = 30;
-    [imageView.layer masksToBounds];
-    imageView.clipsToBounds = YES;//切图
-    imageView.image = [UIImage imageNamed:@"icon"];
-    [self.view addSubview:imageView];
-    
-    //第三方登录
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, KScreenHeight-250, KScreenWidth, 20)];
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"请选择第三方登录方式";
-    label.font = [UIFont systemFontOfSize:14];
-    [self.view addSubview:label];
-    
-    //1/6  2/9
-    NSArray *titles = @[@"组-iconfont-weixin",@"组-iconfont-QQ"];
-    float kBtnw = (KScreenWidth*2/9.0);
-    for (int i=0; i<titles.count; i++) {
-        
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(KScreenWidth/2.0-kBtnw+kBtnw*i,KScreenHeight- 200, kBtnw, 60)];
-        [button setImage:[UIImage imageNamed:titles[i]] forState:0];
-        [self.view addSubview:button];
-        button.tag = 1000+i;
-        [button addTarget:self action:@selector(isThirdLogin:) forControlEvents:UIControlEventTouchUpInside];
-        
+}
+- (IBAction)phoneLoginBtnAction:(id)sender {
+    if (self.phoneNumTextField.text.length == 0) {
+        [AlertTool ShowErrorInView:self.view withTitle:@"请输入手机号！"];
+        return;
     }
-
+    if (self.passwordTextField.text.length == 0) {
+        [AlertTool ShowErrorInView:self.view withTitle:@"密码"];
+        return;
+    }
+    [AlertTool ShowInView:self.view withTitle:@"正在登录"];
+    AccountParam *param = [[AccountParam alloc]init];
+    param.mobile_num = self.phoneNumTextField.text;
+    param.password = self.passwordTextField.text;
+    KWeakSelf;
+    [[Account shareInstance] loginWithParam:param success:^(BOOL successGetInfo,id responseObj){
+        if (!successGetInfo) {
+            [AlertTool ShowErrorInView:ws.view withTitle:responseObj];
+        }else{
+            ws.successLogin();
+            [ws dismissViewControllerAnimated:NO completion:nil];
+        }
+    }];
 }
 
-
-- (void)isThirdLogin:(UIButton *)sender
-{
+- (IBAction)wechatLoginAction:(id)sender {
     
+    //lsy
     [AlertTool ShowInView:self.view withTitle:@"正在登录"];
     [[ThirdLoginService sharedInstance] wechatLogin:^(BOOL success, ShareParam *reqParam) {
         if (!success) {
@@ -117,55 +104,44 @@
             }
         }];
     }];
-    /*
-    [YZGShare loginWithPlatformType:sender.tag-998 success:^(id responseObj, BOOL successGetInfo){
-        if (successGetInfo){
-            [YZGShare sendOauthUserInfoWithParam:responseObj success:^(id response, BOOL successGetInfo) {
-                if (successGetInfo) {
-                    [AlertTool Hidden];
-                    self.successLogin();
-                }else{
-                    [AlertTool ShowErrorInView:self.view withTitle:response];
-                }
-            }];
-        }else{
-            [AlertTool ShowErrorInView:self.view withTitle:responseObj];
-        }
-    }];
-     */
-    
 }
-
-
-- (IBAction)phone:(id)sender {
-    PhoneLoginController *phoneLogin = [[PhoneLoginController alloc] initWithSuccessLogin:self.successLogin];
-    [self presentNeedNavgation:YES hadLeftBackButton:YES presentendViewController:phoneLogin];
-}
-
-- (IBAction)protocol:(id)sender {
-    BaseWebViewController *web = [[BaseWebViewController alloc]init];
-    web.title = @"用户注册协议";
-    NSString *url = [YZGAppSetting sharedInstance].appUrl;
-    web.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/portal/page/index/id/2",url]];
-    [self presentNeedNavgation:YES hadLeftBackButton:YES presentendViewController:web];
-}
-
-- (IBAction)thirdLogin:(UIButton *)sender {
+- (IBAction)qqLoginAction:(id)sender {
     [AlertTool ShowInView:self.view withTitle:@"正在登录"];
-    [YZGShare loginWithPlatformType:sender.tag success:^(id responseObj, BOOL successGetInfo){
-        if (successGetInfo){
-            [YZGShare sendOauthUserInfoWithParam:responseObj success:^(id response, BOOL successGetInfo) {
-                if (successGetInfo) {
-                    [AlertTool Hidden];
-                    self.successLogin();
-                }else{
-                    [AlertTool ShowErrorInView:self.view withTitle:response];
-                }
-            }];
-        }else{
-            [AlertTool ShowErrorInView:self.view withTitle:responseObj];
+    [[ThirdLoginService sharedInstance] qqlogin:^(BOOL success, ShareParam *reqParam) {
+        
+        if (!success) {
+            [AlertTool ShowErrorInView:self.view withTitle:@"QQ登录失败"];
+            return ;
         }
+        [YZGShare sendOauthUserInfoWithParam:reqParam success:^(id response, BOOL successGetInfo) {
+            if (successGetInfo) {
+                [AlertTool Hidden];
+                self.successLogin();
+            }else{
+                [AlertTool ShowErrorInView:self.view withTitle:response];
+            }
+        }];
     }];
 }
+- (IBAction)zhuceBtnAction:(id)sender {
+    RegiestController *regeist = [[RegiestController alloc]init];
+    [self presentNeedNavgation:YES hadLeftBackButton:YES presentendViewController:regeist];
+}
+- (IBAction)forgetPwdBtnAction:(id)sender {
+    
+    ForgetController *forget = [[ForgetController alloc]init];
+    [self presentNeedNavgation:YES hadLeftBackButton:YES presentendViewController:forget];
+}
+
+
+
+//- (IBAction)protocol:(id)sender {
+//    BaseWebViewController *web = [[BaseWebViewController alloc]init];
+//    web.title = @"用户注册协议";
+//    NSString *url = [YZGAppSetting sharedInstance].appUrl;
+//    web.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/portal/page/index/id/2",url]];
+//    [self presentNeedNavgation:YES hadLeftBackButton:YES presentendViewController:web];
+//}
+
 
 @end

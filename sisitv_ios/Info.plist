@@ -47,7 +47,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1105785975</string>
+				<string>tencent1106808280</string>
 			</array>
 		</dict>
 		<dict>
@@ -61,6 +61,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>zhibomei</string>
 			<key>CFBundleURLSchemes</key>
 			<array/>
 		</dict>

@@ -50,7 +50,7 @@
     [self creatWindow];
     
     [self regeistLeanCould];
-
+    
     [self regeistShare];
     
     [[RootTool sharedInstance] showAdvertWithTimeInterval:1.0 disappearHandler:^{
@@ -67,8 +67,8 @@
     //推送相关
     [self regeistNotification];
     ///异常捕获
-//    InstallUncaughtExceptionHandler();
-//    [self redirectNSlogToDocumentFolder];
+    //    InstallUncaughtExceptionHandler();
+    //    [self redirectNSlogToDocumentFolder];
     return YES;
 }
 
@@ -121,9 +121,9 @@
 
 - (void)guideInfo{
     
-//    if ([Account shareInstance].firstRegister == YES) {
-//        
-//    }
+    //    if ([Account shareInstance].firstRegister == YES) {
+    //
+    //    }
     
     
 }
@@ -169,7 +169,7 @@
 }
 
 -(void)chooseRootController{
-   RootTool *rootTool = [RootTool sharedInstance];
+    RootTool *rootTool = [RootTool sharedInstance];
     rootTool.delegate = self;
     [rootTool chooseRootController];
 }
@@ -188,20 +188,32 @@
 //openurl
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
     if ([[url scheme] hasPrefix:@"wx"]){
-        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
+        //        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+    }
+    
+    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
+        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
     }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     
     if ([[url scheme] hasPrefix:@"wx"]){
-        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
+    }
+    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
+        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
     }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     if ([[url scheme] hasPrefix:@"wx"]){
-        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
+        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
+    }
+    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
+        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
     }
     return [[YZGPay shareInstance] handleOpenURL:url];
 }
@@ -218,3 +230,4 @@
 }
 
 @end
+

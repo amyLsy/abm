@@ -70,7 +70,9 @@
     self.gender.image = [UIImage imageNamed:_user.sex];
     self.name.text = _user.user_nicename;
     [self.level setTitle: _user.localProcessedUserLevel forState:UIControlStateNormal];
-    [self.level setBackgroundImage:[UIImage imageNamed:_user.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:_user.userLevelImageName] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
     self.userId.text = [NSString stringWithFormat:@"ID: %@",_user.ID];
     self.signature.text = _user.signature;
     self.signatureView.layer.cornerRadius = self.signatureView.height/3.0;

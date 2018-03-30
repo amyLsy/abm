@@ -27,13 +27,12 @@
     self.nameLabel.text = mode.user_nicename;
     self.singLable.text = mode.signature;
     if (mode.sex == 1) {
-        self.sexImageView.image = [UIImage imageNamed:@"男"];
+        self.sexImageView.image = [UIImage imageNamed:@"boy"];
     }else{
-         self.sexImageView.image = [UIImage imageNamed:@"女"];
-        
+         self.sexImageView.image = [UIImage imageNamed:@"nv"];
     }
     
-    self.levelLabel.text = [NSString stringWithFormat:@"等级:%@",mode.user_level];
+    self.levelLabel.text = [NSString stringWithFormat:@"%@",mode.user_level];
     
     
 }

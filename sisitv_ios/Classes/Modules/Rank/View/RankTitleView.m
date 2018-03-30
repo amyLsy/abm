@@ -19,6 +19,8 @@
     [self layoutIfNeeded];
     [self layoutSubviews];
     self.buttonArray = self.xibButtonArray;
+//    self.selectedColor = RGBToColor(158, 128, 120);
+    self.selectedColor = rgba(158, 128, 120, 1);
 }
 
 @end

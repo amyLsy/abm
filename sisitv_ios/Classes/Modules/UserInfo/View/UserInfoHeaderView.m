@@ -68,7 +68,9 @@
     self.image.text = user.photo_num;
     [self.backgroundImageView lg_setImageWithurl:user.background placeholderImage:nil];
     [self.level setTitle:user.localProcessedUserLevel forState:UIControlStateNormal];
-    [self.level setBackgroundImage:[UIImage imageNamed:user.userLevelImageName] forState:UIControlStateNormal];
+    [self.level setImage:[UIImage imageNamed:user.userLevelImageName] forState:UIControlStateNormal];
+    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
+    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     if ([user.channel_status isEqualToString:@"正在直播"]) {
         self.livingStatus.hidden = NO;
         [self.livingStatus setTitle:user.channel_status forState:UIControlStateNormal];

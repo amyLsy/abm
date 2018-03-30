@@ -52,7 +52,7 @@
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Showing/Model/ShowControl.m"
-                  timestampString = "543836908.59612"
+                  timestampString = "544007987.974465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
@@ -67,7 +67,7 @@
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Showing/Model/ShowControl.m"
-                  timestampString = "543836908.60071"
+                  timestampString = "544007987.977648"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -148,23 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.233301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "-didSelectItem:atIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.233773"
+            timestampString = "543924409.551044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
@@ -180,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.2341059"
+            timestampString = "543924409.551126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "305"
@@ -291,54 +275,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.23475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-configForRequest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.235075"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-configForRequest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Main/Controller/MainHotController.m"
-            timestampString = "543837006.2355829"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-configForRequest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "sisitv_ios/Classes/Base/Model/YZGListModel.m"
             timestampString = "543827481.799486"
             startingColumnNumber = "9223372036854775807"
@@ -356,7 +292,7 @@
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Base/Model/YZGListModel.m"
-                  timestampString = "543836908.710959"
+                  timestampString = "544007988.0756691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -371,7 +307,7 @@
                   moduleName = "sisitv_ios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Base/Model/YZGListModel.m"
-                  timestampString = "543836908.714766"
+                  timestampString = "544007988.0811549"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -387,46 +323,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "sisitv_ios/Classes/Account/Controller/LoginController/LoginController.m"
-            timestampString = "543837006.236166"
+            filePath = "sisitv_ios/Classes/Main/Model/LGHotDataSource.m"
+            timestampString = "543923823.612684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-isThirdLogin:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-collectionView:cellClassForItem:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[LoginController isThirdLogin:]_block_invoke"
-                  moduleName = "sisitv_ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Account/Controller/LoginController/LoginController.m"
-                  timestampString = "543836908.7272151"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[LoginController isThirdLogin:]_block_invoke_2"
-                  moduleName = "sisitv_ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/zhibomei1/abm/sisitv_ios/Classes/Account/Controller/LoginController/LoginController.m"
-                  timestampString = "543836908.730482"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sisitv_ios/Classes/Main/Model/LGHotDataSource.m"
+            timestampString = "543923831.581104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-collectionView:cellClassForItem:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

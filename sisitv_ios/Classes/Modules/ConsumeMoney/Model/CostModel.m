@@ -13,7 +13,8 @@
 +(void)getDiamondListSuccess:(void (^)(BOOL, NSArray *))succcess{
     
     [HttpTool requestWithUrlFlag:HttpRequsetUrlFlagGet_recharge_package param:nil success:^(id responseObject) {
-        BOOL isSuccess;NSLog(@"==%@", responseObject);
+        BOOL isSuccess;
+        NSLog(@"==%@", responseObject);
         id result;
         if ([responseObject[@"code"] isEqual:@200]) {
             isSuccess = YES;

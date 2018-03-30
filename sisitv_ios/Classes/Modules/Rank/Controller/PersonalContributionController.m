@@ -12,14 +12,8 @@
 #import "RankListModel.h"
 #import "RankHeadView.h"
 @interface PersonalContributionController ()
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segementControl;
-
 @property (nonatomic , copy) NSString *ID;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *segentHeight;
-
 @property (strong, nonatomic)  RankHeadView *headView;
-
 @end
 
 @implementation PersonalContributionController
@@ -35,17 +29,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"贡献榜";
-    CGFloat y = self.segentHeight.constant;
-    self.tableView.frame = CGRectMake(0, y, KScreenWidth, KOnlyHadNavBarViewHeight - y );
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KOnlyHadNavBarViewHeight);
 //    self.segementControl.tintColor = kNavColor;
-    [self cliclSegment:self.segementControl];
+//    [self cliclSegment:nil];
+    
+    [self requestHttpWithType:@"month"];
     [self addheadView];
 }
 
 
 - (void)addheadView{
     self.headView = [RankHeadView viewFromeNib];
-    self.headView.frame = CGRectMake(0, 0, 100, 200);
+    self.headView.frame = CGRectMake(0, 0, 100, 245);
     KWeakSelf;
     self.headView.headCallback = ^(RankRowItem *item) {
         UserInfoController *userInfo = [[UserInfoController alloc]init];
@@ -53,6 +48,16 @@
         [ws presentNeedNavgation:NO presentendViewController:userInfo];
     };
     self.tableView.tableHeaderView = self.headView;
+    
+    self.headView.switchRankType = ^(NSString *type) {
+        [ws requestHttpWithType:type];
+    };
+}
+
+- (void)requestHttpWithType:(NSString *)type{
+    RankListParam *rankListParam = [[RankListParam alloc] initWithId:self.ID type:type order:nil];
+    self.listModel.listParam = rankListParam;
+    [self.tableView yzgStartRefreshing];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -65,14 +70,15 @@
 - (IBAction)cliclSegment:(UISegmentedControl *)segment{
     NSString *type;
     if (segment.selectedSegmentIndex ==0) {
-        type = @"all";
-    }else if (segment.selectedSegmentIndex ==1){
+//        type = @"all";
         type = @"month";
-    }else if (segment.selectedSegmentIndex ==2){
+    }else if (segment.selectedSegmentIndex ==1){
         type = @"week";
-    }else{
+    }else if (segment.selectedSegmentIndex ==2){
         type = @"day";
+    }else{
     }
+    type = @"month";
     RankListParam *rankListParam = [[RankListParam alloc] initWithId:self.ID type:type order:nil];
     self.listModel.listParam = rankListParam;
     [self.tableView yzgStartRefreshing];

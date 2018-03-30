@@ -21,7 +21,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-Nz-MzD">
                     <rect key="frame" x="148" y="39" width="75" height="75"/>
-                    <state key="normal" backgroundImage="home_popup_live"/>
+                    <state key="normal" backgroundImage="commence_live"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abx-Vi-a1K">
                     <rect key="frame" x="33" y="39.5" width="75" height="75"/>
@@ -29,11 +29,11 @@
                         <constraint firstAttribute="height" constant="75" id="8tx-Or-cTx"/>
                         <constraint firstAttribute="width" constant="75" id="aUg-EF-nh9"/>
                     </constraints>
-                    <state key="normal" backgroundImage="home_popup_video"/>
+                    <state key="normal" backgroundImage="commence_video"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfH-0r-P6v">
                     <rect key="frame" x="263" y="39" width="75" height="75"/>
-                    <state key="normal" backgroundImage="home_popup_picture"/>
+                    <state key="normal" backgroundImage="commence_picture"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLZ-sN-HBc">
                     <rect key="frame" x="272" y="119.5" width="58" height="17"/>
@@ -64,7 +64,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="GLZ-sN-HBc" firstAttribute="centerX" secondItem="nfH-0r-P6v" secondAttribute="centerX" id="2Z9-AG-VYA"/>
                 <constraint firstItem="GLZ-sN-HBc" firstAttribute="centerY" secondItem="5ye-h1-73m" secondAttribute="centerY" id="7vv-Bs-qR0"/>
@@ -100,8 +100,8 @@
     </objects>
     <resources>
         <image name="commence_close" width="24" height="24"/>
-        <image name="home_popup_live" width="47" height="47"/>
-        <image name="home_popup_picture" width="47" height="47"/>
-        <image name="home_popup_video" width="47" height="47"/>
+        <image name="commence_live" width="55" height="55"/>
+        <image name="commence_picture" width="55" height="55"/>
+        <image name="commence_video" width="55" height="55"/>
     </resources>
 </document>

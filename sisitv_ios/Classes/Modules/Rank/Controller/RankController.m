@@ -74,13 +74,19 @@
 
 -(void)addChildController{// 增加子类控制器？左右滑动、下滑框内显示
     IncomeRankController *income = [[IncomeRankController alloc]init];// 收益榜
+    income.type = @"benefit";
      [self addChildViewController:income];
     
-    ContributionController *contribution = [[ContributionController alloc]init];// 打赏榜
+    IncomeRankController *contribution = [[IncomeRankController alloc]init];
+//    ContributionController *contribution = [[ContributionController alloc]init];// 打赏榜
+    contribution.type = @"contribution";
      [self addChildViewController:contribution];
     
-    WiseRankController *wiskrank = [[WiseRankController alloc]init];//新增独立智者榜
-     [self addChildViewController:wiskrank];
+    IncomeRankController *wiserank = [[IncomeRankController alloc]init];
+//    WiseRankController *wiskrank = [[WiseRankController alloc]init];//新增独立智者榜
+    
+    wiserank.type = @"wiserank";
+     [self addChildViewController:wiserank];
 }
 
 #pragma mark - <UIScrollViewDelegate>

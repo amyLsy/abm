@@ -24,9 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CGFloat y = self.segentHeight.constant;
-    self.tableView.frame = CGRectMake(0, y, KScreenWidth, KOnlyHadNavBarViewHeight - y );
+    self.tableView.frame = CGRectMake(0, 0, KScreenWidth, KOnlyHadNavBarViewHeight);
 //    self.segementControl.tintColor = kNavColor;
-    [self cliclSegment:self.segementControl];
+//    [self cliclSegment:self.segementControl];
+    [self requestHttpWithType:_type order:@"month"];
     
     [self addheadView];
 }
@@ -35,7 +36,7 @@
     
     
     self.headView = [RankHeadView viewFromeNib];
-    self.headView.frame = CGRectMake(0, 0, 100, 200);
+    self.headView.frame = CGRectMake(0, 0, 100, 245);
     KWeakSelf;
     self.headView.headCallback = ^(RankRowItem *item) {
         
@@ -45,21 +46,57 @@
         
     };
     self.tableView.tableHeaderView = self.headView;
+    self.headView.switchRankType = ^(NSString *type) {
+        [ws requestHttpWithType:ws.type order:type];
+    };
     
 }
+
+- (void)requestHttpWithType:(NSString *)type order:(NSString *)order{
+    RankListParam *rankListParam = [[RankListParam alloc] initWithId:nil type:type order:order];
+    self.listModel.listParam = rankListParam;
+    [self.tableView yzgStartRefreshing];
+}
+
 /**（总榜all/月榜month/周榜week/日榜day）*/
 - (IBAction)cliclSegment:(UISegmentedControl *)segment{
+    
     NSString *order;
-    if (segment.selectedSegmentIndex ==0) {
-        order = @"all";
-    }else if (segment.selectedSegmentIndex ==1){
-        order = @"month";
-    }else if (segment.selectedSegmentIndex ==2){
-        order = @"week";
-    }else{
-        order = @"day";
+    
+    if ([_type isEqualToString:@"benefit"]) {
+        if (segment.selectedSegmentIndex ==0) {
+            order = @"all";
+        }else if (segment.selectedSegmentIndex ==1){
+            order = @"month";
+        }else if (segment.selectedSegmentIndex ==2){
+            order = @"week";
+        }else{
+            order = @"day";
+        }
+    }else if ([_type isEqualToString:@"contribution"]){
+        
+        if (segment.selectedSegmentIndex ==0) {
+            order = @"all";
+        }else if (segment.selectedSegmentIndex ==1){
+            order = @"month";
+        }else if (segment.selectedSegmentIndex ==2){
+            order = @"week";
+        }else{
+            order = @"day";
+        }
+    }else{//wiserank
+        
+        if (segment.selectedSegmentIndex ==0) {
+            order = @"month";//0对应月
+        }else if (segment.selectedSegmentIndex ==1){
+            order = @"week";//1对应周
+        }else if (segment.selectedSegmentIndex ==2){
+            order = @"day";//2对应日
+        }else{//智者榜没有总榜
+            order = @"all";
+        }
     }
-    RankListParam *rankListParam = [[RankListParam alloc] initWithId:nil type:@"benefit" order:order];
+    RankListParam *rankListParam = [[RankListParam alloc] initWithId:nil type:_type order:order];
     self.listModel.listParam = rankListParam;
     [self.tableView yzgStartRefreshing];
 }

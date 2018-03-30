@@ -140,7 +140,9 @@
                 
               _headView.isLiveBtton.hidden = YES;
             }
-            [_headView.level setBackgroundImage:[UIImage imageNamed:userModel.userLevelImageName] forState:UIControlStateNormal];
+            [_headView.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+            [_headView.level setImage:[UIImage imageNamed:userModel.userLevelImageName] forState:UIControlStateNormal];
+            _headView.level.titleLabel.font = [UIFont systemFontOfSize:10];
             [_headView.level setTitle:userModel.user_level forState:UIControlStateNormal];
             
             [_headView.videoBUtton setTitle:[NSString stringWithFormat:@"视频%@",userModel.video_num] forState:UIControlStateNormal];
