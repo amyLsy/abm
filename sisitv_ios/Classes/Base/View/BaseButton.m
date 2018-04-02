@@ -48,6 +48,7 @@
         CGFloat titleH = self.titleLabel.height;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.frame = CGRectMake(titleX, titleY, titleW, titleH);
+        self.titleLabel.numberOfLines = 0;
     }
 }
 

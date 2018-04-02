@@ -110,16 +110,20 @@ static NSString *commentHFViewID = @"replyCellID";
     /**
      *  背景图片
      */
-    imageView.image = [UIImage imageNamed:@"comment-bar-bg"];
+//    imageView.image = [UIImage imageNamed:@"comment-bar-bg"];
+    imageView.backgroundColor = rgba(175, 174, 175, 1);
     UITextField *textField = [[UITextField alloc] init];
-    textField.placeholder = @"我来说两句";
-    textField.backgroundColor = [UIColor whiteColor];
-    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"有爱评论，说点好听的~";
+    textField.font = [UIFont systemFontOfSize:14];
+    textField.backgroundColor = [UIColor clearColor];
+    textField.borderStyle = UITextBorderStyleNone;
     
     //按钮
     LGButtont *sendButton = [LGButtont buttonWithType:UIButtonTypeCustom];
-    [sendButton setImage:[UIImage imageNamed:@"comment_send_icon"] forState:UIControlStateNormal];
-    
+//    [sendButton setImage:[UIImage imageNamed:@"comment_send_icon"] forState:UIControlStateNormal];
+    [sendButton setTitle:@"发送" forState:UIControlStateNormal];
+    sendButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    [sendButton setBackgroundColor:rgba(136, 84, 237, 1)];
     [self.view addSubview:commentView];
     [commentView addSubview:imageView];
     [commentView addSubview:textField];
@@ -136,6 +140,16 @@ static NSString *commentHFViewID = @"replyCellID";
         
         make.left.top.right.bottom.mas_equalTo(commentView);
     }];
+    
+    [sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+//        make.size.mas_equalTo(CGSizeMake(comHeight, comHeight));
+        make.top.mas_equalTo(commentView);
+        make.bottom.mas_equalTo(commentView).offset(0);
+        make.right.mas_equalTo(commentView).offset(0);
+        make.width.mas_equalTo(60);
+    }];
+    
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.height.equalTo(@(comHeight - 2 * 5));
@@ -145,12 +159,6 @@ static NSString *commentHFViewID = @"replyCellID";
         make.left.mas_equalTo(commentView.mas_left).offset(10);
     }];
     
-    [sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.size.mas_equalTo(CGSizeMake(comHeight, comHeight));
-        make.bottom.mas_equalTo(commentView).offset(0);
-        make.right.mas_equalTo(commentView).offset(-10);
-    }];
     
     
     [sendButton addTarget:self action:@selector(sendComments:) forControlEvents:UIControlEventTouchUpInside];
@@ -330,13 +338,13 @@ static NSString *commentHFViewID = @"replyCellID";
 }
 
 //计算行高
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LGComment *comment = self.comments[indexPath.row];
-
-   
-    //返回计算的行高
-    return comment.rowHeght;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    LGComment *comment = self.comments[indexPath.row];
+//
+//   
+//    //返回计算的行高
+//    return comment.rowHeght;
+//}
 //点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

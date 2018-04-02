@@ -17,7 +17,7 @@ static NSString *const kAppUpDateCurrentPosition = @"appUpDateCurrentPosition";
 /**
  APP在itunes的appId
  */
-static NSString *const AppleIdInItunes = @"11946";
+static NSString *const AppleIdInItunes = @"1292538675";
 /**
  APP Url 91pgxj.com www.91yeyan.com
  APP Api

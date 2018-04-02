@@ -71,8 +71,8 @@
 #define kNavColor rgba(255, 77, 86, 1)
 #define kNavDarkColor ([UIColor colorWithHexString:@"6b2a84"])
 
-#define kBalance (@"活力")//全局文字
-#define kBenefit (@"智力")//全局文字
+#define kBalance (@"媚力")//全局文字
+#define kBenefit (@"美美")//全局文字
 #define kTitle (@"题")//全局文字
 
 

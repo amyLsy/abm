@@ -60,12 +60,13 @@
     KWeakSelf;
     if (![Account shareInstance].token)
     {
-        [self.delegate rootToolExitSuccess:ws];
         
         LoginController *login = [[LoginController alloc] initWithSuccessLogin:^{
             [ws.delegate rootToolLoginSuccess:ws];
         }];
+        
         self.rootWindow.rootViewController = login;
+        [self.delegate rootToolExitSuccess:ws];
     }else{
         [self.delegate rootToolLoginSuccess:ws];
     }

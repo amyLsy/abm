@@ -36,22 +36,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view from its nib.
-    self.confirmButton.backgroundColor = [UIColor darkGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
      UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(varCodeLabelClick)];
     [self.varCodeLabel addGestureRecognizer:tagGesture];
     [self setLayOut];
     self.navigationItem.title = @"忘记密码";
-    [self viewSetAtt:self.phoneNumber withImageName:@"手机号" placeholderString:@"请输入手机号" color:[UIColor lightGrayColor] font:13];
-    [self viewSetAtt:self.password withImageName:@"验证码" placeholderString:@"请输入密码" color:[UIColor lightGrayColor] font:13];
-    [self viewSetAtt:self.rePassword withImageName:@"验证码" placeholderString:@"请输入新密码" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.phoneNumber withImageName:@"login_user" placeholderString:@"请输入手机号" color:[UIColor lightGrayColor] font:13];
+    [self textFiledSetLeftView:self.varCode withImageName:@"registration_captcha" placeholderString:@"请输入验证码" color:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13]];
+    [self viewSetAtt:self.password withImageName:@"registration_password" placeholderString:@"请输入新密码" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.rePassword withImageName:@"registration_password" placeholderString:@"请确认新密码" color:[UIColor lightGrayColor] font:13];
     [self viewSetAtt:self.varCodeView withImageName:nil placeholderString:nil color:[UIColor whiteColor] font:13];
 
-    [self textFiledSetLeftView:self.varCode withImageName:@"验证码" placeholderString:@"请输入验证码" color:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13]];
     [YZGAppSetting sharedInstance].isAutoUpSpring = YES;
-    self.codeLabel.textColor = [UIColor darkGrayColor];
-    self.sepView.backgroundColor = [UIColor darkGrayColor];
 }
 
 
@@ -78,7 +74,7 @@
     self.phoneHeight.constant = self.phoneHeight.constant *KHeightScale;
     self.phoneToLeft.constant = self.phoneToLeft.constant *KWidthScale;
     self.phoneToRight.constant = self.phoneToRight.constant *KWidthScale;
-    self.confirmButton.layer.cornerRadius = 5;
+//    self.confirmButton.layer.cornerRadius = 5;
     self.varCodeLabel.layer.cornerRadius = 5;
     self.varCodeLabel.layer.masksToBounds = YES;
 }
@@ -86,6 +82,7 @@
 -(void)varCodeLabelClick
 {
     if (!self.phoneNumber.text.length) {
+        [AlertTool ShowErrorInView:self.view withTitle:@"请先输入手机号"];
         return;
     }
     AccountParam *param = [[AccountParam alloc]init];
@@ -102,6 +99,20 @@
 
 
 - (IBAction)confirmButtonClick {
+    
+    if (self.password.text.length == 0) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"别忘了填写密码哦~" hiddenAfter:1.0];
+        return;
+    }
+    if (![self.password.text isEqualToString:self.rePassword.text]) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"两次输入的密码不一致哦~" hiddenAfter:1.0];
+        return;
+    }
+    if (self.varCode.text.length == 0) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"别忘了填写验证码哦~" hiddenAfter:1.0];
+        return;
+    }
+    
     AccountParam *param = [[AccountParam alloc]init];
     param.mobile_num = self.phoneNumber.text;
     param.password = self.password.text;

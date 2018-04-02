@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *phoneToLeft;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *phoneHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *phoneToRight;
+@property (weak, nonatomic) IBOutlet UITextField *againPwdTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *passTextFlied;
@@ -41,8 +42,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.regeistButton setBackgroundImage:[UIImage imageNamed:@"login_bt_press"] forState:UIControlStateSelected];
-    
     [self.regeistButton setTitleColor:[UIColor whiteColor] forState: UIControlStateNormal];
     
     UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(varCodeLabelClick)];
@@ -50,18 +49,18 @@
     [self setLayOut];
     self.navigationItem.title = @"注册";
     [self viewSetAtt:self.phoneTextFiled withImageName:@"login_user" placeholderString:@"请输入手机号" color:[UIColor lightGrayColor] font:13];
-    [self viewSetAtt:self.passTextFlied withImageName:@"registration_password" placeholderString:@"请输入密码" color:[UIColor lightGrayColor] font:13];
-      [self viewSetAtt:self.InviteCodeTextField withImageName:@"registration_invitation" placeholderString:@"请输入邀请码(可选)" color:[UIColor lightGrayColor] font:13];
-    [self viewSetAtt:self.varCodeView withImageName:nil placeholderString:nil color:[UIColor lightGrayColor] font:13];
-
     [self textFiledSetLeftView:self.varcode withImageName:@"registration_captcha" placeholderString:@"请输入验证码" color:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:13]];
+    [self viewSetAtt:self.passTextFlied withImageName:@"registration_password" placeholderString:@"请设置密码" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.againPwdTextField withImageName:@"registration_password" placeholderString:@"请确认密码" color:[UIColor lightGrayColor] font:13];
+      [self viewSetAtt:self.InviteCodeTextField withImageName:@"registration_invitation" placeholderString:@"填写邀请码(可选)" color:[UIColor lightGrayColor] font:13];
+    [self viewSetAtt:self.varCodeView withImageName:nil placeholderString:nil color:[UIColor lightGrayColor] font:13];
     self.agreeProtocolButton.selected = YES;
     [YZGAppSetting sharedInstance].isAutoUpSpring = YES;
-    
-    [self.protocalButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.varCodeLabel.textColor = [UIColor darkGrayColor];
-    self.sepView.backgroundColor = [UIColor darkGrayColor];
 
+}
+- (IBAction)backBtnAction:(id)sender {
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -88,7 +87,7 @@
     self.phoneHeight.constant = self.phoneHeight.constant *KHeightScale;
     self.phoneToLeft.constant = self.phoneToLeft.constant *KWidthScale;
     self.phoneToRight.constant = self.phoneToRight.constant *KWidthScale;
-    self.regeistButton.layer.cornerRadius = 5;
+//    self.regeistButton.layer.cornerRadius = 5;
     self.varCodeLabel.layer.cornerRadius = 5;
     self.varCodeLabel.layer.masksToBounds = YES;
 }
@@ -110,10 +109,23 @@
 
 - (IBAction)regeist:(UIButton *)sender
 {
-    if (!self.agreeProtocolButton.isSelected) {
-        [AlertTool ShowInView:self.view onlyWithTitle:@"请同意用户注册协议" hiddenAfter:1.0];
+//    if (!self.agreeProtocolButton.isSelected) {
+//        [AlertTool ShowInView:self.view onlyWithTitle:@"请同意用户注册协议" hiddenAfter:1.0];
+//        return;
+//    }
+    if (self.passTextFlied.text.length == 0) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"别忘了填写密码哦~" hiddenAfter:1.0];
         return;
     }
+    if (![self.passTextFlied.text isEqualToString:self.againPwdTextField.text]) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"两次输入的密码不一致哦~" hiddenAfter:1.0];
+        return;
+    }
+    if (self.varcode.text.length == 0) {
+        [AlertTool ShowInView:self.view onlyWithTitle:@"别忘了填写验证码哦~" hiddenAfter:1.0];
+        return;
+    }
+    
     AccountParam *param = [[AccountParam alloc]init];
     param.mobile_num = self.phoneTextFiled.text;
     param.password = self.passTextFlied.text;
@@ -144,6 +156,7 @@
 -(void)varCodeLabelClick
 {
     if (!self.phoneTextFiled.text.length) {
+        [AlertTool ShowErrorInView:self.view withTitle:@"请先输入手机号"];
         return;
     }
     AccountParam *param = [[AccountParam alloc]init];

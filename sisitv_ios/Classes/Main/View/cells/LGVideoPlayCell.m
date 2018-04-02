@@ -61,22 +61,20 @@
     if (model.is_like == 1) {
         self.likeImageView.image = [UIImage imageNamed:@"image_like_icon"];
     }else{
-        self.likeImageView.image = [UIImage imageNamed:@"noneLike_icon"];
+        self.likeImageView.image = [UIImage imageNamed:@"details_like"];
     }
 
     if ([model.owner_id isEqualToString:[Account shareInstance].ID]) {
         
         _attentionLabel.hidden = YES;
     }else{
-        
         _attentionLabel.hidden = NO;
-        
         if (model.is_attention) {
-            _attentionLabel.hidden = YES;
             [_attentionLabel setTitle:@"已关注" forState:UIControlStateNormal];
+            [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"btn_attention_elect"] forState:UIControlStateNormal];
         }else{
-            _attentionLabel.hidden = NO;
-            [_attentionLabel setTitle:@"未关注" forState:UIControlStateNormal];
+            [_attentionLabel setTitle:@"关注" forState:UIControlStateNormal];
+            [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"bt"] forState:UIControlStateNormal];
         }
         for (NSString *userID in [YZGAppSetting sharedInstance].userAttArray) {
             if ([model.owner_id isEqualToString:userID]) {
@@ -116,7 +114,7 @@
     if (model.is_like == 1) {
         self.likeImageView.image = [UIImage imageNamed:@"image_like_icon"];
     }else{
-       self.likeImageView.image = [UIImage imageNamed:@"noneLike_icon"];
+       self.likeImageView.image = [UIImage imageNamed:@"details_like"];
     }
     
     if ([model.owner_id isEqualToString:[Account shareInstance].ID]) {
@@ -127,11 +125,11 @@
         _attentionLabel.hidden = NO;
         
         if (model.is_attention) {
-            _attentionLabel.hidden = YES;
             [_attentionLabel setTitle:@"已关注" forState:UIControlStateNormal];
+            [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"btn_attention_elect"] forState:UIControlStateNormal];
         }else{
-            _attentionLabel.hidden = NO;
-            [_attentionLabel setTitle:@"未关注" forState:UIControlStateNormal];
+            [_attentionLabel setTitle:@"关注" forState:UIControlStateNormal];
+            [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"bt"] forState:UIControlStateNormal];
         }
         for (NSString *userID in [YZGAppSetting sharedInstance].userAttArray) {
             if ([model.owner_id isEqualToString:userID]) {
@@ -281,9 +279,14 @@
             
             if (isSuccess) {
                 _model.is_attention =  YES;
-                self.attentionLabel.hidden = YES;
                 [self.attentionLabel setTitle:result forState:UIControlStateNormal];
                 [[YZGAppSetting sharedInstance].userAttArray addObject:_model.owner_id];
+                if ([result isEqualToString:@"已关注"]) {
+                    [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"btn_attention_elect"] forState:UIControlStateNormal];
+                }else{
+                    
+                    [_attentionLabel setBackgroundImage:[UIImage imageNamed:@"bt"] forState:UIControlStateNormal];
+                }
             }else{
                 _model.is_attention =  NO;
                 [[YZGAppSetting sharedInstance].userAttArray removeObject:_model.owner_id];

@@ -61,7 +61,10 @@
     [self totalIncomeViewCornerRadius];
     
     [self addNotiAndObserver];
-    self.audienceCount.text = @"0人";
+    self.audienceCount.text = @"  0人  ";
+    self.audienceCount.layer.cornerRadius = 8;
+    self.audienceCount.clipsToBounds = YES;
+    self.audienceCount.font = [UIFont systemFontOfSize:10];
 }
 
 -(void)collectionView
@@ -199,7 +202,7 @@
     if ([roomInfo.avatar length]>0 &&roomInfo.avatar) {
         [self.avatar sd_setImageWithURL: _roomInfo.avatar];
     }
-    [self label:self.hostId setValueWithString:[NSString stringWithFormat:@"主播ID : %@",_roomInfo.channel_creater] originString:_roomInfo.channel_creater];
+    [self label:self.hostId setValueWithString:[NSString stringWithFormat:@"ID: %@",_roomInfo.channel_creater] originString:_roomInfo.channel_creater];
     [self label:self.name setValueWithString:_roomInfo.user_nicename  originString:_roomInfo.user_nicename];
     [self label:self.benefit setValueWithString:[NSString stringWithFormat:@" %@:%@ ",kBenefit,_roomInfo.total_earn]originString:_roomInfo.total_earn];
     [self totalIncomeViewCornerRadius];

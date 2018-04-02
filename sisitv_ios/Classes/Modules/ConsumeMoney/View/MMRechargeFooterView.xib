@@ -53,7 +53,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Uay-sd-g4H"/>
                     </constraints>
-                    <state key="normal" title="立即充值" backgroundImage="bt">
+                    <state key="normal" title="立即充值" backgroundImage="login_bt_normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
@@ -79,6 +79,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bt" width="85" height="26"/>
+        <image name="login_bt_normal" width="315" height="45"/>
     </resources>
 </document>

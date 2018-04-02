@@ -36,17 +36,17 @@
         }else{
             self.userLevelImageName = @"level";
         }
-        _localProcessedUserLevel = [NSString stringWithFormat:@"  %@",userLevel];
+        _localProcessedUserLevel = [NSString stringWithFormat:@"%@",userLevel];
     }else{
         self.userLevelImageName = @"grade";
-        _localProcessedUserLevel = @"   1";
+        _localProcessedUserLevel = @"1";
     }
 }
 
 -(NSString *)localProcessedUserLevel{
     if (!_localProcessedUserLevel) {
         self.userLevelImageName = @"level";
-        return @"  1";
+        return @"1";
     }
     return _localProcessedUserLevel;
 }

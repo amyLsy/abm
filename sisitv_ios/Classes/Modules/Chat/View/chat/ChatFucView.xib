@@ -16,52 +16,54 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-zn-kmj">
-                    <rect key="frame" x="24" y="126" width="36" height="36"/>
+                    <rect key="frame" x="24" y="127" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="ggp-lv-amz"/>
                         <constraint firstAttribute="width" constant="36" id="w8D-Lv-ttd"/>
                     </constraints>
-                    <state key="normal" image="3871520397655_.pic"/>
+                    <state key="normal" image="live_icon_demand"/>
                     <connections>
                         <action selector="showAtion:" destination="iN0-l3-epB" eventType="touchUpInside" id="Jrp-dS-yNA"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJL-4L-DX8">
-                    <rect key="frame" x="24" y="182" width="36" height="36"/>
+                    <rect key="frame" x="24" y="183" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="36" id="RRM-iT-AMW"/>
                         <constraint firstAttribute="height" constant="36" id="Ugc-BM-Ekm"/>
                     </constraints>
-                    <state key="normal" image="bt_games"/>
+                    <state key="normal" image="live_icon_game"/>
                     <connections>
                         <action selector="gameAtion:" destination="iN0-l3-epB" eventType="touchUpInside" id="0yR-5A-8Wf"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WB6-3Y-PI3">
-                    <rect key="frame" x="24" y="238" width="36" height="36"/>
+                    <rect key="frame" x="24" y="239" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="Uae-qy-9tt"/>
                         <constraint firstAttribute="width" constant="36" id="V7J-uj-YgG"/>
                     </constraints>
-                    <state key="normal" image="3851520397642_.pic"/>
+                    <state key="normal" image="live_icon_microphone"/>
                     <connections>
                         <action selector="lianmaiAtion:" destination="iN0-l3-epB" eventType="touchUpInside" id="AQU-yH-TIX"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76u-Xv-a0A">
-                    <rect key="frame" x="28.5" y="162" width="27" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="28.5" y="163" width="27" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-1A-rn1">
-                    <rect key="frame" x="28.5" y="218" width="27" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="竞答" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-1A-rn1">
+                    <rect key="frame" x="28.5" y="219" width="27" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDY-i9-8vn">
-                    <rect key="frame" x="24" y="261" width="20" height="20"/>
+                    <rect key="frame" x="24" y="262" width="20" height="20"/>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Nmh-eH-GbU"/>
@@ -78,22 +80,24 @@
                         <constraint firstAttribute="width" constant="36" id="Hvr-Zv-gAh"/>
                         <constraint firstAttribute="height" constant="36" id="vyH-Oy-Dza"/>
                     </constraints>
-                    <state key="normal" image="3861520397655_.pic"/>
+                    <state key="normal" image="live_icon_ranking"/>
                     <connections>
                         <action selector="showListAtion:" destination="iN0-l3-epB" eventType="touchUpInside" id="tsq-PZ-YUM"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="und-og-xfF">
-                    <rect key="frame" x="22.5" y="105" width="40" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="22.5" y="105" width="40" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连麦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J85-Ct-UCW">
-                    <rect key="frame" x="29" y="281" width="27" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="29" y="282" width="27" height="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sW0-ZK-BDa">
                     <rect key="frame" x="24" y="10" width="36" height="36"/>
@@ -101,7 +105,7 @@
                         <constraint firstAttribute="height" constant="36" id="aR2-6c-2WK"/>
                         <constraint firstAttribute="width" constant="36" id="ema-qX-gOs"/>
                     </constraints>
-                    <state key="normal" image="3881520397656_.pic"/>
+                    <state key="normal" image="live_icon_gift"/>
                     <connections>
                         <action selector="gift:" destination="iN0-l3-epB" eventType="touchUpInside" id="4xB-ZP-Owh"/>
                     </connections>
@@ -151,10 +155,10 @@
         </view>
     </objects>
     <resources>
-        <image name="3851520397642_.pic" width="368" height="374"/>
-        <image name="3861520397655_.pic" width="128" height="128"/>
-        <image name="3871520397655_.pic" width="200" height="149"/>
-        <image name="3881520397656_.pic" width="325" height="270"/>
-        <image name="bt_games" width="55" height="55"/>
+        <image name="live_icon_demand" width="39" height="39"/>
+        <image name="live_icon_game" width="39" height="39"/>
+        <image name="live_icon_gift" width="39" height="39"/>
+        <image name="live_icon_microphone" width="39" height="39"/>
+        <image name="live_icon_ranking" width="39" height="39"/>
     </resources>
 </document>

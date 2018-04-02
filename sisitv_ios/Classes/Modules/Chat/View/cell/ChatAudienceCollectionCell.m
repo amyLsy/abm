@@ -14,7 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 
-@property (weak, nonatomic) IBOutlet UIButton *level;
+@property (weak, nonatomic) IBOutlet UILabel *level;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *levelHegithConstraint;
 
 @end
 
@@ -24,6 +25,11 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     [self.avatar roundingImage];
+    [self bringSubviewToFront:self.level];
+    self.level.font = [UIFont boldSystemFontOfSize:8];
+    self.level.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    self.level.layer.cornerRadius = 5.1;
+    self.level.clipsToBounds = YES;
 }
 
 
@@ -31,14 +37,8 @@
 {
     _audienceInfo = audienceInfo;
 
-    [self.avatar sd_setImageWithURL:audienceInfo.avatar placeholderImage:[UIImage imageNamed:@"icon_avatar_default"]];
-    
-    [self.level setTitle:audienceInfo.localProcessedUserLevel  forState:UIControlStateNormal];
-
-    self.level.titleLabel.font = [UIFont systemFontOfSize:10];
-    [self.level setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [self.level setImage:[UIImage imageNamed:audienceInfo.userLevelImageName] forState:UIControlStateNormal];
-
+    [self.avatar sd_setImageWithURL:audienceInfo.avatar placeholderImage:[UIImage imageNamed:@"defaultavatar"]];
+    self.level.text = [NSString stringWithFormat:@"Lv.%@",audienceInfo.localProcessedUserLevel];
 }
 
 @end

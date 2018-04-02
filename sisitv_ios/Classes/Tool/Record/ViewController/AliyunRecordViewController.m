@@ -141,7 +141,7 @@
 }
 
 - (void)addWaterMark {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"watermark" ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"logo_watermark" ofType:@"png"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     AliyunEffectImage *testImage = [[AliyunEffectImage alloc] initWithFile:path];
     // frame的宽高要和图片宽高等比例

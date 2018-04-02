@@ -13,7 +13,6 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
 }
 
 - (IBAction)closeButton:(id)sender {

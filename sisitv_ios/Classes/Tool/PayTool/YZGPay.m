@@ -15,6 +15,8 @@
 #import <StoreKit/StoreKit.h>
 #import "YZGAppSetting.h"
 #import "YZGShareUtilits.h"
+#import <WXApi.h>
+
 NSString *const kBuyProductEnd = @"payForProductEnded";
 
 @interface YZGPay ()<SKProductsRequestDelegate,SKPaymentTransactionObserver>
@@ -74,6 +76,19 @@ NSString *const kBuyProductEnd = @"payForProductEnded";
 
 //调起微信支付和微信支付完成回调
 -(void)doWxPayRequestWithDictionary:(NSDictionary *)result{
+    
+    
+    PayReq *request = [[PayReq alloc] init];
+    request.partnerId = result[@"partnerid"];
+    request.prepayId= result[@"prepayid"];
+    request.package = result[@"package"];
+    request.nonceStr= result[@"noncestr"];
+    NSNumber *timeNum = result[@"timestamp"];
+    request.timeStamp= (unsigned)[timeNum integerValue];
+    request.sign= result[@"sign"];
+    [WXApi sendReq:request];
+
+    return;
      /** appid */
     NSString *appid = result[@"appid"];
     /** 商家向财付通申请的商家id */
@@ -92,6 +107,8 @@ NSString *const kBuyProductEnd = @"payForProductEnded";
     NSString *sign  = result[@"sign"];
     //生成URLscheme
     NSString *str = [NSString stringWithFormat:@"weixin://app/%@/pay/?nonceStr=%@&package=%@&partnerId=%@&prepayId=%@&timeStamp=%@&sign=%@&signType=SHA1",appid,nonceStr,package,partnerId,prepayId,[NSString stringWithFormat:@"%d",[timeStamp intValue] ],sign];
+    
+
     
     if (kYZGiOS10OrLater) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@""} completionHandler:nil];
@@ -278,7 +295,7 @@ NSString *const kBuyProductEnd = @"payForProductEnded";
 
 -(void)requestWithUrlFlag:(HttpRequsetUrlFlag)flag param:(PayParam *)param success:(void(^)(BOOL successGetInfo, id responseObject))success{
     [HttpTool requestWithUrlFlag:flag param:param.mj_keyValues success:^(id responseObject) {
-//        NSLog(@"123===%@",responseObject);
+        NSLog(@"123===%@",responseObject);
         if ([responseObject[@"code"] isEqual:@200]){
             success(YES,responseObject);
         }else{

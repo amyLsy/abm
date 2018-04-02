@@ -50,12 +50,15 @@
 		1833EEDA206CE70900B3426C /* MMRechargeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1833EED4206CE70800B3426C /* MMRechargeFooterView.xib */; };
 		1833EEDB206CE70900B3426C /* MMRechargeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833EED5206CE70800B3426C /* MMRechargeTableViewCell.m */; };
 		1833EEDC206CE70900B3426C /* MMRechargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1833EED6206CE70800B3426C /* MMRechargeTableViewCell.xib */; };
+		1838585B206E2D7600C24E44 /* LGReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1838585A206E2D7600C24E44 /* LGReplyCell.xib */; };
+		1838585D206E30CC00C24E44 /* LGCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1838585C206E30CC00C24E44 /* LGCommentCell.xib */; };
 		18392ADF20187624000E89B0 /* LGLiveAttentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18392ADE20187624000E89B0 /* LGLiveAttentionController.m */; };
 		18392AE22018763D000E89B0 /* LGVideoAttentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18392AE12018763D000E89B0 /* LGVideoAttentionController.m */; };
 		183D885A20464E70006EC088 /* RankTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183D885920464E70006EC088 /* RankTitleView.xib */; };
 		185A8466200C44EF002547AD /* LGTermsTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A8465200C44EF002547AD /* LGTermsTypeView.m */; };
 		185A8469200C4C82002547AD /* LGUploadTermsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A8468200C4C82002547AD /* LGUploadTermsModel.m */; };
 		185A846A200C4E43002547AD /* ChatKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185A846B200C4E43002547AD /* ChatKit.framework */; };
+		18642A5A206F18FC005F275E /* logo_watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 18642A59206F18FB005F275E /* logo_watermark.png */; };
 		18666A002015C82B0049FC48 /* LGUserPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186669FE2015C82B0049FC48 /* LGUserPlayerView.m */; };
 		18666A012015C82B0049FC48 /* LGUserPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186669FF2015C82B0049FC48 /* LGUserPlayerView.xib */; };
 		187860691E112C8600B65EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187860681E112C8600B65EB7 /* main.m */; };
@@ -71,14 +74,13 @@
 		18AA50D920494E4B008D92EE /* GiftListInvitaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AA50D820494E4B008D92EE /* GiftListInvitaView.xib */; };
 		18CEFF7C2049318500B75FE1 /* LGRightImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFF7B2049318400B75FE1 /* LGRightImageButton.m */; };
 		18F66AA4205270B6001840AC /* SPUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F66AA2205270B5001840AC /* SPUncaughtExceptionHandler.m */; };
-		18F9F757201718470066FDC4 /* watermark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F9F756201718470066FDC4 /* watermark.jpg */; };
 		18F9F75B20171C1A0066FDC4 /* AliyunVideoSDKPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75920171C1A0066FDC4 /* AliyunVideoSDKPro.framework */; };
 		18F9F75C20171C1A0066FDC4 /* QuCore-ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75A20171C1A0066FDC4 /* QuCore-ThirdParty.framework */; };
 		18F9F75D20171CF30066FDC4 /* AliyunVideoSDKPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75920171C1A0066FDC4 /* AliyunVideoSDKPro.framework */; };
 		18F9F75E20171CF30066FDC4 /* AliyunVideoSDKPro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75920171C1A0066FDC4 /* AliyunVideoSDKPro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18F9F75F20171CF30066FDC4 /* QuCore-ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75A20171C1A0066FDC4 /* QuCore-ThirdParty.framework */; };
 		18F9F76020171CF30066FDC4 /* QuCore-ThirdParty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18F9F75A20171C1A0066FDC4 /* QuCore-ThirdParty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18F9F762201720650066FDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9F761201720650066FDC4 /* LaunchScreen.storyboard */; };
+		18FEF11E206F8C0D00B0DF11 /* HMShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FEF11D206F8C0D00B0DF11 /* HMShareService.m */; };
 		3A05AA1E1FFBE2010091797F /* LWActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A05AA061FFBE2000091797F /* LWActionSheetTableViewCell.m */; };
 		3A05AA1F1FFBE2010091797F /* LWActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A05AA081FFBE2000091797F /* LWActionSheetView.m */; };
 		3A05AA201FFBE2010091797F /* LWAlertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A05AA0A1FFBE2000091797F /* LWAlertContentView.m */; };
@@ -542,9 +544,7 @@
 		3AAADC261FF2329F006E1F2B /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC111FF2329E006E1F2B /* UIScrollView+MJRefresh.m */; };
 		3AAADC271FF2329F006E1F2B /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC131FF2329E006E1F2B /* UIView+MJExtension.m */; };
 		3AAADC361FF234C2006E1F2B /* LGCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC2B1FF234C1006E1F2B /* LGCommentCell.m */; };
-		3AAADC371FF234C2006E1F2B /* LGCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAADC2C1FF234C1006E1F2B /* LGCommentCell.xib */; };
 		3AAADC381FF234C2006E1F2B /* LGCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC2E1FF234C1006E1F2B /* LGCommentController.m */; };
-		3AAADC391FF234C2006E1F2B /* LGReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAADC2F1FF234C1006E1F2B /* LGReplyCell.xib */; };
 		3AAADC3B1FF234C2006E1F2B /* LGCommentHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC351FF234C1006E1F2B /* LGCommentHeaderFooterView.m */; };
 		3AAADC3E1FF234EC006E1F2B /* LGShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC3C1FF234EA006E1F2B /* LGShareController.m */; };
 		3AAADC411FF23559006E1F2B /* LGBasiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAADC401FF23559006E1F2B /* LGBasiController.m */; };
@@ -695,6 +695,8 @@
 		1833EED4206CE70800B3426C /* MMRechargeFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMRechargeFooterView.xib; sourceTree = "<group>"; };
 		1833EED5206CE70800B3426C /* MMRechargeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRechargeTableViewCell.m; sourceTree = "<group>"; };
 		1833EED6206CE70800B3426C /* MMRechargeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMRechargeTableViewCell.xib; sourceTree = "<group>"; };
+		1838585A206E2D7600C24E44 /* LGReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGReplyCell.xib; sourceTree = "<group>"; };
+		1838585C206E30CC00C24E44 /* LGCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGCommentCell.xib; sourceTree = "<group>"; };
 		18392ADD20187624000E89B0 /* LGLiveAttentionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGLiveAttentionController.h; sourceTree = "<group>"; };
 		18392ADE20187624000E89B0 /* LGLiveAttentionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGLiveAttentionController.m; sourceTree = "<group>"; };
 		18392AE02018763D000E89B0 /* LGVideoAttentionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGVideoAttentionController.h; sourceTree = "<group>"; };
@@ -705,6 +707,7 @@
 		185A8467200C4C82002547AD /* LGUploadTermsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGUploadTermsModel.h; sourceTree = "<group>"; };
 		185A8468200C4C82002547AD /* LGUploadTermsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGUploadTermsModel.m; sourceTree = "<group>"; };
 		185A846B200C4E43002547AD /* ChatKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChatKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18642A59206F18FB005F275E /* logo_watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_watermark.png; sourceTree = "<group>"; };
 		186669FD2015C82B0049FC48 /* LGUserPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGUserPlayerView.h; sourceTree = "<group>"; };
 		186669FE2015C82B0049FC48 /* LGUserPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGUserPlayerView.m; sourceTree = "<group>"; };
 		186669FF2015C82B0049FC48 /* LGUserPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LGUserPlayerView.xib; sourceTree = "<group>"; };
@@ -731,10 +734,10 @@
 		18CEFF7B2049318400B75FE1 /* LGRightImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGRightImageButton.m; sourceTree = "<group>"; };
 		18F66AA2205270B5001840AC /* SPUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPUncaughtExceptionHandler.m; path = AliVideoFramwork/SPUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		18F66AA3205270B6001840AC /* SPUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPUncaughtExceptionHandler.h; path = AliVideoFramwork/SPUncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		18F9F756201718470066FDC4 /* watermark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watermark.jpg; sourceTree = "<group>"; };
 		18F9F75920171C1A0066FDC4 /* AliyunVideoSDKPro.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunVideoSDKPro.framework; sourceTree = "<group>"; };
 		18F9F75A20171C1A0066FDC4 /* QuCore-ThirdParty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "QuCore-ThirdParty.framework"; sourceTree = "<group>"; };
-		18F9F761201720650066FDC4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18FEF11C206F8C0C00B0DF11 /* HMShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMShareService.h; sourceTree = "<group>"; };
+		18FEF11D206F8C0D00B0DF11 /* HMShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMShareService.m; sourceTree = "<group>"; };
 		3A05AA051FFBE2000091797F /* LWActionSheetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWActionSheetTableViewCell.h; sourceTree = "<group>"; };
 		3A05AA061FFBE2000091797F /* LWActionSheetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWActionSheetTableViewCell.m; sourceTree = "<group>"; };
 		3A05AA071FFBE2000091797F /* LWActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWActionSheetView.h; sourceTree = "<group>"; };
@@ -1569,10 +1572,8 @@
 		3AAADC131FF2329E006E1F2B /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		3AAADC2A1FF234C1006E1F2B /* LGCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCommentCell.h; sourceTree = "<group>"; };
 		3AAADC2B1FF234C1006E1F2B /* LGCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCommentCell.m; sourceTree = "<group>"; };
-		3AAADC2C1FF234C1006E1F2B /* LGCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGCommentCell.xib; sourceTree = "<group>"; };
 		3AAADC2D1FF234C1006E1F2B /* LGCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCommentController.h; sourceTree = "<group>"; };
 		3AAADC2E1FF234C1006E1F2B /* LGCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCommentController.m; sourceTree = "<group>"; };
-		3AAADC2F1FF234C1006E1F2B /* LGReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LGReplyCell.xib; sourceTree = "<group>"; };
 		3AAADC341FF234C1006E1F2B /* LGCommentHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCommentHeaderFooterView.h; sourceTree = "<group>"; };
 		3AAADC351FF234C1006E1F2B /* LGCommentHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCommentHeaderFooterView.m; sourceTree = "<group>"; };
 		3AAADC3C1FF234EA006E1F2B /* LGShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGShareController.m; sourceTree = "<group>"; };
@@ -1866,8 +1867,7 @@
 		187860671E112C8600B65EB7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18F9F761201720650066FDC4 /* LaunchScreen.storyboard */,
-				18F9F756201718470066FDC4 /* watermark.jpg */,
+				18642A59206F18FB005F275E /* logo_watermark.png */,
 				1878609A1E112C9A00B65EB7 /* PrefixHeader.pch */,
 				187860731E112C8600B65EB7 /* Assets.xcassets */,
 				187860781E112C8600B65EB7 /* Info.plist */,
@@ -3358,6 +3358,8 @@
 		3A5D57901FF09AF500335D35 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3A5D57CC1FF09AF500335D35 /* PayTool */,
+				3A5D57D91FF09AF500335D35 /* ShareTool */,
 				18251C8B206A3BD300D14BC0 /* LoginTool */,
 				3A833F9620144E2200E4FC9A /* Import */,
 				3A833F8F20144DE700E4FC9A /* PhotoLibrary */,
@@ -3376,10 +3378,8 @@
 				3A5D57BC1FF09AF500335D35 /* LeanCloudTool */,
 				3A5D57C41FF09AF500335D35 /* LGUpload */,
 				3A5D57C91FF09AF500335D35 /* PathManager */,
-				3A5D57CC1FF09AF500335D35 /* PayTool */,
 				3A5D57D11FF09AF500335D35 /* ProgressView */,
 				3A5D57D41FF09AF500335D35 /* RootTool */,
-				3A5D57D91FF09AF500335D35 /* ShareTool */,
 				3A5D57E21FF09AF500335D35 /* TZImagePickerController */,
 				3A5D57F81FF09AF500335D35 /* UIConfig */,
 				3A5D57FD1FF09AF500335D35 /* UIView+Progress */,
@@ -3546,6 +3546,8 @@
 		3A5D57D91FF09AF500335D35 /* ShareTool */ = {
 			isa = PBXGroup;
 			children = (
+				18FEF11C206F8C0C00B0DF11 /* HMShareService.h */,
+				18FEF11D206F8C0D00B0DF11 /* HMShareService.m */,
 				3A5D57DA1FF09AF500335D35 /* ShareParam.h */,
 				3A5D57DB1FF09AF500335D35 /* ShareParam.m */,
 				3A5D57DC1FF09AF500335D35 /* YZGShare.h */,
@@ -3881,16 +3883,16 @@
 		3AAADC291FF234C1006E1F2B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1838585A206E2D7600C24E44 /* LGReplyCell.xib */,
 				3AAADC3F1FF23557006E1F2B /* LGBasiController.h */,
 				3AAADC401FF23559006E1F2B /* LGBasiController.m */,
 				3AAADC3D1FF234EC006E1F2B /* LGShareController.h */,
 				3AAADC3C1FF234EA006E1F2B /* LGShareController.m */,
 				3AAADC2A1FF234C1006E1F2B /* LGCommentCell.h */,
 				3AAADC2B1FF234C1006E1F2B /* LGCommentCell.m */,
-				3AAADC2C1FF234C1006E1F2B /* LGCommentCell.xib */,
+				1838585C206E30CC00C24E44 /* LGCommentCell.xib */,
 				3AAADC2D1FF234C1006E1F2B /* LGCommentController.h */,
 				3AAADC2E1FF234C1006E1F2B /* LGCommentController.m */,
-				3AAADC2F1FF234C1006E1F2B /* LGReplyCell.xib */,
 				1826F933201093AC0042A578 /* LGReplyView.h */,
 				1826F934201093AC0042A578 /* LGReplyView.m */,
 				1826F936201093BE0042A578 /* LGReplyView.xib */,
@@ -4089,7 +4091,6 @@
 				3A5D59131FF09AF600335D35 /* VideoEditViewController.xib in Resources */,
 				3A5D58801FF09AF500335D35 /* AboutSisiController.xib in Resources */,
 				3A102B061FF6980800C329F4 /* LGBgmVIew.xib in Resources */,
-				18F9F757201718470066FDC4 /* watermark.jpg in Resources */,
 				180A8786200C753800965326 /* LGTopCell.xib in Resources */,
 				3A5D58E21FF09AF600335D35 /* MineDiamondListCell.xib in Resources */,
 				3A5D58E81FF09AF600335D35 /* PersonalContributionController.xib in Resources */,
@@ -4113,11 +4114,13 @@
 				3A5D58C61FF09AF600335D35 /* GameTheEndListTableViewCell.xib in Resources */,
 				3A5D586E1FF09AF500335D35 /* MainNewTopicCollectionCell.xib in Resources */,
 				3A5D59081FF09AF600335D35 /* mask.png in Resources */,
+				1838585D206E30CC00C24E44 /* LGCommentCell.xib in Resources */,
 				3A5D59071FF09AF600335D35 /* fanrenge.mp3 in Resources */,
 				3A5D590A1FF09AF600335D35 /* EndShowingController.xib in Resources */,
 				3A09AE582014325100F0884B /* Info.plist in Resources */,
 				3A5D59211FF09AF600335D35 /* ShowingTopicCollectionCell.xib in Resources */,
 				3A5D58E41FF09AF600335D35 /* ContributionController.xib in Resources */,
+				18642A5A206F18FC005F275E /* logo_watermark.png in Resources */,
 				3A5D58AC1FF09AF600335D35 /* ChatAdministratorView.xib in Resources */,
 				3A5D58CA1FF09AF600335D35 /* GameYZTableViewCell.xib in Resources */,
 				3A5D58C21FF09AF600335D35 /* GameStartTableViewCell.xib in Resources */,
@@ -4125,7 +4128,6 @@
 				3A5D590D1FF09AF600335D35 /* ShowingController.xib in Resources */,
 				3A5D58731FF09AF500335D35 /* MainTitleView.xib in Resources */,
 				3A5D58D41FF09AF600335D35 /* JLGameBlanksCell.xib in Resources */,
-				3AAADC371FF234C2006E1F2B /* LGCommentCell.xib in Resources */,
 				1833EEDA206CE70900B3426C /* MMRechargeFooterView.xib in Resources */,
 				3A5D58A81FF09AF600335D35 /* ChatLyricsCell.xib in Resources */,
 				3A5D59491FF09AF600335D35 /* TZImagePickerController.bundle in Resources */,
@@ -4133,7 +4135,6 @@
 				3A5D58C41FF09AF600335D35 /* GameSubjectTableViewCell.xib in Resources */,
 				3AA4E974201256FB00DC21C9 /* LGLianMaiListCell.xib in Resources */,
 				1817241B2047FC5F002B4943 /* LGSelectGameView.xib in Resources */,
-				18F9F762201720650066FDC4 /* LaunchScreen.storyboard in Resources */,
 				3A5D580F1FF09AF500335D35 /* RegiestController.xib in Resources */,
 				3A5D58681FF09AF500335D35 /* LGVideoListCell.xib in Resources */,
 				3A5D58CE1FF09AF600335D35 /* YZGBulletAnimationView.xib in Resources */,
@@ -4154,6 +4155,7 @@
 				3A5D587C1FF09AF500335D35 /* PersonalInformationViewController.xib in Resources */,
 				1826F937201093BE0042A578 /* LGReplyView.xib in Resources */,
 				18666A012015C82B0049FC48 /* LGUserPlayerView.xib in Resources */,
+				1838585B206E2D7600C24E44 /* LGReplyCell.xib in Resources */,
 				3A5D59671FF09B3800335D35 /* AliyunLanguageSource.bundle in Resources */,
 				3A5D59931FF0A49A00335D35 /* LGVideoPlayCell.xib in Resources */,
 				3AE5F0501FF4902D00A252C7 /* LGShowListCell.xib in Resources */,
@@ -4161,7 +4163,6 @@
 				3A1CB0EF1FFB527E006A6BCC /* LGReferencesCell.xib in Resources */,
 				3A5D58BE1FF09AF600335D35 /* ChatAlertManagerView.xib in Resources */,
 				3A5D58F01FF09AF600335D35 /* RankCell.xib in Resources */,
-				3AAADC391FF234C2006E1F2B /* LGReplyCell.xib in Resources */,
 				3A102B0B1FF69E1100C329F4 /* LGBgmCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4630,6 +4631,7 @@
 				3A5D58F51FF09AF600335D35 /* UserInfoListModel.m in Sources */,
 				3A5D59101FF09AF600335D35 /* ShowingTopicController.m in Sources */,
 				3A05AA261FFBE2010091797F /* LWImageBrowserModel.m in Sources */,
+				18FEF11E206F8C0D00B0DF11 /* HMShareService.m in Sources */,
 				3A5D58501FF09AF500335D35 /* MainNewController.m in Sources */,
 				3A5D58D51FF09AF600335D35 /* ChatMusicTitleView.m in Sources */,
 				3A5D59541FF09AF600335D35 /* SetLocationRequest.m in Sources */,
@@ -4833,6 +4835,7 @@
 			baseConfigurationReference = 714CF1AAB33449696B411147 /* Pods-sisitv_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yiqiu he (63T252A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -4963,6 +4966,7 @@
 			baseConfigurationReference = EF8DC5CD818B322AF4BD2594 /* Pods-sisitv_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yiqiu he (ZG9T5NERK4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

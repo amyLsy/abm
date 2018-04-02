@@ -42,6 +42,7 @@
 -(instancetype)initWithSuccessLogin:(void (^)(void))successLogin{
     if (self = [super init]) {
         self.successLogin = successLogin;
+//        self = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
     }
     return self;
 }

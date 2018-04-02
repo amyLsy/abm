@@ -30,8 +30,8 @@
     }else{
         
         CGFloat width = (KScreenWidth - 2)/2.0;
-//        return CGSizeMake(width , width/0.65);
-        return CGSizeMake(width , width);
+        return CGSizeMake(width , width/0.65);
+//        return CGSizeMake(width , width);
     }
     
     

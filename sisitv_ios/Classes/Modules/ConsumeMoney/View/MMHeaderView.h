@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef void(^BackMoneyValue)(NSString *moneyValue);
+@class CostRowItem;
+typedef void(^BackMoneyValue)(CostRowItem *moneyValue);
 
 @interface MMHeaderView : UIView
 @property (nonatomic, copy)BackMoneyValue moneyValue;
+@property (nonatomic, strong) NSMutableArray *productArray;
+@property (weak, nonatomic) IBOutlet UILabel *meimeiValueLabel;
+
 @end

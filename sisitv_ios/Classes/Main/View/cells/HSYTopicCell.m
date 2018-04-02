@@ -202,11 +202,11 @@
             shareType = @"weChat";
         }
             break;
-        case ShareButtonTypeTypeSinaWeibo:
-        {
-            shareType = @"weibo";
-        }
-            break;
+//        case ShareButtonTypeTypeSinaWeibo:
+//        {
+//            shareType = @"weibo";
+//        }
+//            break;
         case ShareButtonTypeQQ:
         {
             shareType = @"qq";

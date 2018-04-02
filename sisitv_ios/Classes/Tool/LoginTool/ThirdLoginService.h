@@ -23,16 +23,6 @@
  */
 -(BOOL)wechatLogin:(void(^)(BOOL success, ShareParam *reqParam))userParam;
 
-
-/**
- 此方法必须要在AppDelegate的openURL方法中实现
-
- @param url AppDelegate的openURL方法中
- @return 微信的处理结果
- */
-- (BOOL)wxHandleOpenURL:(NSURL *)url;
-
-
 /**
  QQ登录
 
@@ -45,7 +35,8 @@
  此方法必须要在AppDelegate的openURL方法中实现
  
  @param url AppDelegate的openURL方法中
- @return 腾讯的处理结果
+ @return 处理结果
  */
--(BOOL)qqHandleLoginOpenURL:(NSURL *)url;
+-(BOOL)handleOpenURL:(NSURL *)url;
+
 @end

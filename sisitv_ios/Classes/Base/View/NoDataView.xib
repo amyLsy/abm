@@ -15,15 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="268" height="294"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="搜索无结果" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-PI-rbg">
-                    <rect key="frame" x="101.5" y="109.5" width="65" height="75"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_empty" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-PI-rbg">
+                    <rect key="frame" x="101.5" y="114.5" width="65" height="65"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="CSm-Gq-IDQ"/>
-                        <constraint firstAttribute="height" constant="75" id="dPs-mg-8am"/>
+                        <constraint firstAttribute="height" constant="65" id="dPs-mg-8am"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4T-oP-LTF">
-                    <rect key="frame" x="0.0" y="192.5" width="268" height="25"/>
+                    <rect key="frame" x="0.0" y="187.5" width="268" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="wbL-AB-h95"/>
                     </constraints>
@@ -49,6 +49,6 @@
         </view>
     </objects>
     <resources>
-        <image name="搜索无结果" width="58" height="74"/>
+        <image name="icon_empty" width="115" height="115"/>
     </resources>
 </document>

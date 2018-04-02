@@ -27,9 +27,10 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     self.alpha = 0.0;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeShareView)];
-    [self addGestureRecognizer:tap];
-    self.buttomView.backgroundColor = RGB_COLOR(0, 0, 0, 0.8);
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeShareView)];
+//    [self addGestureRecognizer:tap];
+    self.buttomView.backgroundColor = [UIColor whiteColor];
+     [self setShareButtons:@[@"share_wechat",@"share_wechatmoments",@"share_qq",@"share_qqzone"]];
 }
 -(void)setShareButtons:(NSArray<NSString *> *)buttonArray{
     FDStackView *buttonStackView =  [[FDStackView alloc] init];
@@ -41,17 +42,22 @@
     buttonStackView.alignment = UIStackViewAlignmentFill;
     buttonStackView.distribution = UIStackViewDistributionFillEqually;
     buttonStackView.spacing = 10;
+    NSArray *titleArray = @[@"发送给\n微信好友",@"分享到\n朋友圈",@"发送给\nQQ好友",@"分享到\nQQ空间"];
     for (NSInteger i = 0; i < buttonArray.count; i++) {
         BaseButton *shareButton = [BaseButton buttonWithType:UIButtonTypeCustom];
         [shareButton setImage:[UIImage imageNamed:buttonArray[i]] forState:UIControlStateNormal];
-        NSString *title = [buttonArray[i] stringByReplacingOccurrencesOfString:@"分享" withString:@""];
-        [shareButton setTitle:title forState:UIControlStateNormal];
+//        NSString *title = [buttonArray[i] stringByReplacingOccurrencesOfString:@"分享" withString:@""];
+        [shareButton setTitle:titleArray[i] forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:10.0];
+        [shareButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         shareButton.tag = i+1;
         [shareButton addTarget:self action:@selector(shareButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [shareButton adjustTitleBlowImageView];
         [buttonStackView addArrangedSubview:shareButton];
     }
+}
+- (IBAction)closeBtnAction:(id)sender {
+    [self removeShareView];
 }
 
 - (void)shareButtonClick:(UIButton *)button {

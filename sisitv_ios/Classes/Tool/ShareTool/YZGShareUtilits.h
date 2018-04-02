@@ -22,18 +22,18 @@ static NSString *const YZGShareWeChatAppId = @"wx48f78c84a33b7555";
 /**
  *   WeChatAppSecret
  */
-static NSString *const YZGShareWeChatAppSecret = @"394bf747c0e4f5d8d3e65b4dc66628c7";
+static NSString *const YZGShareWeChatAppSecret = @"c2723a602a238280fea4f95de34ff7c3";
 
 /**
  *   QQAppId 1105785975
 
  */
-static NSString *const YZGShareQQAppId = @"1105785975";
+static NSString *const YZGShareQQAppId = @"1106808280";
 
 /**
  *   QQAppKey udjQnj86utLNtihX
  */
-static NSString *const YZGShareQQAppKey = @"udjQnj86utLNtihX";
+static NSString *const YZGShareQQAppKey = @"pGyn09PPeKZdDIQK";
 
 /**
  *   SinaAppKey

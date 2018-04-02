@@ -10,7 +10,7 @@
 #import <Photos/Photos.h>
 #import <objc/runtime.h>
 typedef void(^imageBlock)(bool isSuccess ,NSString * info);
-static NSString *name = @"聚乐直播";
+static NSString *name = @"直播美";
 
 @interface UIImage (_LGSaveImage)
 @property(nonatomic, strong) imageBlock finish;

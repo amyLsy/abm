@@ -7,9 +7,10 @@
 //
 
 #import "MMHeaderView.h"
+#import "CostRowItem.h"
+
 @interface MMHeaderView()
 
-@property (weak, nonatomic) IBOutlet UILabel *meimeiValueLabel;
 @property (weak, nonatomic) IBOutlet UIButton *money100Btn;
 @property (weak, nonatomic) IBOutlet UIButton *money200Btn;
 @property (weak, nonatomic) IBOutlet UIButton *money300Btn;
@@ -29,6 +30,7 @@
         button.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
         [button addTarget:self action:@selector(moneyBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
+    self.productArray = [[NSMutableArray alloc] init];
 }
 
 - (void)moneyBtnAction:(UIButton *)btn{
@@ -39,12 +41,23 @@
             [button setBackgroundColor:[UIColor whiteColor]];
         }
     }
+    if (self.productArray.count == 0) {
+        return;
+    }
     if (_moneyValue) {
-        NSString *value = btn.tag == 0 ? @"10.0" : @"20.0";
-        if (btn.tag == 2) {
-            value = @"30.0";
-        }
-        _moneyValue(value);
+        CostRowItem *product = self.productArray[btn.tag];
+        _moneyValue(product);
+    }
+}
+
+-(void)setProductArray:(NSMutableArray *)productArray{
+    _productArray = productArray;
+    NSInteger index = 0;
+    for (CostRowItem *product in _productArray) {
+        UIButton *btn = self.btnArray[index];
+        [btn setTitle:product.diamond_num forState:UIControlStateNormal];
+        btn.hidden = NO;
+        index++;
     }
 }
 

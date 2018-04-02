@@ -34,7 +34,7 @@
 #import "LGPlaysController.h"
 #import "LGPlayScrollView.h"
 #import <libksygpulive/KSYMoviePlayerController.h>
-
+#import "HMShareService.h"
 
 @interface LGPlaysController ()<UICollectionViewDelegate,UICollectionViewDataSource,LGBottmCommentViewDelegate,YZGShareViewDelegate,LGPlayerScrollViewDelegate>
 @property(nonatomic,strong) UICollectionView *collectionView;
@@ -771,21 +771,20 @@ static NSString *cellID = @"videoCellId";
 
 #pragma mark ShareViewDelegate分享
 -(void)yzgShareView:(YZGShareView *)shareView clickShareButtonType:(ShareButtonType)shareButtonType{
-    LGMediaListModel *mode = shareView.object;
-
-    
-    YZGShare *share = [[YZGShare alloc] init];
-    share.pic = mode.thumb;
-    share.title = @"我在聚乐直播发现了一个有趣的...";
-    share.content = mode.desc;
-    share.shareUrl = mode.uri;
     
 //    [YZGShare getShareInfoWithParam:param success:^(id response, BOOL successGetInfo) {
 //        if (successGetInfo) {
 //            [YZGShare shareViewButtonClick:shareButtonType withShareContent:response success:nil];
 //            用户分享统计
-     [YZGShare shareViewButtonClick:shareButtonType withShareContent:share success:nil];
+//     [YZGShare shareViewButtonClick:shareButtonType withShareContent:share success:nil];
+    LGMediaListModel *mode = shareView.object;
+    [[HMShareService shareInstance] shareToWXType:WX_SHARE_SESSION_TYPE headUrl:mode.uri];
     
+    YZGShare *share = [[YZGShare alloc] init];
+    share.pic = mode.thumb;
+    share.title = @"我在直播美发现了一个有趣的...";
+    share.content = mode.desc;
+    share.shareUrl = mode.uri;
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"token"] = [Account shareInstance].token;
     param[@"type"] = @"1";
@@ -802,11 +801,6 @@ static NSString *cellID = @"videoCellId";
         case ShareButtonTypeWechatTimeline:
         {
            shareType = @"weChat";
-        }
-            break;
-        case ShareButtonTypeTypeSinaWeibo:
-        {
-            shareType = @"weibo";
         }
             break;
         case ShareButtonTypeQQ:

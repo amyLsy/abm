@@ -12,9 +12,10 @@
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <WXApi.h>
+#import "YZGPay.h"
 
 static NSString *const WeChatAppId = @"wx48f78c84a33b7555";
-static NSString *const WeChatAppSecret = @"394bf747c0e4f5d8d3e65b4dc66628c7";
+static NSString *const WeChatAppSecret = @"c2723a602a238280fea4f95de34ff7c3";
 static NSString *const QQAppId = @"1106808280";
 static NSString *const QQAppKey = @"pGyn09PPeKZdDIQK";
 
@@ -45,6 +46,17 @@ static ThirdLoginService *loginService;
         return self;
     }
     return nil;
+}
+
+-(BOOL)handleOpenURL:(NSURL *)url{
+    BOOL result = NO;
+    if ([[url scheme] hasPrefix:@"wx"]){
+        result = [self wxHandleOpenURL:url];
+    }
+    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
+        result = [self qqHandleLoginOpenURL:url];
+    }
+    return result;
 }
 
 #pragma mark - 微信登录
@@ -113,7 +125,27 @@ static ThirdLoginService *loginService;
     return [WXApi handleOpenURL:url delegate:(id)self];
 }
 
+
 -(void)onResp:(BaseResp *)resp{
+    
+    if ([resp isKindOfClass:[PayResp class]]){
+        PayResp*response=(PayResp*)resp;
+        switch(response.errCode){
+            case WXSuccess:{
+                //服务器端查询支付通知或查询API返回的结果再提示成功
+                NSDictionary *dict = @{@"status":@"0",@"descrp":@"支付成功"};
+                [[NSNotificationCenter defaultCenter] postNotificationName:kBuyProductEnd object:nil userInfo:dict];
+                NSLog(@"支付成功");
+            }
+                break;
+            default:{
+                NSDictionary *dict = @{@"status":@"0",@"descrp":@"支付失败"};
+                NSLog(@"支付失败，retcode=%d",resp.errCode);
+                [[NSNotificationCenter defaultCenter] postNotificationName:kBuyProductEnd object:nil userInfo:dict];
+            }
+                break;
+        }
+    }
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         switch (resp.errCode) {
             case 0:

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"关于我们";
-    self.info.text = [NSString stringWithFormat:@"\n感受不一样的知识人文！挑战您的大脑的思维，展现不一样的自己，体验不一样的玩法， 更多精彩就在\"聚乐直播\"!"];
+    self.info.text = [NSString stringWithFormat:@"\n感受不一样的知识人文！挑战您的大脑的思维，展现不一样的自己，体验不一样的玩法， 更多精彩就在\"直播美\"!"];
 }
 
 

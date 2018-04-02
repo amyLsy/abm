@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,39 +19,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-6j-qIV">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultavatar" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-6j-qIV">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-vW-hVw">
-                        <rect key="frame" x="24" y="52" width="56" height="28"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="fbx-vW-hVw" secondAttribute="height" multiplier="2" id="Ywv-Ud-Y17"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                        <state key="normal" title="1">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCc-1V-u9s">
+                        <rect key="frame" x="28" y="56" width="52" height="24"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.53767429739999995" blue="0.1833398041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="eYx-6j-qIV" secondAttribute="bottom" id="5PN-Ly-Rn5"/>
-                <constraint firstItem="eYx-6j-qIV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8XS-pT-uYi"/>
-                <constraint firstAttribute="bottom" secondItem="fbx-vW-hVw" secondAttribute="bottom" id="OLn-ym-JgB"/>
-                <constraint firstAttribute="trailing" secondItem="eYx-6j-qIV" secondAttribute="trailing" id="Tne-pX-9u1"/>
-                <constraint firstItem="eYx-6j-qIV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eJQ-bf-ATr"/>
-                <constraint firstItem="fbx-vW-hVw" firstAttribute="trailing" secondItem="eYx-6j-qIV" secondAttribute="trailing" id="ilg-M1-FMp"/>
-                <constraint firstItem="fbx-vW-hVw" firstAttribute="width" secondItem="eYx-6j-qIV" secondAttribute="width" multiplier="0.7" id="zBh-a2-hfV"/>
+                <constraint firstAttribute="bottom" secondItem="eYx-6j-qIV" secondAttribute="bottom" id="5Dk-qX-bBj"/>
+                <constraint firstItem="eYx-6j-qIV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7dV-dJ-D6c"/>
+                <constraint firstItem="SCc-1V-u9s" firstAttribute="width" secondItem="eYx-6j-qIV" secondAttribute="width" multiplier="0.65" id="D6F-Iv-WP2"/>
+                <constraint firstAttribute="trailing" secondItem="SCc-1V-u9s" secondAttribute="trailing" id="LaD-Ui-Jmj"/>
+                <constraint firstItem="SCc-1V-u9s" firstAttribute="height" secondItem="eYx-6j-qIV" secondAttribute="height" multiplier="0.3" id="e7q-bT-4ew"/>
+                <constraint firstAttribute="bottom" secondItem="SCc-1V-u9s" secondAttribute="bottom" id="fgX-r9-7lz"/>
+                <constraint firstAttribute="trailing" secondItem="eYx-6j-qIV" secondAttribute="trailing" id="kuo-ol-chf"/>
+                <constraint firstItem="eYx-6j-qIV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="reR-jF-dFa"/>
             </constraints>
             <size key="customSize" width="75" height="72"/>
             <connections>
                 <outlet property="avatar" destination="eYx-6j-qIV" id="C4l-EV-tjx"/>
-                <outlet property="level" destination="fbx-vW-hVw" id="2EB-db-bKK"/>
+                <outlet property="level" destination="SCc-1V-u9s" id="5aa-JC-vVL"/>
+                <outlet property="levelHegithConstraint" destination="e7q-bT-4ew" id="idU-qV-IXO"/>
             </connections>
             <point key="canvasLocation" x="-105" y="49"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icon_avatar_default" width="100" height="100"/>
+        <image name="defaultavatar" width="162" height="162"/>
     </resources>
 </document>

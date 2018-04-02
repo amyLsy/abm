@@ -97,19 +97,18 @@
 
 -(UIViewController *)deafaultController{
     UIViewController *rootController = [[UIViewController alloc]init];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ad"]];
-    [rootController.view addSubview:imageView];
-    imageView.frame = rootController.view.bounds;
+//    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"launch"]];
+//    imageView.frame = rootController.view.bounds;
+//    [rootController.view addSubview:imageView];
+    rootController.view.backgroundColor = [UIColor whiteColor];
     return rootController;
 }
 
 -(void)getAccountInfo{
     //是否开启了推广活动
-    [[YZGAppSetting sharedInstance] appisPromotion:^(BOOL isPromotion) {
-        [YZGAppSetting sharedInstance].isPromotion = isPromotion;
-    }];
-    
-    
+//    [[YZGAppSetting sharedInstance] appisPromotion:^(BOOL isPromotion) {
+//        [YZGAppSetting sharedInstance].isPromotion = isPromotion;
+//    }];
     [[Account isLogined] getAccountInfoSuccess:^{
         [self guideInfo];
         [self successGetAccountInfo];
@@ -187,33 +186,27 @@
 
 //openurl
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
-    if ([[url scheme] hasPrefix:@"wx"]){
-        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
-        //        return [WXApi handleOpenURL:url delegate:(id)[ThirdLoginService sharedInstance]];
-    }
     
-    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
-        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
+    NSLog(@"%@",url);
+    if ([[url scheme] hasPrefix:@"wx"] || [url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]){
+        return [[ThirdLoginService sharedInstance] handleOpenURL:url];
     }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     
-    if ([[url scheme] hasPrefix:@"wx"]){
-        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
-    }
-    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
-        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
+    NSLog(@"%@",url);
+    if ([[url scheme] hasPrefix:@"wx"] || [url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]){
+        return [[ThirdLoginService sharedInstance] handleOpenURL:url];
     }
     return  [[YZGPay shareInstance] handleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    if ([[url scheme] hasPrefix:@"wx"]){
-        return [[ThirdLoginService sharedInstance] wxHandleOpenURL:url];
-    }
-    if ([url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]) {
-        return [[ThirdLoginService sharedInstance] qqHandleLoginOpenURL:url];
+    
+    NSLog(@"%@",url);
+    if ([[url scheme] hasPrefix:@"wx"] || [url.absoluteString hasPrefix:[NSString stringWithFormat:@"tencent"]]){
+        return [[ThirdLoginService sharedInstance] handleOpenURL:url];
     }
     return [[YZGPay shareInstance] handleOpenURL:url];
 }

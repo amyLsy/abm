@@ -23,11 +23,6 @@ typedef NS_ENUM(NSUInteger, ShareButtonType){
      *  朋友圈
      */
     ShareButtonTypeWechatTimeline ,
-
-    /**
-     *  新浪微博
-     */
-    ShareButtonTypeTypeSinaWeibo,
     /**
      *  qq
      */

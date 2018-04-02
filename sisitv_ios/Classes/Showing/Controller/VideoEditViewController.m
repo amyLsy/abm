@@ -863,7 +863,7 @@
                                      }
                                       LGPhotoImage *pImage = ws.imagesArray.lastObject;
                                      UIImage *imgesave = pImage.image;
-                                     UIImage *wateImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"watermark.jpg" ofType:nil]];
+                                     UIImage *wateImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"logo_watermark.png" ofType:nil]];
                                      UIImage *uploadImage = [self addWatemarkImageWithLogoImage:imgesave watemarkImage:wateImage logoImageRect:CGRectMake(0, 0, imgesave.size.width, imgesave.size.height) watemarkImageRect:CGRectMake(-80, -80, wateImage.size.width * 0.15, wateImage.size.height * 0.15)];
                                      
                                      _converImageView.image = uploadImage;

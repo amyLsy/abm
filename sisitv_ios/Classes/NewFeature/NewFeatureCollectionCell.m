@@ -25,6 +25,8 @@
 -(void)setItem:(id)item forIndexPath:(NSIndexPath *)indexPath{
     NewFeatureRowItem *rowItem = ( NewFeatureRowItem *)item;
     self.feature.image = [UIImage imageNamed:rowItem.imageName];
+    //启动滚动页图片 lsy
+    self.feature.contentMode = UIViewContentModeScaleToFill;
 }
 +(CGSize)collectionView:(UICollectionView *)collectionView itemSizeForItem:(id )item{
     return CGSizeMake(KScreenWidth, KScreenHeight);
